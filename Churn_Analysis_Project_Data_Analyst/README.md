@@ -10,17 +10,23 @@
 
 <br>
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-Scientific_Computing-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-Analytics-orange?style=for-the-badge)
-![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+[![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-Scientific_Computing-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![SQL](https://img.shields.io/badge/SQL-Analytics-orange?style=for-the-badge)](https://www.w3schools.com/sql/)
+[![SQLite](https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-Machine_Learning-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![Power BI](https://img.shields.io/badge/Power_BI-Dashboard-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://www.microsoft.com/power-platform/products/power-bi)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Web_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+
+<br>
+
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge)](https://matplotlib.org/)
+[![Seaborn](https://img.shields.io/badge/Seaborn-Statistical_Visualization-4C72B0?style=for-the-badge)](https://seaborn.pydata.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![GeoJSON](https://img.shields.io/badge/GeoJSON-Geospatial_Data-2E7D32?style=for-the-badge)](https://geojson.org/)
 
 <br><br>
-
 **👨‍💻 Author: S Mohammed Kaif**
 
 </div>
@@ -858,12 +864,64 @@ If you find this project useful:
 
 <div align="center">
 
-### 📊 Customer Churn Analysis
+## 📊 Customer Churn Analysis & Prediction
 
-**Turning Customer Data into Business Intelligence**
+### Turning Customer Data into Business Intelligence
 
-Made with ❤️ using Python, SQL, Machine Learning, Power BI & Streamlit.
+<p>
+  <strong>
+    Data Analytics • SQL • Machine Learning • Power BI • Streamlit
+  </strong>
+</p>
 
-**© 2026 S Mohammed Kaif**
+<br>
+
+<a href="https://github.com/Shaik-Mohammed-Kaif/Data-Science-Analyst-Project">
+  <img src="https://img.shields.io/badge/⭐_Star_Repository-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+&nbsp;
+<a href="https://github.com/Shaik-Mohammed-Kaif/Data-Science-Analyst-Project/fork">
+  <img src="https://img.shields.io/badge/🍴_Fork_Project-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+&nbsp;
+<a href="https://github.com/Shaik-Mohammed-Kaif/Data-Science-Analyst-Project/issues">
+  <img src="https://img.shields.io/badge/🐛_Report_Issue-red?style=for-the-badge">
+</a>
+
+<br><br>
+
+<a href="https://github.com/Shaik-Mohammed-Kaif">
+  <img src="https://img.shields.io/badge/GitHub-S_Mohammed_Kaif-181717?style=for-the-badge&logo=github&logoColor=white">
+</a>
+&nbsp;
+<a href="https://www.linkedin.com/">
+  <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white">
+</a>
+
+<br><br>
+
+**👨‍💻 Developed by S Mohammed Kaif**
+
+*Data Science • Data Analytics • Machine Learning • Business Intelligence*
+
+<br>
+
+**© 2026 S Mohammed Kaif • Customer Churn Analytics & Prediction**
+
+</div>
+
+---
+
+<div align="center">
+
+### ⭐ If this project helped you, consider giving it a star!
+
+**Built with Python 🐍 • SQL 🗄️ • Machine Learning 🤖 • Power BI 📊 • Streamlit 🌐**
+
+<br>
+
+<a href="#-customer-churn-analysis--prediction">
+  <img src="https://img.shields.io/badge/⬆️_Back_to_Top-6C63FF?style=for-the-badge">
+</a>
 
 </div>
