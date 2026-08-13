@@ -1100,16 +1100,3 @@ Retention Strategy
 ⭐ Built with Python, SQL, Statistics, Machine Learning, Power BI & Streamlit.
 
 </div>
-```
-
-**Ab structure wala part 100% tumhare abhi diye `dir` ke according hai**, especially dashboard folder ka naam:
-
-```text
-Streamlit_And-PowerBI-Dashbord-Churn-Analysis
-```
-
-aur notebooks:
-
-```text
-Churn-Analysis-IPYNB
-```
