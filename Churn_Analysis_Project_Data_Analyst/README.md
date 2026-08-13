@@ -490,7 +490,7 @@ SQL analysis focuses on:
 * Subqueries
 * Window functions
 
-Example business questions:
+Example:
 
 ```sql
 -- Churned customers
@@ -704,14 +704,20 @@ Prioritize high-value customers where potential revenue exposure is significant.
 </div>
 
 ---
+
+# 📁 Project Structure
+
+```text
 Churn_Analysis_Project_Data_Analyst/
 │
 ├── 📁 Churn-Analysis-IPYNB/
+│   │
 │   ├── 01-Churn-Analysis-proj-for-EDA-Data-Processing.ipynb
 │   ├── 02-Churn-SQL-Dashbord-Analysis.ipynb
 │   └── 03-Churn-Prediction-Analysis.ipynb
 │
 ├── 📁 Churn-Dataset-With-Geo-Loc-Analysis/
+│   │
 │   ├── Churn_Customer_Data.csv
 │   ├── Clean_customer_data.csv
 │   ├── customer_churn.db
@@ -722,6 +728,7 @@ Churn_Analysis_Project_Data_Analyst/
 │   └── Predicted_Churned_Customers.csv
 │
 ├── 📁 Streamlit_And-PowerBI-Dashbord-Churn-Analysis/
+│   │
 │   ├── Churn_Analysis_BI_Dashbord.pbix
 │   ├── master_churn_dashboard.py
 │   └── Stream_app.py
@@ -732,6 +739,114 @@ Churn_Analysis_Project_Data_Analyst/
 ```
 
 ---
+
+# 📓 Jupyter Notebooks
+
+The project analysis is organized into three main notebooks.
+
+### 01 — EDA & Data Processing
+
+```text
+01-Churn-Analysis-proj-for-EDA-Data-Processing.ipynb
+```
+
+Covers:
+
+* Data loading
+* Data inspection
+* Data processing
+* EDA
+* Customer behavior analysis
+* Churn-related visualizations
+
+### 02 — SQL Dashboard Analysis
+
+```text
+02-Churn-SQL-Dashbord-Analysis.ipynb
+```
+
+Covers:
+
+* SQLite database analysis
+* SQL queries
+* Customer segmentation
+* Churn analysis
+* Revenue analysis
+* Business-oriented SQL insights
+
+### 03 — Churn Prediction Analysis
+
+```text
+03-Churn-Prediction-Analysis.ipynb
+```
+
+Covers:
+
+* Machine learning preparation
+* Feature processing
+* Churn prediction
+* Model evaluation
+* Predicted customer analysis
+
+---
+
+# 📂 Dataset Files
+
+The project contains customer datasets and analytical outputs.
+
+### Customer Data
+
+```text
+Churn_Customer_Data.csv
+Customer_Data.csv
+Clean_customer_data.csv
+```
+
+### SQLite Databases
+
+```text
+customer_churn.db
+customer_data.db
+```
+
+### Prediction Outputs
+
+```text
+Customer_Churn_Predictions.csv
+Predicted_Churned_Customers.csv
+```
+
+### Geographic Data
+
+```text
+india_state.geojson
+```
+
+The GeoJSON file supports geographic customer/churn visualization.
+
+---
+
+# 📊 Dashboard Files
+
+The project includes both Power BI and Streamlit dashboard components.
+
+### Power BI
+
+```text
+Churn_Analysis_BI_Dashbord.pbix
+```
+
+### Streamlit Applications
+
+```text
+Stream_app.py
+master_churn_dashboard.py
+```
+
+These files provide interactive business analytics and customer churn visualization.
+
+---
+
 # ⚙️ Installation
 
 ### 1️⃣ Clone Repository
@@ -746,7 +861,13 @@ git clone https://github.com/Shaik-Mohammed-Kaif/Data-Science-Analyst-Project.gi
 cd Data-Science-Analyst-Project
 ```
 
-### 3️⃣ Install Dependencies
+### 3️⃣ Navigate to Churn Project
+
+```bash
+cd Churn_Analysis_Project_Data_Analyst
+```
+
+### 4️⃣ Install Dependencies
 
 ```bash
 pip install -r requirement.txt
@@ -764,11 +885,19 @@ pip install pandas numpy matplotlib seaborn scipy scikit-learn streamlit plotly
 
 ## 📓 Jupyter Notebook
 
+From the project environment:
+
 ```bash
 jupyter notebook
 ```
 
-Then open the required analysis notebook.
+Then open:
+
+```text
+Churn-Analysis-IPYNB/
+```
+
+Choose the required notebook.
 
 ---
 
@@ -777,14 +906,34 @@ Then open the required analysis notebook.
 Navigate to:
 
 ```bash
-cd Churn_Analysis_Project_Data_Analyst/Streamlit-Churn-Analytics-Dashboard
+cd Churn_Analysis_Project_Data_Analyst/Streamlit_And-PowerBI-Dashbord-Churn-Analysis
 ```
 
-Run:
+Run the Streamlit application:
 
 ```bash
 streamlit run Stream_app.py
 ```
+
+Or:
+
+```bash
+streamlit run master_churn_dashboard.py
+```
+
+---
+
+# 📊 Power BI Dashboard
+
+Open:
+
+```text
+Churn_Analysis_Project_Data_Analyst/
+└── Streamlit_And-PowerBI-Dashbord-Churn-Analysis/
+    └── Churn_Analysis_BI_Dashbord.pbix
+```
+
+Open the `.pbix` file using Microsoft Power BI Desktop.
 
 ---
 
@@ -926,7 +1075,7 @@ Retention Strategy
 
 <div align="center">
 
-## **Mohammed Kaif**
+## **S Mohammed Kaif**
 
 ### Data Science | Data Analytics | Machine Learning | AI
 
@@ -951,4 +1100,16 @@ Retention Strategy
 ⭐ Built with Python, SQL, Statistics, Machine Learning, Power BI & Streamlit.
 
 </div>
+```
+
+**Ab structure wala part 100% tumhare abhi diye `dir` ke according hai**, especially dashboard folder ka naam:
+
+```text
+Streamlit_And-PowerBI-Dashbord-Churn-Analysis
+```
+
+aur notebooks:
+
+```text
+Churn-Analysis-IPYNB
 ```
