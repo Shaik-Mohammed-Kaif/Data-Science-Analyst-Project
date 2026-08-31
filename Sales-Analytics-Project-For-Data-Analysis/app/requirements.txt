@@ -1,0 +1,10 @@
+streamlit==1.62.0
+pandas
+numpy
+plotly
+scikit-learn
+joblib
+xgboost
+openpyxl
+reportlab
+Pillow
