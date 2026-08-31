@@ -35,23 +35,78 @@ DATA_PATH = (
     "SuperStore_Feature_Engineered.csv"
 )
 
+
+# ================================================================
+# LOAD DATASET
+# ================================================================
+
 @st.cache_data
 def load_data(path):
-    p = Path(path)
-    if not p.exists():
+
+    try:
+
+        data = pd.read_csv(path)
+
+        if "Order_Date" in data.columns:
+
+            data["Order_Date"] = pd.to_datetime(
+                data["Order_Date"],
+                errors="coerce"
+            )
+
+        for c in [
+            "Sales",
+            "Quantity",
+            "Profit",
+            "Shipping_Days",
+            "Sales_Per_Unit",
+            "Profit_Per_Unit",
+            "Profit_Margin",
+            "Return_Flag",
+            "Order_Year",
+            "Order_Month"
+        ]:
+
+            if c in data.columns:
+
+                data[c] = pd.to_numeric(
+                    data[c],
+                    errors="coerce"
+                )
+
+        return data
+
+    except Exception as e:
+
+        st.error(
+            "❌ Dataset could not be loaded from GitHub."
+        )
+
+        st.code(
+            str(e)
+        )
+
         return pd.DataFrame()
-    data = pd.read_csv(p)
-    if "Order_Date" in data.columns:
-        data["Order_Date"] = pd.to_datetime(data["Order_Date"], errors="coerce")
-    for c in [
-        "Sales","Quantity","Profit","Shipping_Days","Sales_Per_Unit",
-        "Profit_Per_Unit","Profit_Margin","Return_Flag","Order_Year","Order_Month"
-    ]:
-        if c in data.columns:
-            data[c] = pd.to_numeric(data[c], errors="coerce")
-    return data
+
+
+# ================================================================
+# LOAD DATA
+# ================================================================
 
 df = load_data(DATA_PATH)
+
+
+# ================================================================
+# DATA VALIDATION
+# ================================================================
+
+if df.empty:
+
+    st.error(
+        "❌ SuperStore dataset not found or could not be loaded."
+    )
+
+    st.stop()
 
 if "theme" not in st.session_state:
     st.session_state.theme = "Cream"
