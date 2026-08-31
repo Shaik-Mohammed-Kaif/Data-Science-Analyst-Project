@@ -20,7 +20,20 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-DATA_PATH = "SuperStore_Feature_Engineered.csv"
+# ================================================================
+# DATA SOURCE
+# ================================================================
+
+DATA_PATH = (
+    "https://raw.githubusercontent.com/"
+    "Shaik-Mohammed-Kaif/"
+    "Data-Science-Analyst-Project/"
+    "main/"
+    "Sales-Analytics-Project-For-Data-Analysis/"
+    "SuperStore_Sales_Dataset/"
+    "Processed/"
+    "SuperStore_Feature_Engineered.csv"
+)
 
 @st.cache_data
 def load_data(path):
