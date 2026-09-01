@@ -60,7 +60,20 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-DATA_PATH = "SuperStore_Feature_Engineered.csv"
+# ================================================================
+# DATA SOURCE — GITHUB RAW CSV
+# ================================================================
+
+DATA_PATH = (
+    "https://raw.githubusercontent.com/"
+    "Shaik-Mohammed-Kaif/"
+    "Data-Science-Analyst-Project/"
+    "main/"
+    "Sales-Analytics-Project-For-Data-Analysis/"
+    "SuperStore_Sales_Dataset/"
+    "Processed/"
+    "SuperStore_Feature_Engineered.csv"
+)
 TARGET_COLUMN = "Return_Flag"
 
 LINKEDIN_URL = "https://www.linkedin.com/in/s-mohammed-kaif-2a500a341"
