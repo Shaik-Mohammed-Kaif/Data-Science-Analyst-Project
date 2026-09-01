@@ -60,10 +60,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# ================================================================
-# DATA SOURCE — GITHUB RAW CSV
-# ================================================================
-
 DATA_PATH = (
     "https://raw.githubusercontent.com/"
     "Shaik-Mohammed-Kaif/"
@@ -74,6 +70,8 @@ DATA_PATH = (
     "Processed/"
     "SuperStore_Feature_Engineered.csv"
 )
+
+    
 TARGET_COLUMN = "Return_Flag"
 
 LINKEDIN_URL = "https://www.linkedin.com/in/s-mohammed-kaif-2a500a341"
@@ -908,22 +906,26 @@ def plot_confusion(bundle):
 
 @st.cache_data(show_spinner=False)
 def load_data(path):
-    if not os.path.exists(path):
-        return None, f"CSV file not found: {path}"
 
     try:
         data = pd.read_csv(path)
+
     except Exception as e:
         return None, f"Could not read CSV: {e}"
 
+    if data.empty:
+        return None, "The CSV file is empty."
+
     if "Order_Date" in data.columns:
         data["Order_Date"] = pd.to_datetime(
-            data["Order_Date"], errors="coerce"
+            data["Order_Date"],
+            errors="coerce"
         )
 
     if "Ship_Date" in data.columns:
         data["Ship_Date"] = pd.to_datetime(
-            data["Ship_Date"], errors="coerce"
+            data["Ship_Date"],
+            errors="coerce"
         )
 
     return data, None
@@ -931,18 +933,31 @@ def load_data(path):
 
 df, load_error = load_data(DATA_PATH)
 
+
 if load_error:
+
     st.error(load_error)
+
     st.info(
-        "Place 'SuperStore_Feature_Engineered.csv' in the same folder "
-        "as this Python file, or change DATA_PATH at the top."
+        "The SuperStore dataset could not be loaded "
+        "from the configured data source."
     )
+
     st.stop()
 
+
 if TARGET_COLUMN not in df.columns:
-    st.error(f"Target column '{TARGET_COLUMN}' was not found.")
+
+    st.error(
+        f"Target column '{TARGET_COLUMN}' was not found."
+    )
+
     st.write("Available columns:")
-    st.code(", ".join(df.columns))
+
+    st.code(
+        ", ".join(df.columns)
+    )
+
     st.stop()
 
 
