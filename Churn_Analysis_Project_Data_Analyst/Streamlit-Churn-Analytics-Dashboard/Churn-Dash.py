@@ -2855,75 +2855,156 @@ st.markdown(
 # FILTER BAR
 # =====================================================================
 
+def _reset_filters():
+    """
+    Reset all dashboard filters through Streamlit's callback mechanism.
+    Widget state is changed before the next script rerun.
+    """
+
+    st.session_state["filter_quarter"] = "All"
+
+    if GENDER_COL is not None:
+        st.session_state["filter_gender"] = "All"
+
+    if DATE_COL is not None and not PARSED_DATES.dropna().empty:
+        valid_dates = PARSED_DATES.dropna()
+
+        st.session_state["filter_date_range"] = (
+            valid_dates.min().date(),
+            valid_dates.max().date(),
+        )
+
+
 st.markdown(
     """
-    <div class="filter-bar-label">🔍 FILTERS</div>
+    <div class="filter-bar-label">
+        🔍 FILTERS
+    </div>
     """,
     unsafe_allow_html=True,
 )
 
+
 filter_col_1, filter_col_2, filter_col_3, filter_col_4 = st.columns(
-    [1.5, 1, 1, 0.7], gap="small"
+    [1.5, 1, 1, 0.7],
+    gap="small",
 )
 
-with filter_col_1:
-    if DATE_COL is not None:
-        _min_date = PARSED_DATES.min().date()
-        _max_date = PARSED_DATES.max().date()
 
-        selected_date_range = st.date_input(
-            "📅 Date Range",
-            value=(_min_date, _max_date),
-            min_value=_min_date,
-            max_value=_max_date,
-            key="filter_date_range",
-        )
+# ---------------------------------------------------------------------
+# DATE RANGE
+# ---------------------------------------------------------------------
+
+with filter_col_1:
+
+    if DATE_COL is not None:
+
+        valid_dates = PARSED_DATES.dropna()
+
+        if not valid_dates.empty:
+
+            min_date = valid_dates.min().date()
+            max_date = valid_dates.max().date()
+
+            selected_date_range = st.date_input(
+                "📅 Date Range",
+                value=(min_date, max_date),
+                min_value=min_date,
+                max_value=max_date,
+                key="filter_date_range",
+            )
+
+        else:
+
+            selected_date_range = None
+
+            st.selectbox(
+                "📅 Date Range",
+                ["No valid dates found"],
+                disabled=True,
+                key="filter_date_placeholder",
+            )
+
     else:
+
         selected_date_range = None
+
         st.selectbox(
             "📅 Date Range",
-            ["No date column found in dataset"],
+            ["No date column found"],
             disabled=True,
             key="filter_date_placeholder",
         )
 
+
+# ---------------------------------------------------------------------
+# QUARTER
+# ---------------------------------------------------------------------
+
 with filter_col_2:
+
     selected_quarter = st.selectbox(
         "📊 Quarter",
-        ["All", "Q1", "Q2", "Q3", "Q4"],
-        index=0,
+        options=["All", "Q1", "Q2", "Q3", "Q4"],
         key="filter_quarter",
     )
 
+
+# ---------------------------------------------------------------------
+# GENDER
+# ---------------------------------------------------------------------
+
 with filter_col_3:
+
     if GENDER_COL is not None:
-        _gender_options = ["All"] + sorted(
-            df[GENDER_COL].dropna().astype(str).unique().tolist()
+
+        gender_values = (
+            df[GENDER_COL]
+            .dropna()
+            .astype(str)
+            .str.strip()
         )
+
+        gender_values = sorted(
+            gender_values[gender_values != ""].unique().tolist()
+        )
+
+        gender_options = ["All"] + gender_values
+
         selected_gender = st.selectbox(
             "🧑 Gender",
-            _gender_options,
-            index=0,
+            options=gender_options,
             key="filter_gender",
         )
+
     else:
+
         selected_gender = "All"
+
         st.selectbox(
             "🧑 Gender",
-            ["All"],
+            ["Gender unavailable"],
             disabled=True,
             key="filter_gender_placeholder",
         )
 
-with filter_col_4:
-    st.markdown("<div style='height:1.7rem;'></div>", unsafe_allow_html=True)
-    reset_clicked = st.button("🔄 Reset", use_container_width=True)
 
-    if reset_clicked:
-        st.session_state["filter_quarter"] = "All"
-        if GENDER_COL is not None:
-            st.session_state["filter_gender"] = "All"
-        st.rerun()
+# ---------------------------------------------------------------------
+# RESET
+# ---------------------------------------------------------------------
+
+with filter_col_4:
+
+    st.markdown(
+        "<div style='height:1.7rem;'></div>",
+        unsafe_allow_html=True,
+    )
+
+    st.button(
+        "🔄 Reset",
+        use_container_width=True,
+        on_click=_reset_filters,
+    )
 
 
 # ---------------------------------------------------------------------
@@ -3147,7 +3228,7 @@ with row1_c1:
         fig = style_fig(fig, height=245, show_legend=True)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="gender_donut_chart",
         )
@@ -3229,7 +3310,7 @@ with row1_c2:
         fig = style_fig(fig, height=390, show_legend=True)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="age_group_chart",
         )
@@ -3285,7 +3366,7 @@ with row1_c3:
         fig = style_fig(fig, height=320)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="state_churn_chart",
         )
@@ -3333,7 +3414,7 @@ with row1_c4:
         fig = style_fig(fig, height=320)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="internet_type_chart",
         )
@@ -3393,7 +3474,7 @@ with row2_c1:
         fig = style_fig(fig, height=175)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="payment_method_chart",
         )
@@ -3434,7 +3515,7 @@ with row2_c1:
         fig = style_fig(fig, height=175)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="contract_chart",
         )
@@ -3512,7 +3593,7 @@ with row2_c2:
         fig = style_fig(fig, height=390, show_legend=True)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="tenure_group_chart",
         )
@@ -3553,7 +3634,7 @@ with row2_c3:
         fig = style_fig(fig, height=320)
 
         st.plotly_chart(
-            fig, use_container_width=True,
+            fig, width="stretch",
             config={"displayModeBar": False, "responsive": True},
             key="churn_category_chart",
         )
