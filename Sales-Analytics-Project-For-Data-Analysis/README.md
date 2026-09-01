@@ -73,6 +73,82 @@ Decision Support
 Streamlit Application
 ````
 
+# 🚀 Live Applications
+
+The SuperStore project includes three deployed Streamlit applications, each focused on a different part of the end-to-end analytics and machine-learning workflow.
+
+### 📊 1. SuperStore Sales Dashboard
+
+Interactive business intelligence dashboard for exploring:
+
+- Sales performance
+- Profit analysis
+- Orders
+- Quantity
+- Categories
+- Sub-Categories
+- Payment modes
+- Customer performance
+- Monthly trends
+- Year / Quarter analysis
+
+🔗 **Live Application:** [SuperStore Sales Dashboard](https://superstore-sales-dashboards.streamlit.app/)
+
+---
+
+### 🤖 2. SuperStore Predictive Intelligence
+
+Machine-learning application for:
+
+- Return_Flag prediction
+- Classification
+- Model evaluation
+- Prediction probabilities
+- Model comparison
+- F1-based model selection
+- Predictive analytics
+- Business decision support
+
+🔗 **Live Application:** [SuperStore Predictive Intelligence](https://superstore-predictive-intelligence.streamlit.app/)
+
+---
+
+### 📈 3. SuperStore Sales Analytics
+
+Additional interactive sales analytics application covering:
+
+- Sales analysis
+- Profit analysis
+- Customer analysis
+- Product analysis
+- Category analysis
+- Regional analysis
+- Business performance insights
+- Interactive visual analytics
+
+🔗 **Live Application:** [SuperStore Sales Analytics](https://kiaf-supersales-dashbord-analytic.streamlit.app/)
+
+---
+
+## 🌐 Streamlit Applications Overview
+
+| Application | Purpose | Technology |
+|---|---|---|
+| 📊 SuperStore Sales Dashboard | Interactive Business Intelligence | Streamlit + Plotly |
+| 🤖 SuperStore Predictive Intelligence | Return_Flag Machine Learning Prediction | Streamlit + Scikit-learn |
+| 📈 SuperStore Sales Analytics | Sales & Business Analytics | Streamlit + Plotly + Pandas |
+
+### 🔗 Quick Access
+
+**📊 Sales Dashboard**  
+[Open SuperStore Sales Dashboard](https://superstore-sales-dashboards.streamlit.app/)
+
+**🤖 Predictive Intelligence**  
+[Open SuperStore Predictive Intelligence](https://superstore-predictive-intelligence.streamlit.app/)
+
+**📈 Sales Analytics**  
+[Open SuperStore Sales Analytics](https://kiaf-supersales-dashbord-analytic.streamlit.app/)
+
 ---
 
 # 🎯 Business Objective
