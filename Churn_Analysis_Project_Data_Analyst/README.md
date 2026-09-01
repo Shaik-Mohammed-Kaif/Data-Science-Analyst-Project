@@ -128,6 +128,117 @@ insights and predictive analytics.
 
 ---
 
+# 📊 Telecom Customer Churn Prediction & Analytics
+
+An end-to-end **Telecom Customer Churn Prediction and Analytics** project built with Python, Machine Learning, Plotly, and Streamlit.
+
+The project includes two deployed applications:
+
+## 🚀 Live Applications
+
+### 🎯 Customer Churn Prediction
+Predict individual customer churn probability and assess customer risk.
+
+👉 **[Open Customer Churn Prediction App](https://telecom-customer-churn-analysis-mohammed-kaif.streamlit.app/)**
+
+### 📊 Telecom Customer Churn Dashboard
+Explore customer demographics, churn trends, services, contracts, payment methods, and business insights.
+
+👉 **[Open Telecom Customer Churn Dashboard](https://churn-dashb-analysis-kaif.streamlit.app/)**
+
+---
+
+## 🧠 Project Overview
+
+This project combines **Data Analytics and Machine Learning** to understand customer churn behavior and identify customers who may be at higher risk of leaving.
+
+### Key Areas
+
+- Data Cleaning & Preprocessing
+- Exploratory Data Analysis (EDA)
+- Customer Churn Analysis
+- Demographic Analysis
+- Service Usage Analysis
+- Contract & Payment Analysis
+- Churn Rate Analysis
+- Machine Learning Prediction
+- Customer Risk Classification
+- Model Evaluation
+- Explainable AI
+- Business & Retention Insights
+- Interactive Streamlit Dashboard
+
+---
+
+## 🛠️ Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Plotly
+- Streamlit
+- Machine Learning
+- Explainable AI
+
+---
+
+## 📈 Dashboard
+
+The analytics dashboard provides interactive insights into:
+
+- Total Customers
+- New Joiners
+- Total Churn
+- Churn Rate
+- Churn by Gender
+- Churn by Age Group
+- Churn by State
+- Churn by Internet Type
+- Churn by Payment Method
+- Churn by Contract
+- Churn by Tenure
+- Churn Category
+- Service Usage
+- Customer Behavior
+
+---
+
+## 🤖 Churn Prediction
+
+The prediction application allows users to enter customer information and obtain:
+
+- Churn Probability
+- Customer Risk Level
+- Prediction Result
+- Model-based Explanation
+- Important Churn Drivers
+- Retention Recommendations
+
+---
+
+## 🎯 Business Objective
+
+The primary objective is to help businesses:
+
+- Identify potentially high-risk customers
+- Understand major churn patterns
+- Analyze customer behavior
+- Support proactive retention strategies
+- Convert machine learning predictions into actionable business insights
+
+---
+
+## 👨‍💻 Author
+
+**S Mohammed Kaif**
+
+Data Science | Machine Learning | Data Analytics | AI
+
+---
+
+⭐ If you find this project useful, consider giving the repository a star.
+
 # 🏢 Business Context
 
 This project represents a **Telecom / Subscription-Based Customer
