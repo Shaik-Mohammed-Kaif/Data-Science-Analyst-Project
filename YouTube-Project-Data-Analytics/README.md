@@ -53,6 +53,50 @@ The project combines data engineering, data cleaning, exploratory analysis, SQL 
 
 ---
 
+# 🎬 YouTube Analytics & Intelligence Platform
+
+An end-to-end **YouTube Data Analytics and Machine Learning project** built with Python, Pandas, NumPy, Plotly, Scikit-learn, SQLite, and Streamlit.
+
+The project includes two separate deployed applications: a historical **YouTube Analytics Dashboard** and an ML-powered **YouTube Intelligence / Prediction Application**.
+
+---
+
+## 🚀 Live Applications
+
+### 📊 YouTube Analytics Dashboard
+
+Explore historical YouTube trending-video performance through interactive analytics, KPIs, charts, engagement analysis, publishing patterns, category insights, channel performance, and content analysis.
+
+🔗 **Live Dashboard:**  
+https://youtube-dashb-analytics-kaif.streamlit.app/
+
+---
+
+### 🤖 YouTube Intelligence | ML Prediction
+
+An interactive machine-learning application for analyzing and predicting YouTube video performance using engineered video and content features.
+
+🔗 **Live Prediction App:**  
+https://youtube-prediction-analytic-kaif.streamlit.app/
+
+---
+
+## 🛠️ Technology Stack
+
+- Python
+- Pandas
+- NumPy
+- Plotly
+- Scikit-learn
+- SQLite
+- Streamlit
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Machine Learning
+- Data Visualization
+
+---
+
 # 🎯 Business Objectives
 
 The primary goal of this project is to understand what factors are associated with better performance among trending YouTube videos.
