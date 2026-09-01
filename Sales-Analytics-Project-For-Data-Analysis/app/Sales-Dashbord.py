@@ -25,7 +25,21 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-DATA_PATH = "SuperStore_Feature_Engineered.csv"
+# ================================================================
+# GITHUB DATA SOURCE
+# ================================================================
+
+DATA_PATH = (
+    "https://raw.githubusercontent.com/"
+    "Shaik-Mohammed-Kaif/"
+    "Data-Science-Analyst-Project/"
+    "main/"
+    "Sales-Analytics-Project-For-Data-Analysis/"
+    "SuperStore_Sales_Dataset/"
+    "Processed/"
+    "SuperStore_Feature_Engineered.csv"
+)
+
 
 # ================================================================
 # THEMES — same 6 charts always; only colors change per theme
@@ -287,24 +301,61 @@ def chart_layout(fig, height=270, title=""):
 
 @st.cache_data(show_spinner=False)
 def load_data(path):
-    if not os.path.exists(path):
-        return None, f"CSV file not found: {path}"
+
     try:
         data = pd.read_csv(path)
+
     except Exception as e:
-        return None, f"Could not read CSV: {e}"
+        return None, f"Could not read dataset: {e}"
+
+    if data.empty:
+        return None, "Dataset is empty."
+
+    # Convert dates if available
+    if "Order_Date" in data.columns:
+        data["Order_Date"] = pd.to_datetime(
+            data["Order_Date"],
+            errors="coerce"
+        )
+
+    if "Ship_Date" in data.columns:
+        data["Ship_Date"] = pd.to_datetime(
+            data["Ship_Date"],
+            errors="coerce"
+        )
+
     return data, None
 
 
 df, load_error = load_data(DATA_PATH)
 
+
+# ================================================================
+# DATA VALIDATION
+# ================================================================
+
 if load_error:
-    st.error(load_error)
+
+    st.error("❌ Dataset Loading Failed")
+
+    st.code(load_error)
+
     st.info(
-        "Place 'SuperStore_Feature_Engineered.csv' in the same folder "
-        "as this file, or change DATA_PATH at the top of the script."
+        "Please verify that the GitHub repository and CSV file "
+        "are publicly accessible."
     )
+
     st.stop()
+
+
+# ================================================================
+# SUCCESS MESSAGE
+# ================================================================
+
+st.success(
+    f"✅ SuperStore dataset loaded successfully — "
+    f"{len(df):,} records × {len(df.columns):,} columns"
+)
 
 # ---- Resolve flexible column names (works with common SuperStore schemas) ----
 
