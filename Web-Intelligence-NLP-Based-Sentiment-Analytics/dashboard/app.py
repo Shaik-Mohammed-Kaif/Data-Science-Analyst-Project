@@ -30,6 +30,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.metrics import (
     accuracy_score,
     precision_score,
@@ -913,6 +914,121 @@ def preprocess_for_model(text):
     )
 
 
+
+@st.cache_data(show_spinner=False)
+def compute_keyword_analysis(frame, text_column, top_n=15):
+    """
+    Compute TF-IDF keywords directly from the CURRENT filtered corpus.
+
+    This is intentionally calculated at dashboard runtime rather than
+    depending on a pre-generated CSV. Therefore every slicer selection
+    changes the keyword results automatically.
+    """
+    if frame.empty or not text_column or text_column not in frame.columns:
+        return pd.DataFrame(columns=["Keyword", "TF-IDF Score"])
+
+    texts = (
+        frame[text_column]
+        .fillna("")
+        .astype(str)
+        .str.strip()
+    )
+    texts = texts[texts.ne("")]
+
+    if texts.empty:
+        return pd.DataFrame(columns=["Keyword", "TF-IDF Score"])
+
+    try:
+        vectorizer = TfidfVectorizer(
+            stop_words="english",
+            lowercase=True,
+            token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z]+\b",
+            max_features=2000,
+        )
+        matrix = vectorizer.fit_transform(texts)
+
+        scores = np.asarray(
+            matrix.mean(axis=0)
+        ).ravel()
+
+        result = pd.DataFrame(
+            {
+                "Keyword": vectorizer.get_feature_names_out(),
+                "TF-IDF Score": scores,
+            }
+        )
+
+        return (
+            result
+            .sort_values(
+                "TF-IDF Score",
+                ascending=False,
+            )
+            .head(top_n)
+            .reset_index(drop=True)
+        )
+
+    except ValueError:
+        return pd.DataFrame(columns=["Keyword", "TF-IDF Score"])
+
+
+@st.cache_data(show_spinner=False)
+def compute_ngram_analysis(frame, text_column, ngram_range, top_n=15):
+    """
+    Compute bigrams/trigrams directly from the CURRENT filtered corpus.
+
+    Counts are recalculated after slicers are applied so phrase analytics
+    stay synchronized with the rest of the dashboard.
+    """
+    if frame.empty or not text_column or text_column not in frame.columns:
+        return pd.DataFrame(columns=["Phrase", "Frequency"])
+
+    texts = (
+        frame[text_column]
+        .fillna("")
+        .astype(str)
+        .str.strip()
+    )
+    texts = texts[texts.ne("")]
+
+    if texts.empty:
+        return pd.DataFrame(columns=["Phrase", "Frequency"])
+
+    try:
+        vectorizer = CountVectorizer(
+            stop_words="english",
+            lowercase=True,
+            ngram_range=ngram_range,
+            token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z]+\b",
+        )
+
+        matrix = vectorizer.fit_transform(texts)
+
+        frequencies = np.asarray(
+            matrix.sum(axis=0)
+        ).ravel()
+
+        result = pd.DataFrame(
+            {
+                "Phrase": vectorizer.get_feature_names_out(),
+                "Frequency": frequencies.astype(int),
+            }
+        )
+
+        return (
+            result
+            .sort_values(
+                "Frequency",
+                ascending=False,
+            )
+            .head(top_n)
+            .reset_index(drop=True)
+        )
+
+    except ValueError:
+        return pd.DataFrame(columns=["Phrase", "Frequency"])
+
+
 def sentiment_color_label(label):
     """Return a Streamlit status treatment for a sentiment label."""
 
@@ -1680,6 +1796,42 @@ with k6:
 
 
 # ================================================================
+# FILTER-AWARE TEXT INTELLIGENCE TABLES
+# ================================================================
+#
+# These are calculated from filtered_df, not only from saved CSV files.
+# This fixes Streamlit deployment cases where outputs/tables files are
+# absent from GitHub and also makes keywords/phrases respond to slicers.
+# ================================================================
+
+ANALYSIS_TEXT_COL = (
+    PROCESSED_TEXT_COL
+    if PROCESSED_TEXT_COL
+    else TEXT_COL
+)
+
+keyword_df = compute_keyword_analysis(
+    filtered_df,
+    ANALYSIS_TEXT_COL,
+    top_n=15,
+)
+
+bigram_df = compute_ngram_analysis(
+    filtered_df,
+    ANALYSIS_TEXT_COL,
+    ngram_range=(2, 2),
+    top_n=15,
+)
+
+trigram_df = compute_ngram_analysis(
+    filtered_df,
+    ANALYSIS_TEXT_COL,
+    ngram_range=(3, 3),
+    top_n=15,
+)
+
+
+# ================================================================
 # NLP INTELLIGENCE — 8 VISUALS
 # ================================================================
 
@@ -1865,168 +2017,56 @@ with v3:
 # ------------------------------------------------
 # VISUAL 4 — TOP TF-IDF KEYWORDS
 # ------------------------------------------------
+#
+# DEPLOYMENT FIX:
+# Keywords are computed from filtered_df at runtime.
+# The dashboard no longer depends on final_top_keywords.csv.
+# This means:
+#   • deployment works even when outputs/tables is not committed
+#   • Author/Sentiment/Topic slicers refresh this visual
+#   • local and Streamlit Cloud behavior stays consistent
+# ------------------------------------------------
 
 with v4:
 
-    if KEYWORDS_PATH.exists():
-
-        try:
-            keyword_df = pd.read_csv(
-                KEYWORDS_PATH
-            )
-        except Exception:
-            keyword_df = pd.DataFrame()
-
-    else:
-
-        keyword_df = pd.DataFrame()
-
-
     if not keyword_df.empty:
 
-        keyword_name_col = find_column(
-            keyword_df,
-            [
-                "keyword",
-                "term",
-                "word",
-                "feature",
-            ],
+        plot_keywords = (
+            keyword_df
+            .head(8)
+            .sort_values(
+                "TF-IDF Score"
+            )
         )
 
-        keyword_score_col = find_column(
-            keyword_df,
-            [
-                "score",
-                "tfidf",
-                "mean_tfidf",
-                "importance",
-            ],
+        fig = px.bar(
+            plot_keywords,
+            x="TF-IDF Score",
+            y="Keyword",
+            orientation="h",
+            title="4. Top Keywords (TF-IDF)",
+            text="TF-IDF Score",
         )
 
-        keyword_count_col = find_column(
-            keyword_df,
-            [
-                "frequency",
-                "count",
-                "document_frequency",
-            ],
+        fig.update_traces(
+            marker_color=ACCENT,
+            marker_line_width=0,
+            texttemplate="%{text:.3f}",
+            textposition="outside",
+            cliponaxis=False,
         )
 
-
-        if (
-            keyword_name_col
-            and keyword_score_col
-        ):
-
-            plot_keywords = (
-                keyword_df[
-                    [
-                        keyword_name_col,
-                        keyword_score_col,
-                    ]
-                ]
-                .dropna()
-                .sort_values(
-                    keyword_score_col,
-                    ascending=False,
-                )
-                .head(8)
-                .sort_values(
-                    keyword_score_col
-                )
+        show_chart(
+            style_chart(
+                fig,
+                330,
             )
-
-            plot_keywords.columns = [
-                "Keyword",
-                "Score",
-            ]
-
-            fig = px.bar(
-                plot_keywords,
-                x="Score",
-                y="Keyword",
-                orientation="h",
-                title="4. Top Keywords (TF-IDF)",
-                text="Score",
-            )
-
-            fig.update_traces(
-                marker_color=ACCENT,
-                marker_line_width=0,
-                texttemplate="%{text:.3f}",
-                textposition="outside",
-                cliponaxis=False,
-            )
-
-            show_chart(
-                style_chart(
-                    fig,
-                    330,
-                )
-            )
-
-        elif (
-            keyword_name_col
-            and keyword_count_col
-        ):
-
-            plot_keywords = (
-                keyword_df[
-                    [
-                        keyword_name_col,
-                        keyword_count_col,
-                    ]
-                ]
-                .dropna()
-                .sort_values(
-                    keyword_count_col,
-                    ascending=False,
-                )
-                .head(8)
-                .sort_values(
-                    keyword_count_col
-                )
-            )
-
-            plot_keywords.columns = [
-                "Keyword",
-                "Frequency",
-            ]
-
-            fig = px.bar(
-                plot_keywords,
-                x="Frequency",
-                y="Keyword",
-                orientation="h",
-                title="4. Top Keywords",
-                text="Frequency",
-            )
-
-            fig.update_traces(
-                marker_color=ACCENT,
-                marker_line_width=0,
-                textposition="outside",
-                cliponaxis=False,
-            )
-
-            show_chart(
-                style_chart(
-                    fig,
-                    330,
-                )
-            )
-
-        else:
-
-            empty_plot(
-                "Keyword columns were not recognized."
-            )
+        )
 
     else:
 
         empty_plot(
-            "Keyword analysis output not found."
+            "No keyword terms are available for the current filters."
         )
 
 
@@ -2043,104 +2083,51 @@ v5, v6, v7, v8 = st.columns(
 # ------------------------------------------------
 # VISUAL 5 — TOP BIGRAMS
 # ------------------------------------------------
+#
+# DEPLOYMENT FIX:
+# Bigrams are computed from filtered_df at runtime instead of relying
+# on top_bigrams.csv. This keeps the visual slicer-aware.
+# ------------------------------------------------
 
 with v5:
 
-    if BIGRAM_PATH.exists():
-
-        try:
-            bigram_df = pd.read_csv(
-                BIGRAM_PATH
-            )
-        except Exception:
-            bigram_df = pd.DataFrame()
-
-    else:
-
-        bigram_df = pd.DataFrame()
-
-
     if not bigram_df.empty:
 
-        phrase_col = find_column(
-            bigram_df,
-            [
-                "bigram",
-                "phrase",
-                "ngram",
-                "term",
-                "keyword",
-            ],
+        plot_bigrams = (
+            bigram_df
+            .head(7)
+            .sort_values(
+                "Frequency"
+            )
         )
 
-        value_col = find_column(
-            bigram_df,
-            [
-                "frequency",
-                "count",
-                "score",
-                "tfidf",
-            ],
+        fig = px.bar(
+            plot_bigrams,
+            x="Frequency",
+            y="Phrase",
+            orientation="h",
+            title="5. Top Bigrams",
+            text="Frequency",
         )
 
-        if phrase_col and value_col:
+        fig.update_traces(
+            marker_color=PURPLE,
+            marker_line_width=0,
+            textposition="outside",
+            cliponaxis=False,
+        )
 
-            plot_bigrams = (
-                bigram_df[
-                    [
-                        phrase_col,
-                        value_col,
-                    ]
-                ]
-                .dropna()
-                .sort_values(
-                    value_col,
-                    ascending=False,
-                )
-                .head(7)
-                .sort_values(
-                    value_col
-                )
+        show_chart(
+            style_chart(
+                fig,
+                330,
             )
-
-            plot_bigrams.columns = [
-                "Phrase",
-                "Frequency",
-            ]
-
-            fig = px.bar(
-                plot_bigrams,
-                x="Frequency",
-                y="Phrase",
-                orientation="h",
-                title="5. Top Bigrams",
-                text="Frequency",
-            )
-
-            fig.update_traces(
-                marker_color=PURPLE,
-                marker_line_width=0,
-                textposition="outside",
-                cliponaxis=False,
-            )
-
-            show_chart(
-                style_chart(
-                    fig,
-                    330,
-                )
-            )
-
-        else:
-
-            empty_plot(
-                "Bigram columns were not recognized."
-            )
+        )
 
     else:
 
         empty_plot(
-            "Bigram analysis output not found."
+            "No bigrams are available for the current filters."
         )
 
 
@@ -2415,6 +2402,11 @@ st.subheader(
     "Keyword & Phrase Intelligence"
 )
 
+st.caption(
+    "Runtime NLP analysis of the current filtered corpus • "
+    "updates automatically with every slicer selection."
+)
+
 kp1, kp2 = st.columns(
     2,
     gap="medium",
@@ -2429,8 +2421,15 @@ with kp1:
 
     if not keyword_df.empty:
 
+        keyword_display = keyword_df.copy()
+
+        keyword_display["TF-IDF Score"] = (
+            keyword_display["TF-IDF Score"]
+            .round(4)
+        )
+
         st.dataframe(
-            keyword_df.head(15),
+            keyword_display,
             width="stretch",
             hide_index=True,
             height=280,
@@ -2439,7 +2438,7 @@ with kp1:
     else:
 
         empty_plot(
-            "Keyword output not found."
+            "No keyword terms are available for the current filters."
         )
 
 
@@ -2451,45 +2450,41 @@ with kp2:
 
     phrase_tables = []
 
-    if BIGRAM_PATH.exists():
+    if not bigram_df.empty:
 
-        try:
+        bigram_display = bigram_df.head(10).copy()
 
-            temp_bigram = pd.read_csv(
-                BIGRAM_PATH
-            )
+        bigram_display["Phrase Type"] = (
+            "Bigram"
+        )
 
-            temp_bigram["Phrase Type"] = (
-                "Bigram"
-            )
+        phrase_tables.append(
+            bigram_display[
+                [
+                    "Phrase",
+                    "Frequency",
+                    "Phrase Type",
+                ]
+            ]
+        )
 
-            phrase_tables.append(
-                temp_bigram.head(10)
-            )
+    if not trigram_df.empty:
 
-        except Exception:
-            pass
+        trigram_display = trigram_df.head(10).copy()
 
+        trigram_display["Phrase Type"] = (
+            "Trigram"
+        )
 
-    if TRIGRAM_PATH.exists():
-
-        try:
-
-            temp_trigram = pd.read_csv(
-                TRIGRAM_PATH
-            )
-
-            temp_trigram["Phrase Type"] = (
-                "Trigram"
-            )
-
-            phrase_tables.append(
-                temp_trigram.head(10)
-            )
-
-        except Exception:
-            pass
-
+        phrase_tables.append(
+            trigram_display[
+                [
+                    "Phrase",
+                    "Frequency",
+                    "Phrase Type",
+                ]
+            ]
+        )
 
     if phrase_tables:
 
@@ -2508,7 +2503,7 @@ with kp2:
     else:
 
         empty_plot(
-            "Phrase analysis output not found."
+            "No phrases are available for the current filters."
         )
 
 
