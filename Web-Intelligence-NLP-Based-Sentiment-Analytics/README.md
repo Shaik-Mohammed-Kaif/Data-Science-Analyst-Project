@@ -49,6 +49,31 @@ then used for machine-learning experiments.
 
 ---
 
+## 🚀 Live Applications
+
+### 📊 Text Intelligence Dashboard
+
+Explore the interactive NLP analytics dashboard with global slicers, sentiment analytics, keyword intelligence, topic analysis, and interactive visualizations.
+
+🔗 **[Open Text Intelligence Dashboard · Streamlit](https://kaif-nlp-intelligence.streamlit.app/)**
+
+### 🤖 NLP Sentiment Predictor
+
+Enter text and get sentiment predictions using the trained NLP sentiment classification model.
+
+🔗 **[Open NLP Sentiment Predictor · Streamlit](https://nlp-sentiment-predictor.streamlit.app/)**
+
+---
+
+### 🧠 Application Overview
+
+| Application | Purpose | Platform |
+|---|---|---|
+| 📊 **Text Intelligence Dashboard** | Interactive NLP analytics, sentiment, keywords & topics | Streamlit |
+| 🤖 **NLP Sentiment Predictor** | Real-time text sentiment prediction | Streamlit |
+
+---
+
 # 🎯 Project Objective
 
 The primary objective is to build a complete text analytics pipeline
