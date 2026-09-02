@@ -24,6 +24,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import streamlit as st
+from sklearn.feature_extraction.text import TfidfVectorizer
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -458,6 +459,24 @@ st.markdown(
         /* Native Streamlit radio theme control */
         div[role="radiogroup"] {
             gap: 5px;
+        }
+
+        /*
+           Desktop layout lock:
+           Keep each KPI / slicer / 3-column visual row on one row
+           when Streamlit's sidebar is opened. The dashboard becomes
+           narrower, but the analytical order does not reshuffle.
+        */
+        @media (min-width: 900px) {
+            [data-testid="stHorizontalBlock"] {
+                flex-wrap: nowrap !important;
+                align-items: stretch !important;
+            }
+
+            [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+                min-width: 0 !important;
+                flex-shrink: 1 !important;
+            }
         }
 
         div[role="radiogroup"] label {
@@ -1745,161 +1764,233 @@ with v2:
 # ------------------------------------------------
 # 3. TOP 10 KEYWORDS
 # ------------------------------------------------
+#
+# IMPORTANT:
+# The previous version depended only on the precomputed
+# final_top_keywords.csv. That file can be absent in Streamlit
+# deployment and, more importantly, it cannot react to slicers.
+#
+# This version calculates TF-IDF directly from plot_df, which is
+# already filtered by the global slicers. Therefore the keyword
+# visual updates with Sentiment / Author / Tags / Topic filters.
+# ------------------------------------------------
 
 with v3:
 
-    keyword_df = pd.DataFrame()
+    keyword_text_col = find_column(
+        plot_df,
+        [
+            "processed_text",
+            "clean_text",
+            "original_text",
+            "quote",
+            "text",
+        ],
+    )
 
-    if KEYWORDS_PATH.exists():
+    if keyword_text_col:
 
-        try:
-            keyword_df = pd.read_csv(
-                KEYWORDS_PATH
-            )
-        except Exception:
-            keyword_df = pd.DataFrame()
-
-    if not keyword_df.empty:
-
-        keyword_name_col = find_column(
-            keyword_df,
-            [
-                "keyword",
-                "term",
-                "word",
-                "feature",
-            ],
+        keyword_text = (
+            plot_df[keyword_text_col]
+            .fillna("")
+            .astype(str)
+            .str.strip()
         )
 
-        keyword_score_col = find_column(
-            keyword_df,
-            [
-                "score",
-                "tfidf",
-                "mean_tfidf",
-                "importance",
-            ],
-        )
+        keyword_text = keyword_text[
+            keyword_text.ne("")
+        ]
 
-        keyword_count_col = find_column(
-            keyword_df,
-            [
-                "frequency",
-                "count",
-                "document_frequency",
-            ],
-        )
+        if len(keyword_text) >= 1:
 
-        if keyword_name_col and keyword_score_col:
+            try:
 
-            plot_keywords = (
-                keyword_df[
-                    [
-                        keyword_name_col,
-                        keyword_score_col,
-                    ]
-                ]
-                .dropna()
-                .sort_values(
-                    keyword_score_col,
-                    ascending=False,
+                vectorizer = TfidfVectorizer(
+                    stop_words="english",
+                    lowercase=True,
+                    token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z]+\b",
+                    max_features=1000,
                 )
-                .head(10)
-                .sort_values(
-                    keyword_score_col,
-                    ascending=True,
+
+                tfidf_matrix = vectorizer.fit_transform(
+                    keyword_text
                 )
-            )
 
-            plot_keywords.columns = [
-                "Keyword",
-                "Score",
-            ]
-
-            fig = px.bar(
-                plot_keywords,
-                x="Score",
-                y="Keyword",
-                orientation="h",
-                title="3. Top 10 Keywords",
-                text="Score",
-            )
-
-            fig.update_traces(
-                marker_color=PURPLE,
-                marker_line_width=0,
-                texttemplate="%{text:.3f}",
-                textposition="outside",
-                cliponaxis=False,
-            )
-
-            show_chart(
-                style_chart(
-                    fig,
-                    330,
+                terms = np.asarray(
+                    vectorizer.get_feature_names_out()
                 )
-            )
 
-        elif keyword_name_col and keyword_count_col:
+                scores = np.asarray(
+                    tfidf_matrix.mean(axis=0)
+                ).ravel()
 
-            plot_keywords = (
-                keyword_df[
-                    [
-                        keyword_name_col,
-                        keyword_count_col,
-                    ]
-                ]
-                .dropna()
-                .sort_values(
-                    keyword_count_col,
-                    ascending=False,
+                keyword_result = pd.DataFrame(
+                    {
+                        "Keyword": terms,
+                        "Score": scores,
+                    }
                 )
-                .head(10)
-                .sort_values(
-                    keyword_count_col,
-                    ascending=True,
+
+                keyword_result = (
+                    keyword_result
+                    .sort_values(
+                        "Score",
+                        ascending=False,
+                    )
+                    .head(10)
+                    .sort_values(
+                        "Score",
+                        ascending=True,
+                    )
                 )
-            )
 
-            plot_keywords.columns = [
-                "Keyword",
-                "Frequency",
-            ]
+            except Exception:
+                keyword_result = pd.DataFrame()
 
-            fig = px.bar(
-                plot_keywords,
-                x="Frequency",
-                y="Keyword",
-                orientation="h",
-                title="3. Top 10 Keywords",
-                text="Frequency",
-            )
+            if not keyword_result.empty:
 
-            fig.update_traces(
-                marker_color=PURPLE,
-                marker_line_width=0,
-                textposition="outside",
-                cliponaxis=False,
-            )
-
-            show_chart(
-                style_chart(
-                    fig,
-                    330,
+                fig = px.bar(
+                    keyword_result,
+                    x="Score",
+                    y="Keyword",
+                    orientation="h",
+                    title="3. Top 10 Keywords",
+                    text="Score",
                 )
-            )
+
+                fig.update_traces(
+                    marker_color=PURPLE,
+                    marker_line_width=0,
+                    texttemplate="%{text:.3f}",
+                    textposition="outside",
+                    cliponaxis=False,
+                )
+
+                fig.update_xaxes(
+                    title="Mean TF-IDF Score",
+                )
+
+                fig.update_yaxes(
+                    title="",
+                )
+
+                show_chart(
+                    style_chart(
+                        fig,
+                        330,
+                    )
+                )
+
+            else:
+
+                empty_plot(
+                    "Not enough text data for keyword analysis."
+                )
 
         else:
 
             empty_plot(
-                "Keyword columns were not recognized."
+                "No text remains after the selected filters."
             )
 
     else:
 
-        empty_plot(
-            "Keyword analysis output not found."
-        )
+        # Final fallback only when the dataset has no text column.
+        # This keeps the dashboard usable without inventing data.
+        keyword_df = pd.DataFrame()
+
+        if KEYWORDS_PATH.exists():
+
+            try:
+                keyword_df = pd.read_csv(
+                    KEYWORDS_PATH
+                )
+            except Exception:
+                keyword_df = pd.DataFrame()
+
+        if not keyword_df.empty:
+
+            keyword_name_col = find_column(
+                keyword_df,
+                [
+                    "keyword",
+                    "term",
+                    "word",
+                    "feature",
+                ],
+            )
+
+            keyword_score_col = find_column(
+                keyword_df,
+                [
+                    "score",
+                    "tfidf",
+                    "mean_tfidf",
+                    "importance",
+                ],
+            )
+
+            if keyword_name_col and keyword_score_col:
+
+                fallback_keywords = (
+                    keyword_df[
+                        [
+                            keyword_name_col,
+                            keyword_score_col,
+                        ]
+                    ]
+                    .dropna()
+                    .sort_values(
+                        keyword_score_col,
+                        ascending=False,
+                    )
+                    .head(10)
+                    .sort_values(
+                        keyword_score_col,
+                        ascending=True,
+                    )
+                )
+
+                fallback_keywords.columns = [
+                    "Keyword",
+                    "Score",
+                ]
+
+                fig = px.bar(
+                    fallback_keywords,
+                    x="Score",
+                    y="Keyword",
+                    orientation="h",
+                    title="3. Top 10 Keywords",
+                    text="Score",
+                )
+
+                fig.update_traces(
+                    marker_color=PURPLE,
+                    marker_line_width=0,
+                    texttemplate="%{text:.3f}",
+                    textposition="outside",
+                    cliponaxis=False,
+                )
+
+                show_chart(
+                    style_chart(
+                        fig,
+                        330,
+                    )
+                )
+
+            else:
+
+                empty_plot(
+                    "Keyword columns were not recognized."
+                )
+
+        else:
+
+            empty_plot(
+                "Keyword analysis output not found."
+            )
 
 
 # ================================================================
