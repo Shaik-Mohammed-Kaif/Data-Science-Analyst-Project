@@ -344,47 +344,55 @@ st.markdown(
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 13px;
-            padding: 16px 14px;
+            gap: 10px;
+            padding: 14px 10px;
             border: 1px solid rgba(229, 216, 199, 0.95);
             border-radius: 14px;
             background: rgba(255, 252, 247, 0.92);
             box-shadow: 0 4px 14px rgba(58, 36, 23, 0.07);
+            overflow: hidden;
         }
 
         .kpi-icon-badge {
-            width: 46px;
-            height: 46px;
-            min-width: 46px;
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             background: rgba(168, 90, 24, 0.11);
-            font-size: 1.45rem;
+            font-size: 1.30rem;
             line-height: 1;
             box-shadow: inset 0 0 0 1px rgba(168, 90, 24, 0.05);
         }
 
         .kpi-content {
             min-width: 0;
+            flex: 1 1 auto;
+            overflow: hidden;
             text-align: center;
         }
 
         .kpi-label {
             color: #4D3A2B;
-            font-size: 0.80rem;
-            line-height: 1.25;
+            font-size: 0.76rem;
+            line-height: 1.18;
             margin-bottom: 7px;
-            white-space: nowrap;
+            white-space: normal;
+            overflow-wrap: anywhere;
+            word-break: normal;
+            min-height: 1.18em;
         }
 
         .kpi-value-row {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             white-space: nowrap;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .kpi-value {
@@ -476,6 +484,20 @@ st.markdown(
             [data-testid="stHorizontalBlock"] > [data-testid="column"] {
                 min-width: 0 !important;
                 flex-shrink: 1 !important;
+            }
+        }
+
+        @media (max-width: 899px) {
+            .kpi-card {
+                min-height: 108px;
+            }
+
+            .kpi-label {
+                font-size: 0.72rem;
+            }
+
+            .kpi-value {
+                font-size: 1.28rem;
             }
         }
 
@@ -1509,7 +1531,7 @@ kpi_items = [
     ),
     (
         "🎯",
-        "Avg Sentiment Score",
+        "Avg Sentiment<br>Score",
         (
             "—"
             if pd.isna(avg_compound)
