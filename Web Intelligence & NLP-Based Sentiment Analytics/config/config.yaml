@@ -1,0 +1,293 @@
+# ================================================================
+# WEB INTELLIGENCE AND NLP-BASED SENTIMENT ANALYTICS
+# PROJECT CONFIGURATION
+# ================================================================
+
+
+# ----------------------------------------------------------------
+# PROJECT
+# ----------------------------------------------------------------
+
+project:
+  name: "Web Intelligence and NLP-Based Sentiment Analytics"
+  version: "1.0.0"
+  description: >
+    End-to-end web scraping, data cleaning, NLP preprocessing,
+    sentiment analysis, keyword analysis, topic modeling,
+    and interactive dashboard project.
+
+
+# ----------------------------------------------------------------
+# DATA SOURCE
+# ----------------------------------------------------------------
+
+source:
+  name: "Quotes to Scrape"
+  base_url: "https://quotes.toscrape.com/"
+  start_url: "https://quotes.toscrape.com/"
+  source_type: "web_scraping"
+
+
+# ----------------------------------------------------------------
+# SCRAPING SETTINGS
+# ----------------------------------------------------------------
+
+scraping:
+  max_pages: 10
+  request_timeout: 10
+  delay_seconds: 1
+  verify_ssl: true
+
+  headers:
+    User-Agent: "Mozilla/5.0"
+
+  pagination:
+    enabled: true
+    next_page_selector: "li.next a"
+
+
+# ----------------------------------------------------------------
+# DATA PATHS
+# ----------------------------------------------------------------
+
+paths:
+
+  raw_data:
+    scraped_quotes: "data/raw/scraped_quotes.csv"
+
+  processed_data:
+    cleaned_quotes: "data/processed/cleaned_quotes.csv"
+
+  final_data:
+    nlp_ready: "data/final/nlp_ready_quotes.csv"
+    sentiment_results: "data/final/sentiment_analysis_results.csv"
+    keyword_analysis: "data/final/keyword_analysis.csv"
+    topic_analysis: "data/final/topic_analysis.csv"
+    topic_summary: "data/final/topic_summary.csv"
+    final_dataset: "data/final/nlp_final_dataset.csv"
+
+  models:
+    sentiment_model: "models/best_sentiment_model.pkl"
+    tfidf_vectorizer: "models/tfidf_vectorizer.pkl"
+
+  outputs:
+    figures: "outputs/figures"
+    tables: "outputs/tables"
+    reports: "outputs/reports"
+
+
+# ----------------------------------------------------------------
+# DATA CLEANING
+# ----------------------------------------------------------------
+
+cleaning:
+
+  remove_duplicates: true
+  remove_missing_text: true
+  strip_whitespace: true
+
+  text_column: "quote"
+  author_column: "author"
+  tags_column: "tags"
+
+
+# ----------------------------------------------------------------
+# NLP PREPROCESSING
+# ----------------------------------------------------------------
+
+nlp:
+
+  lowercase: true
+  remove_urls: true
+  remove_html: true
+  remove_special_characters: true
+  normalize_whitespace: true
+
+  remove_stopwords: false
+
+  stemming:
+    enabled: false
+
+  lemmatization:
+    enabled: false
+
+
+# ----------------------------------------------------------------
+# TF-IDF
+# ----------------------------------------------------------------
+
+tfidf:
+
+  max_features: 5000
+  ngram_range:
+    - 1
+    - 2
+
+  min_df: 1
+  max_df: 0.95
+  sublinear_tf: true
+
+
+# ----------------------------------------------------------------
+# SENTIMENT ANALYSIS
+# ----------------------------------------------------------------
+
+sentiment:
+
+  method: "VADER"
+
+  thresholds:
+    positive: 0.05
+    negative: -0.05
+
+  labels:
+    positive: "Positive"
+    neutral: "Neutral"
+    negative: "Negative"
+
+
+# ----------------------------------------------------------------
+# MACHINE LEARNING
+# ----------------------------------------------------------------
+
+machine_learning:
+
+  test_size: 0.20
+  random_state: 42
+
+  models:
+    - "LogisticRegression"
+    - "MultinomialNB"
+    - "LinearSVC"
+
+  evaluation_metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+
+
+# ----------------------------------------------------------------
+# TOPIC MODELING
+# ----------------------------------------------------------------
+
+topic_modeling:
+
+  number_of_topics: 5
+
+  lda:
+    enabled: true
+    random_state: 42
+    max_iter: 20
+
+  nmf:
+    enabled: true
+    random_state: 42
+    max_iter: 500
+
+
+# ----------------------------------------------------------------
+# KEYWORD ANALYSIS
+# ----------------------------------------------------------------
+
+keywords:
+
+  top_n: 20
+
+  ngrams:
+    bigrams: true
+    trigrams: true
+
+  tfidf_keywords: true
+  word_frequency: true
+
+
+# ----------------------------------------------------------------
+# DASHBOARD
+# ----------------------------------------------------------------
+
+dashboard:
+
+  title: "Web Intelligence & NLP Sentiment Analytics"
+
+  page_icon: "🧠"
+  layout: "wide"
+
+  theme:
+    default: "Vanilla"
+    available:
+      - "Vanilla"
+      - "NLP Sage"
+      - "Midnight NLP"
+
+  slicers:
+    sentiment: true
+    author: true
+    tags: true
+    lda_topic: true
+    nmf_topic: true
+
+  charts:
+    sentiment_distribution: true
+    sentiment_flow: true
+    top_keywords: true
+    sentiment_by_author: true
+    sentiment_score_distribution: true
+    top_lda_topics: true
+    average_sentiment_by_topic: true
+    text_length_vs_sentiment: true
+    sentiment_share_by_author: true
+
+
+# ----------------------------------------------------------------
+# DASHBOARD FILTERS
+# ----------------------------------------------------------------
+
+filters:
+
+  default_value: "All"
+
+  reset_enabled: true
+
+  allowed_columns:
+    - "sentiment"
+    - "author"
+    - "tags"
+    - "lda_dominant_topic"
+    - "nmf_dominant_topic"
+
+
+# ----------------------------------------------------------------
+# DASHBOARD DISPLAY
+# ----------------------------------------------------------------
+
+display:
+
+  top_keywords: 10
+  top_authors: 10
+  top_topics: 10
+
+  charts_per_row: 3
+
+  show_data_explorer: true
+  show_insights: true
+  show_footer: true
+
+
+# ----------------------------------------------------------------
+# LOGGING
+# ----------------------------------------------------------------
+
+logging:
+
+  level: "INFO"
+  enabled: true
+
+
+# ----------------------------------------------------------------
+# REPRODUCIBILITY
+# ----------------------------------------------------------------
+
+reproducibility:
+
+  random_state: 42
