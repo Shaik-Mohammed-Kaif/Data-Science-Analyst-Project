@@ -1,0 +1,739 @@
+State,County,City,Vehicle_Count,Model_Count
+WA,King,Seattle,5836,118
+WA,King,Bellevue,2677,108
+WA,Clark,Vancouver,2587,101
+WA,King,Redmond,2122,100
+WA,King,Kirkland,2100,103
+WA,Thurston,Olympia,1971,93
+WA,Pierce,Tacoma,1854,97
+WA,King,Renton,1834,97
+WA,King,Sammamish,1806,99
+WA,Snohomish,Bothell,1597,98
+WA,Whatcom,Bellingham,1560,96
+WA,Spokane,Spokane,1459,94
+WA,King,Mercer Island,1307,93
+WA,King,Issaquah,1270,96
+WA,King,Kent,1235,92
+WA,Snohomish,Everett,1228,87
+WA,King,Woodinville,1164,93
+WA,Pierce,Gig Harbor,1149,89
+WA,Kitsap,Bainbridge Island,1141,89
+WA,Snohomish,Lynnwood,1133,84
+WA,Snohomish,Snohomish,1118,89
+WA,King,Shoreline,1083,87
+WA,Snohomish,Edmonds,1083,90
+WA,Clark,Camas,962,89
+WA,King,Auburn,962,82
+WA,King,Federal Way,832,84
+WA,Kitsap,Bremerton,818,81
+WA,Pierce,Puyallup,798,79
+WA,King,Maple Valley,796,78
+WA,Snohomish,Lake Stevens,751,82
+WA,Kitsap,Port Orchard,712,74
+WA,Snohomish,Marysville,695,73
+WA,King,Bothell,691,76
+WA,King,Kenmore,653,77
+WA,Clark,Ridgefield,646,77
+WA,Thurston,Lacey,631,71
+WA,Benton,Richland,605,77
+WA,Pierce,Bonney Lake,595,73
+WA,Benton,Kennewick,592,74
+WA,King,Burien,580,69
+WA,King,Snoqualmie,522,66
+WA,King,Newcastle,520,61
+WA,Skagit,Anacortes,510,74
+WA,Kitsap,Poulsbo,506,68
+WA,Snohomish,Monroe,504,71
+WA,Pierce,Lakewood,498,76
+WA,Pierce,University Place,497,76
+WA,King,Lake Forest Park,493,66
+WA,Jefferson,Port Townsend,489,61
+WA,King,North Bend,485,68
+WA,Snohomish,Mukilteo,484,71
+WA,King,Vashon,482,68
+WA,King,Tukwila,472,54
+WA,Skagit,Mount Vernon,464,63
+WA,Clallam,Sequim,459,64
+WA,Spokane,Spokane Valley,455,62
+WA,Yakima,Yakima,447,66
+WA,Thurston,Tumwater,446,53
+WA,Snohomish,Mill Creek,430,70
+WA,Snohomish,Arlington,419,63
+WA,King,Seatac,418,55
+WA,King,Duvall,417,59
+WA,Clark,Battle Ground,414,62
+WA,Franklin,Pasco,411,60
+WA,Pierce,South Hill,405,60
+WA,Clark,Washougal,389,69
+WA,King,Covington,373,61
+WA,Island,Oak Harbor,367,63
+WA,King,Des Moines,367,59
+WA,Island,Camano Island,363,55
+WA,San Juan,Friday Harbor,356,62
+WA,Clallam,Port Angeles,328,51
+WA,Mason,Shelton,325,59
+WA,Whatcom,Blaine,325,62
+WA,Snohomish,Stanwood,324,56
+WA,Snohomish,Mountlake Terrace,313,55
+WA,Pierce,Spanaway,295,54
+WA,Chelan,Wenatchee,288,54
+WA,King,Carnation,281,57
+WA,Cowlitz,Longview,271,56
+WA,King,Black Diamond,271,48
+WA,Whatcom,Ferndale,263,57
+WA,King,Medina,262,41
+WA,Kitsap,Silverdale,262,48
+WA,Walla Walla,Walla Walla,260,49
+WA,King,Clyde Hill,252,42
+WA,Pierce,Lake Tapps,250,51
+WA,Pierce,Graham,249,60
+WA,King,Enumclaw,249,46
+WA,King,Normandy Park,237,52
+WA,San Juan,Eastsound,233,49
+WA,Clark,Brush Prairie,230,45
+WA,Pierce,Edgewood,228,45
+WA,Grant,Moses Lake,224,50
+WA,Kitsap,Kingston,219,51
+WA,Kittitas,Ellensburg,214,45
+WA,Douglas,East Wenatchee,210,40
+WA,Island,Langley,209,45
+WA,Thurston,Yelm,205,48
+WA,Whitman,Pullman,190,46
+WA,Pierce,Buckley,187,45
+WA,Island,Coupeville,185,42
+WA,King,Fall City,185,46
+WA,Chelan,Leavenworth,180,38
+WA,Whatcom,Lynden,179,45
+WA,Benton,West Richland,177,42
+WA,Island,Clinton,177,44
+WA,Spokane,Liberty Lake,174,48
+WA,Lewis,Chehalis,171,42
+WA,Snohomish,Brier,168,46
+WA,Pierce,Auburn,167,38
+WA,Lewis,Centralia,164,38
+WA,Island,Freeland,159,46
+WA,Pierce,Fox Island,158,49
+WA,Pierce,Dupont,156,42
+WA,Kittitas,Cle Elum,153,42
+WA,Skagit,Sedro-Woolley,148,35
+WA,Pierce,Steilacoom,147,43
+WA,Snohomish,Woodinville,146,43
+WA,Clark,La Center,144,39
+WA,Chelan,Chelan,134,29
+WA,Cowlitz,Kelso,131,36
+WA,Grays Harbor,Aberdeen,130,38
+WA,Skagit,Burlington,130,38
+WA,Mason,Belfair,128,38
+WA,Snohomish,Sultan,127,34
+WA,Spokane,Cheney,127,43
+WA,Snohomish,Granite Falls,126,28
+WA,King,Yarrow Point,124,33
+WA,Pierce,Orting,124,34
+WA,Jefferson,Port Ludlow,118,35
+WA,Pierce,Roy,114,30
+WA,Grays Harbor,Ocean Shores,113,36
+WA,San Juan,Lopez Island,109,37
+WA,Klickitat,White Salmon,108,31
+WA,Pierce,Sumner,107,37
+WA,Pierce,Fife,107,30
+WA,Pierce,Eatonville,102,33
+WA,Pierce,Fircrest,102,34
+WA,Cowlitz,Woodland,100,30
+WA,Spokane,Greenacres,97,32
+WA,Cowlitz,Kalama,96,37
+WA,Skagit,Bow,91,31
+WA,Thurston,Rochester,88,31
+WA,Spokane,Colbert,86,28
+WA,Pierce,Lakebay,86,32
+WA,Kitsap,Olalla,82,28
+WA,Grant,Quincy,79,27
+WA,Skagit,La Conner,77,27
+WA,Yakima,Selah,77,24
+WA,Thurston,Tenino,74,24
+WA,Snohomish,Woodway,73,28
+WA,Pierce,Parkland,73,31
+WA,Grays Harbor,Montesano,72,24
+WA,King,Ravensdale,71,25
+WA,Kitsap,Seabeck,70,31
+WA,Pierce,Joint Base Lewis Mcchord,69,24
+WA,Whatcom,Everson,68,28
+WA,Okanogan,Winthrop,65,25
+WA,Kitsap,Suquamish,61,21
+WA,Kitsap,Hansville,60,27
+WA,Chelan,Manson,59,25
+WA,Skamania,Washougal,59,24
+WA,Cowlitz,Castle Rock,59,24
+WA,Pierce,Milton,59,21
+WA,Island,Greenbank,58,26
+WA,Mason,Allyn,58,27
+WA,King,Pacific,57,25
+WA,Spokane,Mead,55,22
+WA,Chelan,Cashmere,54,22
+WA,Spokane,Medical Lake,54,23
+WA,Stevens,Nine Mile Falls,53,28
+WA,Mason,Grapeview,53,20
+WA,Kitsap,Indianola,53,19
+WA,Benton,Benton City,53,26
+WA,Asotin,Clarkston,52,24
+WA,Whatcom,Point Roberts,51,22
+WA,Skamania,Stevenson,50,21
+WA,Douglas,Orondo,50,24
+WA,Lewis,Winlock,50,18
+WA,Grays Harbor,Hoquiam,49,20
+WA,Thurston,Rainier,49,23
+WA,Snohomish,Gold Bar,49,25
+WA,Spokane,Nine Mile Falls,48,22
+WA,Grant,Ephrata,48,21
+WA,King,Hunts Point,48,17
+WA,Benton,Prosser,48,21
+WA,Spokane,Veradale,47,21
+WA,Walla Walla,College Place,47,20
+WA,Yakima,Sunnyside,46,18
+WA,Stevens,Colville,45,22
+WA,Grays Harbor,Elma,45,22
+WA,Jefferson,Nordland,45,18
+WA,Spokane,Deer Park,44,21
+WA,King,Beaux Arts,44,20
+WA,Mason,Hoodsport,41,18
+WA,Jefferson,Quilcene,41,18
+WA,Jefferson,Port Hadlock,40,20
+WA,Whatcom,Sedro Woolley,39,19
+WA,Whatcom,Lummi Island,38,21
+WA,Okanogan,Twisp,38,19
+WA,Wahkiakum,Cathlamet,38,21
+WA,Clark,Yacolt,37,20
+WA,Clark,Woodland,36,15
+WA,Pacific,Long Beach,36,19
+WA,Pend Oreille,Newport,35,17
+WA,San Juan,Olga,35,18
+WA,Pierce,Ruston,34,19
+WA,Mason,Union,34,22
+WA,Spokane,Newman Lake,34,17
+WA,Pierce,Anderson Island,33,18
+WA,Klickitat,Goldendale,30,16
+WA,Spokane,Otis Orchards,30,15
+WA,Grays Harbor,Mccleary,29,12
+WA,Pacific,Ocean Park,29,17
+WA,King,Preston,28,13
+WA,King,Algona,28,13
+WA,Jefferson,Chimacum,28,15
+WA,Kittitas,Ronald,27,14
+WA,Skamania,Underwood,27,18
+WA,Skagit,Concrete,27,11
+WA,Cowlitz,Silverlake,27,17
+WA,Yakima,Moxee,27,14
+WA,Lewis,Onalaska,26,16
+WA,Whatcom,Deming,26,13
+WA,Yakima,Zillah,25,15
+WA,Whatcom,Maple Falls,25,13
+WA,Pacific,Raymond,25,17
+WA,Spokane,Chattaroy,25,14
+WA,Lewis,Toledo,25,13
+WA,Pierce,Vaughn,24,13
+WA,Whatcom,Custer,23,14
+WA,Yakima,Naches,22,13
+WA,Spokane,Airway Heights,22,14
+WA,Chelan,Malaga,22,11
+WA,Lewis,Mossyrock,22,13
+WA,Klickitat,Trout Lake,21,11
+WA,Kittitas,Snoqualmie Pass,21,13
+WA,Jefferson,Brinnon,21,9
+WA,Chelan,Entiat,21,10
+WA,Grays Harbor,Pacific Beach,20,12
+WA,Kittitas,Easton,20,9
+WA,Adams,Othello,20,10
+WA,Okanogan,Mazama,19,14
+WA,Grays Harbor,Westport,19,13
+WA,Mason,Tahuya,19,15
+WA,Stevens,Chewelah,19,12
+WA,Pacific,Surfside,19,15
+WA,Grant,Mattawa,19,13
+WA,Whitman,Colfax,18,10
+WA,Columbia,Dayton,18,9
+WA,Spokane,Elk,18,11
+WA,Yakima,Grandview,18,11
+WA,Chelan,Peshastin,18,10
+WA,Klickitat,Lyle,18,15
+WA,Skamania,Carson,17,13
+WA,Clark,Amboy,17,12
+WA,Kittitas,Roslyn,17,9
+WA,Okanogan,Omak,17,13
+WA,Adams,Ritzville,17,11
+WA,Grays Harbor,Oakville,17,12
+WA,Okanogan,Tonasket,17,9
+WA,Grant,Royal City,17,12
+WA,Stevens,Kettle Falls,16,9
+WA,Spokane,Valleyford,16,12
+WA,Grant,Soap Lake,15,9
+WA,Pacific,Ilwaco,15,12
+WA,Klickitat,Husum,15,10
+WA,Lewis,Morton,15,9
+WA,Cowlitz,Ariel,14,10
+WA,Whatcom,Glacier,14,11
+WA,Okanogan,Oroville,14,12
+WA,Pierce,Longbranch,14,9
+WA,Thurston,Centralia,14,7
+CA,San Diego,San Diego,14,9
+WA,Stevens,Deer Park,13,10
+WA,Stevens,Loon Lake,13,9
+WA,Whitman,Palouse,13,12
+WA,San Juan,Shaw Island,13,10
+WA,King,Milton,13,6
+WA,Okanogan,Brewster,13,5
+WA,Clallam,Forks,13,10
+WA,Pierce,Enumclaw,12,8
+WA,Spokane,Fairchild Air Force Base,12,6
+WA,Spokane,Spangle,12,7
+WA,Klickitat,Snowden,12,11
+WA,Grays Harbor,Cosmopolis,11,8
+WA,Jefferson,Sequim,11,7
+WA,Lewis,Packwood,11,10
+WA,San Juan,Anacortes,11,10
+WA,San Juan,Orcas Is,10,8
+WA,Walla Walla,Burbank,10,7
+WA,Walla Walla,Waitsburg,10,7
+WA,Whatcom,Sumas,10,9
+WA,Asotin,Asotin,10,8
+WA,Lewis,Mineral,10,5
+WA,Lincoln,Davenport,10,9
+WA,Yakima,Toppenish,10,7
+WA,Yakima,Wapato,10,7
+WA,Pacific,Naselle,10,7
+WA,Skagit,Sedro Woolley,9,6
+WA,Clallam,Neah Bay,9,7
+WA,Kitsap,Keyport,9,9
+WA,Lewis,Silver Creek,9,7
+WA,Yakima,Mabton,9,4
+WA,Pacific,Seaview,8,7
+WA,Stevens,Valley,8,7
+WA,Snohomish,Darrington,8,6
+WA,Yakima,Tieton,8,7
+WA,Lewis,Rochester,8,6
+WA,Mason,Lilliwaup,8,5
+WA,King,Skykomish,8,6
+WA,Skamania,North Bonneville,7,7
+WA,Whitman,Rosalia,7,5
+WA,Ferry,Kettle Falls,7,6
+WA,Skagit,Bellingham,7,6
+WA,Pierce,Ashford,7,7
+WA,Lewis,Vader,7,4
+WA,Lewis,Ethel,7,5
+WA,Grant,Coulee City,7,5
+WA,Franklin,Connell,7,5
+WA,Ferry,Republic,7,7
+WA,Grays Harbor,Grayland,7,6
+WA,Grant,Othello,7,6
+WA,Yakima,Granger,7,7
+WA,Whatcom,Acme,7,6
+WA,Yakima,Outlook,6,5
+WA,Stevens,Rice,6,5
+WA,Pacific,Oysterville,6,4
+WA,Kittitas,Kittitas,6,6
+WA,Franklin,Othello,6,5
+WA,Franklin,Mesa,6,5
+WA,Klickitat,Bz Corner,6,5
+WA,Klickitat,Dallesport,6,4
+WA,Okanogan,Carlton,6,6
+WA,Mason,Elma,6,6
+WA,Ferry,Curlew,6,4
+WA,Pacific,Menlo,6,6
+WA,Douglas,Rock Island,6,4
+VA,Virginia Beach,Virginia Beach,5,5
+WA,Pacific,Tokeland,5,5
+WA,Pierce,Carbonado,5,5
+WA,Okanogan,Pateros,5,5
+NV,Clark,Las Vegas,5,4
+WA,Lewis,Salkum,5,2
+WA,Stevens,Evans,5,2
+WA,Yakima,Cowiche,5,3
+WA,Yakima,Union Gap,5,5
+DC,District of Columbia,Washington,5,4
+WA,Spokane,Rockford,5,5
+WA,Spokane,Mica,5,4
+WA,Snohomish,Tulalip,5,4
+CA,Santa Clara,San Jose,5,4
+WA,Lewis,Napavine,5,5
+WA,Lincoln,Reardan,5,5
+WA,Lewis,Curtis,5,4
+WA,Okanogan,Okanogan,5,5
+WA,Pacific,North Cove,5,5
+WA,Pierce,Pacific,5,4
+WA,Lincoln,Wilbur,5,5
+WA,Wahkiakum,Skamokawa,5,4
+WA,Franklin,Eltopia,5,5
+WA,Lewis,Randle,5,5
+WA,Cowlitz,Toutle,5,5
+WA,Whatcom,Nooksack,4,4
+WA,Walla Walla,Touchet,4,4
+CA,Kings,Lemoore,4,3
+CA,San Diego,Chula Vista,4,2
+WA,Pierce,Wilkeson,4,4
+WA,Spokane,Edwall,4,4
+WA,Grant,Warden,4,4
+CO,El Paso,Colorado Springs,4,4
+WA,Whitman,Garfield,4,4
+CA,Sacramento,Sacramento,4,2
+CA,San Diego,Oceanside,4,4
+WA,Wahkiakum,Naselle,4,4
+WA,Kittitas,Thorp,4,3
+WA,Okanogan,Riverside,4,3
+WA,Douglas,Waterville,4,4
+WA,Pend Oreille,Elk,4,4
+VA,Fairfax,Alexandria,4,4
+WA,Grant,Electric City,4,4
+WA,Stevens,Clayton,3,3
+WA,Whitman,Tekoa,3,3
+CA,Los Angeles,Los Angeles,3,3
+CA,Orange,Buena Park,3,2
+VA,Norfolk,Norfolk,3,3
+WA,Stevens,Springdale,3,3
+WA,San Juan,Lopez Is,3,2
+WA,Clallam,Sekiu,3,3
+HI,Honolulu,Honolulu,3,3
+WA,Skamania,White Salmon,3,3
+WA,Grays Harbor,Amanda Park,3,3
+WA,Pacific,Chinook,3,3
+VA,Chesapeake,Chesapeake,3,3
+VA,Alexandria,Alexandria,3,3
+WA,Grays Harbor,Taholah,3,3
+WA,Skagit,Clearlake,3,3
+WA,Pend Oreille,Cusick,3,3
+WA,Pend Oreille,Usk,3,2
+WA,Grays Harbor,Moclips,3,3
+WA,Pacific,South Bend,3,3
+WA,King,Baring,3,3
+WA,Pacific,Nahcotta,3,3
+WA,Lincoln,Harrington,3,3
+WA,Lincoln,Grand Coulee,3,2
+WA,Lewis,Cinebar,3,3
+WA,Klickitat,Murdock,3,3
+WA,Lewis,Ashford,3,3
+NC,Harnett,Spring Lake,3,2
+SC,Charleston,Charleston Afb,3,3
+TX,Bexar,San Antonio,3,3
+WA,Lincoln,Lincoln,3,3
+WA,Lewis,Glenoma,3,3
+WA,Lincoln,Odessa,3,3
+WA,Garfield,Pomeroy,3,3
+WA,Kittitas,South Cle Elum,3,3
+WA,Grant,Marlin,3,2
+AZ,Maricopa,Phoenix,3,3
+WA,King,Snoqualmie Pass,3,3
+CA,Contra Costa,Pittsburg,2,2
+AR,Pulaski,Little Rock,2,2
+BC,King,Seattle,2,2
+CA,Alameda,Berkeley,2,1
+AZ,Maricopa,Tempe,2,2
+WA,Stevens,Hunters,2,2
+WA,Stevens,Addy,2,2
+WA,Whitman,Uniontown,2,2
+WA,Whitman,St John,2,1
+NE,Douglas,Omaha,2,2
+WA,Douglas,Coulee City,2,2
+VA,Stafford,Stafford,2,1
+WA,Whitman,Endicott,2,2
+WA,Spokane,Rosalia,2,1
+CA,Solano,Vacaville,2,2
+CA,Solano,Travis Afb,2,2
+CA,Santa Clara,Santa Clara,2,1
+CA,Santa Clara,Cupertino,2,1
+CA,Orange,Irvine,2,2
+UT,Salt Lake,Salt Lake City,2,2
+TX,Wichita,Wichita Falls,2,2
+TX,El Paso,El Paso,2,2
+TX,Collin,Plano,2,2
+OH,Hamilton,Cincinnati,2,2
+NJ,Burlington,Lumberton,2,2
+CT,New London,Pawcatuck,2,2
+CT,New Haven,Madison,2,2
+WA,Snohomish,Index,2,2
+WA,Skagit,Marblemount,2,2
+VA,Loudoun,Aldie,2,2
+WA,Grays Harbor,Copalis Crossing,2,2
+WA,Skagit,Darrington,2,1
+CO,Boulder,Longmont,2,2
+CO,Arapahoe,Englewood,2,2
+WA,Pierce,South Prairie,2,2
+IL,Lake,Libertyville,2,1
+WA,Ferry,Inchelium,2,2
+WA,Douglas,Mansfield,2,2
+MD,Prince George's,Upper Marlboro,2,2
+WA,Benton,Grandview,2,2
+WA,Grant,Lakeview,2,2
+WA,Klickitat,Glenwood,2,2
+WA,Klickitat,Bingen,2,2
+WA,San Juan,Waldron,2,1
+WA,Pierce,Mcchord Afb,2,1
+WA,Pierce,Kapowsin,2,2
+WA,Grays Harbor,Satsop,2,2
+WA,Adams,Lind,2,2
+WA,Pierce,Elbe,2,2
+WA,Pierce,Artondale,2,1
+TX,Nueces,Corpus Christi,2,2
+VA,Fairfax,Burke,2,2
+NY,Jefferson,Watertown,2,2
+WA,Pacific,Frances,2,2
+NC,Cumberland,Fayetteville,2,2
+NC,Hoke,Raeford,2,2
+WA,Kitsap,Gig Harbor,2,2
+WA,Klickitat,Wahkiacus,2,2
+WA,Klickitat,Roosevelt,2,2
+MD,Montgomery,Gaithersburg,2,2
+MO,Platte,Platte City,2,2
+MD,Calvert,Chesapeake Beach,2,2
+MD,Anne Arundel,Odenton,2,2
+MD,Anne Arundel,Fort George G Meade,2,2
+MD,Montgomery,Silver Spring,2,2
+WA,Lincoln,Ford,2,2
+WA,Lincoln,Deer Meadows,2,2
+WA,Cowlitz,Cougar,2,2
+WA,Yakima,White Swan,2,2
+CA,Riverside,Menifee,2,2
+CA,Monterey,Monterey,1,1
+CA,Alameda,Alameda,1,1
+WY,Sheridan,Sheridan,1,1
+AK,Anchorage,Eagle River,1,1
+AL,Lee,Smiths Station,1,1
+AL,Mobile,Mobile,1,1
+AL,Shelby,Pelham,1,1
+WA,Walla Walla,Walla Walla Co,1,1
+WA,Wahkiakum,Rosburg,1,1
+WA,Wahkiakum,Grays River,1,1
+CA,Placer,Roseville,1,1
+CA,Riverside,Indio,1,1
+CA,Riverside,Wildomar,1,1
+CA,Napa,Napa,1,1
+WA,Whitman,Colton,1,1
+WA,Clark,Orchards,1,1
+WA,Cowlitz,Silver Lake,1,1
+CA,Los Angeles,Gardena,1,1
+CA,Los Angeles,Lakewood,1,1
+CA,Los Angeles,Long Beach,1,1
+CA,Marin,San Rafael,1,1
+AP,King,Seattle,1,1
+CA,Orange,Santa Ana,1,1
+OR,Benton,Corvallis,1,1
+OR,Deschutes,Bend,1,1
+OR,Deschutes,Redmond,1,1
+OR,Lane,Eugene,1,1
+OR,Lane,Springfield,1,1
+WA,Douglas,Bridgeport,1,1
+WA,Okanogan,Chelan,1,1
+WA,Lincoln,Creston,1,1
+WA,Lincoln,Seven Bays,1,1
+MD,Montgomery,Kensington,1,1
+MD,Montgomery,Potomac,1,1
+MD,Prince George's,Andrews Air Force Base,1,1
+MD,Prince George's,Fort Washington,1,1
+VA,Fairfax,Springfield,1,1
+VA,Fairfax,Vienna,1,1
+WA,King,Gold Bar,1,1
+OR,Lincoln,Lincoln City,1,1
+MD,Anne Arundel,Gambrills,1,1
+MD,Anne Arundel,Hanover,1,1
+MD,Carroll,Westminster,1,1
+MD,St. Mary's,Lexington Park,1,1
+MD,Washington,Keedysville,1,1
+MN,Hennepin,Minneapolis,1,1
+MO,Ray,Rayville,1,1
+MO,St. Louis,Saint Louis,1,1
+WA,Pacific,Lebam,1,1
+WA,Okanogan,Coulee Dam,1,1
+WA,Okanogan,Malott,1,1
+WA,Okanogan,Methow,1,1
+WA,Okanogan,Nespelem,1,1
+WA,Klickitat,Wishram,1,1
+WA,Kitsap,Belfair,1,1
+WA,Kitsap,Port Gamble,1,1
+NC,Harnett,Sanford,1,1
+SC,Dorchester,Summerville,1,1
+TX,Bell,Killeen,1,1
+MS,Harrison,Biloxi,1,1
+MT,Yellowstone,Billings,1,1
+NC,Currituck,Moyock,1,1
+WA,Lincoln,Sprague,1,1
+WA,Mason,McCleary,1,1
+WA,Pacific,Bay Center,1,1
+NJ,Hudson,Jersey City,1,1
+NV,Clark,Laughlin,1,1
+NY,Jefferson,Felts Mills,1,1
+NY,Richmond,Staten Island,1,1
+VA,Charlottesville,Charlottesville,1,1
+VA,Fairfax,Herndon,1,1
+KS,Leavenworth,Lansing,1,1
+KS,Sedgwick,Wichita,1,1
+KY,Hardin,Elizabethtown,1,1
+KY,Meade,Fort Knox,1,1
+KY,Oldham,Goshen,1,1
+LA,Plaquemines,Belle Chasse,1,1
+MD,Charles,Hughesville,1,1
+MD,Charles,Waldorf,1,1
+MD,Frederick,Frederick,1,1
+MD,Frederick,Middletown,1,1
+MD,Harford,Edgewood,1,1
+MD,Howard,Dayton,1,1
+MD,Howard,Ellicott City,1,1
+MD,Montgomery,Bethesda,1,1
+MD,Montgomery,Chevy Chase,1,1
+IN,Allen,Fort Wayne,1,1
+IN,Lake,Hobart,1,1
+OR,Multnomah,Portland,1,1
+OR,Polk,Salem,1,1
+PA,Cumberland,Mechanicsburg,1,1
+PA,Philadelphia,Philadelphia,1,1
+SC,Beaufort,Okatie,1,1
+SC,Berkeley,Summerville,1,1
+WA,Adams,Hatton,1,1
+WA,Adams,Washtucna,1,1
+WA,Grays Harbor,Quinault,1,1
+TX,Galveston,Dickinson,1,1
+LA,St. Tammany,Slidell,1,1
+LA,Vernon,Leesville,1,1
+MA,Middlesex,Bedford,1,1
+MA,Middlesex,Chelmsford,1,1
+MA,Middlesex,Hanscom Afb,1,1
+MD,Anne Arundel,Annapolis,1,1
+MD,Anne Arundel,Arnold,1,1
+MD,Anne Arundel,Edgewater,1,1
+WA,Pierce,Incorporated,1,1
+HI,Honolulu,Kailua,1,1
+HI,Kauai,Kekaha,1,1
+HI,Maui,Kihei,1,1
+ID,Elmore,Mountain Home Afb,1,1
+WA,Pend Oreille,Ione,1,1
+WA,San Juan,Deer Harbor,1,1
+WA,San Juan,Orcas,1,1
+ID,Kootenai,Worley,1,1
+IL,Champaign,Champaign,1,1
+IL,Cook,Arlington Heights,1,1
+WA,Lewis,Pe Ell,1,1
+WA,Kittitas,Vantage,1,1
+WA,Klickitat,Alderdale,1,1
+WA,Klickitat,Centerville,1,1
+WA,Grant,Hartline,1,1
+NC,Moore,Southern Pines,1,1
+WA,Benton,Kenn,1,1
+WA,Benton,Plymouth,1,1
+WA,Benton,Pros,1,1
+WA,Klickitat,Klickitat,1,1
+WA,Klickitat,Maryhill,1,1
+IL,Cook,Chicago,1,1
+IL,Cook,Evanston,1,1
+WA,Douglas,Coulee Dam,1,1
+WA,Douglas,Palisades,1,1
+WA,Ferry,Danville,1,1
+WA,Clallam,Beaver,1,1
+WA,Clallam,Bell Hill,1,1
+WA,Clallam,Clallam Bay,1,1
+FL,Palm Beach,Highland Beach,1,1
+FL,Sarasota,Sarasota,1,1
+GA,DeKalb,Decatur,1,1
+GA,Gwinnett,Suwanee,1,1
+GA,Houston,Warner Robins,1,1
+GA,Richmond,Augusta,1,1
+GA,Rockdale,Conyers,1,1
+WA,Ferry,Keller,1,1
+IL,Cook,Skokie,1,1
+IL,DuPage,Burr Ridge,1,1
+IL,Lake,Highland Park,1,1
+IL,Madison,Saint Jacob,1,1
+IL,Rock Island,Rock Island,1,1
+IL,St. Clair,Belleville,1,1
+WA,Snohomish,Shoreline,1,1
+WA,Snohomish,Startup,1,1
+CA,Ventura,Port Hueneme,1,1
+CA,Ventura,Ventura,1,1
+CO,Adams,Aurora,1,1
+WA,Skagit,Hamilton,1,1
+WA,Skagit,Lyman,1,1
+FL,Collier,Naples,1,1
+FL,Escambia,Pensacola,1,1
+FL,Hillsborough,Lithia,1,1
+FL,Hillsborough,Tampa,1,1
+FL,Miami-Dade,Miami,1,1
+FL,Orange,Winter Park,1,1
+WA,Grays Harbor,Copalis Beach,1,1
+VA,Goochland,Henrico,1,1
+VA,Henrico,Sandston,1,1
+VA,Newport News,Newport News,1,1
+WA,Spokane,Latah,1,1
+CA,San Diego,San Clemente,1,1
+CA,San Joaquin,Tracy,1,1
+CA,Santa Barbara,Lompoc,1,1
+HI,Hawaii,Kailua Kona,1,1
+HI,Honolulu,Ewa Beach,1,1
+WA,Skagit,Rockport,1,1
+WA,Skamania,Bingen,1,1
+CO,Larimer,Timnath,1,1
+CO,Las Animas,Trinidad,1,1
+CT,New London,Mystic,1,1
+CT,New London,Old Lyme,1,1
+NJ,Burlington,Joint Base Mdl,1,1
+NJ,Burlington,Medford,1,1
+NJ,Camden,Haddonfield,1,1
+NJ,Cape May,Avalon,1,1
+NJ,Essex,Bloomfield,1,1
+NY,Saratoga,Greenfield Center,1,1
+NY,Saratoga,Saratoga Springs,1,1
+NY,Ulster,Kingston,1,1
+TX,Collin,Prosper,1,1
+TX,Coryell,Gatesville,1,1
+TX,Dallas,Dallas,1,1
+NJ,Essex,Newark,1,1
+CT,New London,Waterford,1,1
+DE,Kent,Dover,1,1
+FL,Broward,Fort Lauderdale,1,1
+TX,Tarrant,Southlake,1,1
+TX,Travis,Austin,1,1
+TX,Williamson,Round Rock,1,1
+TX,Wilson,La Vernia,1,1
+WA,Grant,Stratford,1,1
+CA,Orange,Huntington Beach,1,1
+CA,Orange,Newport Beach,1,1
+CA,Santa Clara,Mountain View,1,1
+CA,Santa Clara,Palo Alto,1,1
+CA,Santa Cruz,Santa Cruz,1,1
+CA,Solano,Benicia,1,1
+CA,Sonoma,Santa Rosa,1,1
+CA,Sonoma,Sonoma,1,1
+CA,Ventura,Camarillo,1,1
+WA,Spokane,Reardan,1,1
+CA,San Bernardino,Fort Irwin,1,1
+CA,San Bernardino,Twentynine Palms,1,1
+CA,San Diego,Coronado,1,1
+WA,Thurston,Oakville,1,1
+WA,Whitman,Lacrosse,1,1
+WA,Whitman,Lamont,1,1
+VA,Portsmouth,Portsmouth,1,1
+VA,Stafford,Fredericksburg,1,1
+VA,Suffolk,Suffolk,1,1
+VA,Williamsburg,Williamsburg,1,1
+WY,Laramie,Cheyenne,1,1
+AZ,Maricopa,Goodyear,1,1
+CA,San Bernardino,Apple Valley,1,1
+NC,Onslow,Mccutcheon Field,1,1
+NC,Orange,Chapel Hill,1,1
+NC,Randolph,Asheboro,1,1
+NE,Sarpy,Bellevue,1,1
+NH,Rockingham,Portsmouth,1,1
+WA,Spokane,Waverly,1,1
+WA,Stevens,Ford,1,1
+WA,Stevens,Fruitland,1,1
+WA,Stevens,Gifford,1,1
+WA,Stevens,Tumtum,1,1
+WA,Thurston,Bucoda,1,1
+CA,Los Angeles,Alhambra,1,1
+AZ,Maricopa,Anthem,1,1
+AZ,Maricopa,Scottsdale,1,1
+WA,Yakima,Prosser,1,1
+AZ,Yavapai,Sedona,1,1
+AZ,Maricopa,Mesa,1,1
+WA,Benton,Rich,1,1
+WA,Chelan,Dryden,1,1
+AZ,Maricopa,Chandler,1,1
+CA,Monterey,Seaside,1,1
+CA,Alameda,Fremont,1,1
+CA,Contra Costa,Moraga,1,1
+WA,Douglas,Bridgeport Bar,1,1
+CA,Kern,Ridgecrest,1,1
+CA,Kern,Rosamond,1,1

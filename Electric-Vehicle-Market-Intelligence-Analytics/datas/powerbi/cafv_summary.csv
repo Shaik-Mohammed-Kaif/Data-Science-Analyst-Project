@@ -1,0 +1,4 @@
+CAFV_Eligibility,CAFV_Flag,Vehicle_Count,Manufacturer_Count,Model_Count,Avg_Range,Share_%
+Clean Alternative Fuel Vehicle Eligible,Eligible,62951,29,57,156.6460262744039,41.8329102484018
+Eligibility unknown as battery range has not been researched,Other,69698,22,50,0.0,46.316502970454934
+Not eligible due to low battery range,Eligible,17833,18,46,19.815454494476533,11.85058678114326

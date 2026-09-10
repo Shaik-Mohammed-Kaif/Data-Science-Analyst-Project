@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EV Intelligence Dashboard</title>
+
+<!--
+  EV INTELLIGENCE DASHBOARD
+  Standalone HTML / CSS / JS
+  - No Python required
+  - Loads the CLEANED CSV through the file picker
+  - Interactive filters
+  - 20 KPI cards
+  - 12 interactive charts
+  - Interactive manufacturer summary table
+  - Search / sort / pagination
+  - CSV download
+  - White / dark / cream / green themes with theme-aware chart palettes
+  - Animated background bubbles
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+<style>
+ :root{
+  /* WHITE THEME */
+  --bg:#f6f8f7;
+  --surface:#ffffff;
+  --surface2:#f8faf9;
+  --text:#17231f;
+  --muted:#6a7772;
+  --border:#dfe7e3;
+  --green:#087f59;
+  --green2:#27a66f;
+  --green3:#70c89d;
+  --green4:#dff3e9;
+  --shadow:0 5px 18px rgba(25,55,45,.07);
+  --radius:10px;
+  --danger:#dc5a5a;
+  --warning:#e6a735;
+
+  --chart1:#087f59;
+  --chart2:#27a66f;
+  --chart3:#55b984;
+  --chart4:#79c99d;
+  --chart5:#9ad7b7;
+  --chart6:#b9e3cc;
+  --chart7:#3d9a73;
+  --chart8:#146d50;
+  --bubble:#087f59;
+  --bubble-bg:rgba(39,166,111,.055);
+}
+
+body[data-theme="dark"]{
+  --bg:#07110f;
+  --surface:#101c19;
+  --surface2:#142521;
+  --text:#eefaf5;
+  --muted:#9db5ac;
+  --border:#294039;
+  --green:#39d18c;
+  --green2:#18b979;
+  --green3:#64e0a5;
+  --green4:#173b2d;
+  --shadow:0 9px 28px rgba(0,0,0,.35);
+
+  --chart1:#39d18c;
+  --chart2:#18b979;
+  --chart3:#64e0a5;
+  --chart4:#8ce8ba;
+  --chart5:#aeeed0;
+  --chart6:#5bc79a;
+  --chart7:#27a87a;
+  --chart8:#137b59;
+  --bubble:#39d18c;
+  --bubble-bg:rgba(57,209,140,.075);
+}
+
+body[data-theme="cream"]{
+  --bg:#f5efe4;
+  --surface:#fffaf1;
+  --surface2:#f8f1e5;
+  --text:#302b23;
+  --muted:#817665;
+  --border:#e4d7c4;
+  --green:#7b684c;
+  --green2:#a1845b;
+  --green3:#c1a77e;
+  --green4:#eee2cf;
+  --shadow:0 6px 20px rgba(88,68,42,.10);
+
+  --chart1:#725d40;
+  --chart2:#94774f;
+  --chart3:#b18f61;
+  --chart4:#c5a97e;
+  --chart5:#d7c19d;
+  --chart6:#a68a63;
+  --chart7:#846d4e;
+  --chart8:#5f4c35;
+  --bubble:#9b8059;
+  --bubble-bg:rgba(161,132,91,.075);
+}
+
+body[data-theme="green"]{
+  --bg:#e9f6ef;
+  --surface:#f9fffb;
+  --surface2:#eef9f3;
+  --text:#123a2b;
+  --muted:#5d7a6c;
+  --border:#c9e5d5;
+  --green:#087a50;
+  --green2:#10a66c;
+  --green3:#43c58a;
+  --green4:#d4f0e1;
+  --shadow:0 6px 20px rgba(8,122,80,.10);
+
+  --chart1:#087a50;
+  --chart2:#10a66c;
+  --chart3:#25b978;
+  --chart4:#43c58a;
+  --chart5:#67d19e;
+  --chart6:#8bdbb4;
+  --chart7:#168e62;
+  --chart8:#075e3e;
+  --bubble:#10a66c;
+  --bubble-bg:rgba(16,166,108,.065);
+}
+
+*{box-sizing:border-box}
+body,.topbar,.section,.kpi,.chart-card,.search,.control select,.control input,table tbody td,.page-btn{transition:background-color .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease}
+html,body{margin:0;min-height:100%;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--text);background:var(--bg)}
+body{overflow-x:hidden}
+button,input,select{font:inherit}
+
+#bubble-layer{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+  opacity:.7;
+}
+.bubble{
+  position:absolute;
+  bottom:-140px;
+  border:1px solid rgba(17,132,94,.12);
+  background:rgba(66,173,128,.045);
+  border-radius:50%;
+  animation:floatUp linear infinite;
+}
+@keyframes floatUp{
+  from{transform:translate3d(0,0,0) scale(.8);opacity:0}
+  15%{opacity:.8}
+  80%{opacity:.35}
+  to{transform:translate3d(var(--drift),-115vh,0) scale(1.25);opacity:0}
+}
+
+.app{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:12px 12px 28px}
+
+.topbar{
+  min-height:66px;background:var(--surface);border:1px solid var(--border);
+  border-radius:12px;box-shadow:var(--shadow);display:flex;align-items:center;
+  justify-content:space-between;padding:10px 14px;margin-bottom:9px;
+}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{
+  width:38px;height:38px;border-radius:10px;background:var(--green);color:#fff;
+  display:grid;place-items:center;font-weight:900;font-size:13px;box-shadow:0 5px 12px rgba(17,132,94,.18)
+}
+.brand h1{font-size:19px;line-height:1;margin:0 0 4px;font-weight:800;letter-spacing:-.35px}
+.brand p{font-size:8px;margin:0;color:var(--muted)}
+.top-actions{display:flex;align-items:center;gap:12px}
+.mini-label{font-size:7px;text-transform:uppercase;color:var(--muted);letter-spacing:.5px}
+.year-box{font-size:15px;font-weight:800;text-align:center}
+.theme-btn{
+  border:1px solid var(--border);background:var(--surface2);color:var(--text);
+  padding:9px 11px;border-radius:8px;cursor:pointer;font-size:10px;font-weight:700
+}
+.theme-btn:hover{border-color:var(--green)}
+
+.section{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  box-shadow:var(--shadow);padding:11px;margin-bottom:9px
+}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.section-title{font-size:11px;font-weight:800;margin:0}
+.section-sub{font-size:7px;color:var(--muted);margin-top:3px}
+.controls-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px
+}
+.control label{display:block;font-size:7px;color:var(--muted);font-weight:700;margin-bottom:4px}
+.control select,.control input{
+  width:100%;height:30px;border:1px solid var(--border);border-radius:6px;
+  background:var(--surface);color:var(--text);padding:0 8px;font-size:8px;outline:none
+}
+.control select:focus,.control input:focus{border-color:var(--green)}
+.actions{display:flex;gap:6px;align-items:center}
+.btn{
+  border:0;border-radius:7px;padding:8px 11px;cursor:pointer;font-size:8px;font-weight:800
+}
+.btn-green{background:var(--green);color:white}
+.btn-soft{background:var(--green4);color:var(--green)}
+.btn-neutral{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.btn:hover{filter:brightness(.96)}
+
+.kpi-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:9px
+}
+.kpi{
+  min-height:69px;background:var(--surface);border:1px solid var(--border);
+  border-radius:10px;padding:9px 10px;box-shadow:var(--shadow)
+}
+.kpi-top{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:7px;font-weight:700}
+.kpi-icon{
+  width:18px;height:18px;border-radius:5px;background:var(--green4);color:var(--green);
+  display:grid;place-items:center;font-size:9px;font-weight:900
+}
+.kpi-value{font-size:13px;font-weight:850;margin-top:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi-note{font-size:6px;color:var(--muted);margin-top:2px}
+
+.chart-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px
+}
+.chart-card{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  box-shadow:var(--shadow);padding:7px;min-height:255px
+}
+.chart-card.wide{grid-column:span 2}
+.chart-title{font-size:9px;font-weight:700;margin:1px 2px 7px}
+.chart-wrap{position:relative;height:220px}
+.chart-card.wide .chart-wrap{height:230px}
+
+.table-section{margin-top:9px}
+.table-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px}
+.table-tools{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.search{
+  width:250px;height:32px;border:1px solid var(--border);border-radius:8px;
+  background:var(--surface);color:var(--text);padding:0 11px;font-size:8px;outline:none
+}
+.search:focus{border-color:var(--green);box-shadow:0 0 0 3px color-mix(in srgb,var(--green) 13%,transparent)}
+.table-meta{display:flex;align-items:center;gap:6px;margin-top:7px;flex-wrap:wrap}
+.table-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border:1px solid var(--border);border-radius:999px;background:var(--surface2);color:var(--muted);font-size:6.5px;font-weight:700}
+.table-chip strong{color:var(--text)}
+.table-scroll{overflow:auto;border:1px solid var(--border);border-radius:10px;margin-top:10px;max-height:560px;box-shadow:0 3px 12px color-mix(in srgb,var(--text) 5%,transparent)}
+table{width:100%;border-collapse:separate;border-spacing:0;min-width:1240px;font-size:7px}
+thead th{
+  position:sticky;top:0;z-index:5;background:var(--green);color:#fff;
+  padding:9px 7px;text-align:left;white-space:nowrap;border-right:1px solid rgba(255,255,255,.14);font-size:6.5px;letter-spacing:.15px
+}
+thead th:first-child{left:0;z-index:7}
+thead th button{border:0;background:none;color:inherit;font-weight:850;font-size:6.5px;cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:3px}
+thead th button:hover{opacity:.8}
+tbody td{padding:8px 7px;border-bottom:1px solid var(--border);white-space:nowrap;background:var(--surface);vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:color-mix(in srgb,var(--green4) 65%,var(--surface))}
+tbody tr.selected td{background:color-mix(in srgb,var(--green4) 80%,var(--surface))}
+tbody td:first-child{position:sticky;left:0;z-index:3;font-weight:750;box-shadow:5px 0 9px color-mix(in srgb,var(--text) 4%,transparent)}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--surface) 94%,var(--green4))}
+tbody tr:nth-child(even):hover td{background:color-mix(in srgb,var(--green4) 70%,var(--surface))}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.rank{font-weight:900;color:var(--green)}
+.rank-badge{display:inline-grid;place-items:center;min-width:22px;height:18px;padding:0 5px;border-radius:6px;background:var(--green4);color:var(--green);font-weight:900}
+.rank-badge.top{background:var(--green);color:#fff}
+.bar-cell{min-width:175px}
+.share-wrap{display:flex;align-items:center;gap:6px;min-width:165px}
+.share-track{height:9px;flex:1;min-width:92px;border-radius:99px;background:var(--green4);overflow:hidden;border:1px solid color-mix(in srgb,var(--green) 10%,transparent)}
+.share-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--chart2),var(--chart1));transition:width .35s ease}
+.share-label{font-size:6.5px;font-weight:850;color:var(--text);min-width:31px;text-align:right}
+.condition{display:inline-flex;align-items:center;gap:4px;padding:3px 6px;border-radius:999px;font-size:6px;font-weight:850;border:1px solid var(--border);background:var(--surface2);color:var(--text)}
+.condition::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
+.condition.good{color:#168a5f;background:color-mix(in srgb,#168a5f 10%,var(--surface));border-color:color-mix(in srgb,#168a5f 25%,var(--border))}
+.condition.warn{color:#a87916;background:color-mix(in srgb,#d6a22c 11%,var(--surface));border-color:color-mix(in srgb,#d6a22c 25%,var(--border))}
+.condition.low{color:#b85b5b;background:color-mix(in srgb,#d86666 10%,var(--surface));border-color:color-mix(in srgb,#d86666 25%,var(--border))}
+.condition.neutral{color:var(--muted)}
+.metric-cell{position:relative;min-width:105px}
+.metric-line{display:flex;justify-content:flex-end;align-items:center;gap:5px}
+.metric-mini{height:3px;border-radius:99px;background:var(--green4);margin-top:4px;overflow:hidden}
+.metric-mini span{display:block;height:100%;background:var(--green);border-radius:99px}
+.focus-btn{border:1px solid var(--border);background:var(--surface2);color:var(--green);border-radius:6px;padding:4px 7px;font-size:6px;font-weight:850;cursor:pointer}
+.focus-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.table-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:8px;color:var(--muted);font-size:7px;flex-wrap:wrap}
+.table-foot-left{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.table-foot select{height:25px;border:1px solid var(--border);border-radius:6px;background:var(--surface);color:var(--text);font-size:7px;padding:0 5px}
+.pagination{display:flex;gap:4px;align-items:center}
+.page-btn{border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:6px;padding:5px 8px;cursor:pointer;font-size:7px}
+.page-btn.active,.page-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.table-hint{font-size:6.5px;color:var(--muted);margin-top:6px}
+.status{
+  display:inline-flex;align-items:center;gap:5px;font-size:7px;color:var(--muted)
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.footer{text-align:center;color:var(--muted);font-size:7px;padding:13px}
+
+.empty{
+  padding:40px 20px;text-align:center;color:var(--muted);font-size:10px;
+  border:1px dashed var(--border);border-radius:8px
+}
+
+@media(max-width:900px){
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-grid{grid-template-columns:repeat(2,1fr)}
+  .chart-card.wide{grid-column:span 2}
+  .controls-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .app{padding:7px}
+  .topbar{align-items:flex-start}
+  .top-actions{flex-direction:column;align-items:flex-end;gap:5px}
+  .controls-grid,.kpi-grid,.chart-grid{grid-template-columns:1fr}
+  .chart-card.wide{grid-column:span 1}
+  .table-tools{flex-direction:column;align-items:stretch}
+  .search{width:100%}
+}
+
+/* ============================================================
+   POWER BI STYLE REPORT CANVAS + RESPONSIVE VISUAL GRID
+   ============================================================ */
+
+html{
+  min-height:100%;
+  background:var(--bg);
+}
+
+body{
+  min-width:320px;
+  overflow-x:hidden;
+  background:var(--bg);
+}
+
+#app-shell{
+  width:min(100% - 24px, 1500px);
+  margin:12px auto 24px;
+}
+
+/* Report header */
+.topbar{
+  width:100%;
+  min-height:72px;
+  padding:14px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+/* Filter panel */
+.filters,
+.filter-panel,
+.section{
+  width:100%;
+}
+
+/* Main dashboard visual grid */
+.charts-grid,
+.chart-grid,
+.visual-grid{
+  width:100%;
+  display:grid !important;
+  grid-template-columns:repeat(12,minmax(0,1fr));
+  gap:10px;
+  align-items:stretch;
+}
+
+/* Standard Power BI visual sizing */
+.chart-card{
+  min-width:0;
+  width:100%;
+  height:310px;
+  min-height:310px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Existing first 12 chart cards:
+   3-column Power BI desktop canvas */
+.chart-card:nth-child(1),
+.chart-card:nth-child(2),
+.chart-card:nth-child(3),
+.chart-card:nth-child(4),
+.chart-card:nth-child(5),
+.chart-card:nth-child(6),
+.chart-card:nth-child(7),
+.chart-card:nth-child(8),
+.chart-card:nth-child(9),
+.chart-card:nth-child(10),
+.chart-card:nth-child(11),
+.chart-card:nth-child(12){
+  grid-column:span 4;
+}
+
+/* Larger visuals where useful */
+.chart-card:nth-child(7),
+.chart-card:nth-child(8),
+.chart-card:nth-child(10){
+  height:330px;
+  min-height:330px;
+}
+
+/* Chart heading */
+.chart-card h3,
+.chart-title{
+  flex:0 0 auto;
+  min-height:34px;
+  margin:0;
+  padding:10px 12px 5px;
+  font-size:11px;
+  line-height:1.25;
+}
+
+/* Plot area fills the visual */
+.chart-card canvas,
+.chart-card > div,
+.chart-container{
+  min-width:0;
+  min-height:0;
+}
+
+/* KPI section: compact 5-column Power BI-style grid */
+.kpi-grid,
+.kpis,
+.metrics-grid{
+  width:100%;
+  display:grid !important;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;
+}
+
+.kpi{
+  min-width:0;
+  min-height:78px;
+  height:78px;
+  padding:10px 12px;
+  overflow:hidden;
+}
+
+/* Summary table visual */
+.summary-card,
+.table-card{
+  width:100%;
+  min-width:0;
+  overflow:hidden;
+}
+
+.summary-table-wrap,
+.table-wrap{
+  width:100%;
+  max-width:100%;
+  overflow:auto;
+}
+
+/* Power BI-like table density */
+table{
+  width:100%;
+  min-width:1040px;
+  border-collapse:separate;
+  border-spacing:0;
+}
+
+table th{
+  height:38px;
+  padding:7px 9px;
+  white-space:nowrap;
+}
+
+table td{
+  height:36px;
+  padding:6px 9px;
+  white-space:nowrap;
+}
+
+/* Footer aligned with report canvas */
+footer{
+  width:100%;
+  max-width:1500px;
+  margin:10px auto 0;
+}
+
+/* ============================================================
+   DESKTOP / LARGE REPORT CANVAS
+   ============================================================ */
+@media (min-width:1400px){
+  #app-shell{
+    width:min(100% - 32px, 1600px);
+  }
+
+  .chart-card{
+    height:320px;
+    min-height:320px;
+  }
+
+  .chart-card:nth-child(7),
+  .chart-card:nth-child(8),
+  .chart-card:nth-child(10){
+    height:340px;
+    min-height:340px;
+  }
+}
+
+/* ============================================================
+   LAPTOP / NORMAL DESKTOP
+   ============================================================ */
+@media (min-width:900px) and (max-width:1199px){
+  #app-shell{
+    width:calc(100% - 20px);
+  }
+
+  .kpi-grid,
+  .kpis,
+  .metrics-grid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .chart-card{
+    height:290px;
+    min-height:290px;
+  }
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+@media (min-width:600px) and (max-width:899px){
+  #app-shell{
+    width:calc(100% - 16px);
+    margin:8px auto 18px;
+  }
+
+  .topbar{
+    min-height:68px;
+    padding:12px 14px;
+  }
+
+  .kpi-grid,
+  .kpis,
+  .metrics-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .charts-grid,
+  .chart-grid,
+  .visual-grid{
+    grid-template-columns:repeat(6,minmax(0,1fr));
+  }
+
+  .chart-card:nth-child(n){
+    grid-column:span 3;
+    height:285px;
+    min-height:285px;
+  }
+
+  .chart-card:nth-child(7),
+  .chart-card:nth-child(8),
+  .chart-card:nth-child(10){
+    height:300px;
+    min-height:300px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+@media (max-width:599px){
+  #app-shell{
+    width:calc(100% - 12px);
+    margin:6px auto 14px;
+  }
+
+  .topbar{
+    min-height:auto;
+    padding:11px 12px;
+    flex-wrap:wrap;
+  }
+
+  .kpi-grid,
+  .kpis,
+  .metrics-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+  }
+
+  .kpi{
+    height:74px;
+    min-height:74px;
+    padding:9px 10px;
+  }
+
+  .charts-grid,
+  .chart-grid,
+  .visual-grid{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .chart-card:nth-child(n){
+    grid-column:1 / -1;
+    height:275px;
+    min-height:275px;
+  }
+
+  .chart-card:nth-child(7),
+  .chart-card:nth-child(8),
+  .chart-card:nth-child(10){
+    height:290px;
+    min-height:290px;
+  }
+
+  table{
+    min-width:1040px;
+  }
+}
+
+/* Prevent visual overflow from long labels */
+.chart-card,
+.chart-card *{
+  max-width:100%;
+}
+
+canvas{
+  max-width:100% !important;
+}
+
+/* Power BI style selection/hover feel */
+.chart-card:hover{
+  transform:translateY(-1px);
+}
+
+.kpi:hover{
+  transform:translateY(-1px);
+}
+
+/* ============================================================
+   REPORT CANVAS PRINT / SCREENSHOT FRIENDLY
+   ============================================================ */
+@media print{
+  #app-shell{
+    width:100%;
+    max-width:none;
+    margin:0;
+  }
+
+  .chart-card{
+    break-inside:avoid;
+  }
+}
+
+
+/* Backend-connected dashboard: no client CSV upload control */
+.load-cleaned-csv,
+#load-cleaned-csv,
+#load-csv-btn,
+button[title="Load Cleaned CSV"],
+button[aria-label="Load Cleaned CSV"]{
+  display:none !important;
+}
+
+</style>
+</head>
+
+<body data-theme="white">
+<div id="bubble-layer"></div>
+
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">EV</div>
+      <div>
+        <h1>EV Intelligence Dashboard</h1>
+        <p>Electric Vehicle Market Analytics • Business Intelligence • Interactive Decision Support</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <div>
+        <div class="mini-label">Reference Year</div>
+        <div class="year-box" id="referenceYear">—</div>
+      </div>
+      <button class="theme-btn" id="themeBtn">☾ Dark • Click to change</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <div class="section-title">Interactive Filters</div>
+        <div class="section-sub">Filter the EV market by model year, state, manufacturer, EV type, CAFV eligibility and electric utility.</div>
+      </div>
+      <div class="actions">
+        
+        <input id="csvFile" type="file" accept=".csv,text/csv" hidden>
+        <button class="btn btn-green" id="resetBtn">↻ Reset All Filters</button>
+      </div>
+    </div>
+
+    <div class="controls-grid">
+      <div class="control"><label>Model Year</label><select id="fYear"><option value="">Select Model Year</option></select></div>
+      <div class="control"><label>State</label><select id="fState"><option value="">Select State</option></select></div>
+      <div class="control"><label>Manufacturer</label><select id="fMake"><option value="">Select Manufacturer</option></select></div>
+      <div class="control"><label>EV Type</label><select id="fType"><option value="">Select EV Type</option></select></div>
+      <div class="control"><label>CAFV Eligibility</label><select id="fCafv"><option value="">Select CAFV Eligibility</option></select></div>
+      <div class="control"><label>Electric Utility</label><select id="fUtility"><option value="">Select Electric Utility</option></select></div>
+    </div>
+
+    <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+      <div class="status"><span class="dot"></span><span id="dataStatus">Demo data loaded — choose your cleaned CSV for real data.</span></div>
+      <div style="font-size:7px;color:var(--muted)" id="recordStatus"></div>
+    </div>
+  </section>
+
+  <section class="kpi-grid" id="kpis"></section>
+
+  <section class="chart-grid" id="charts"></section>
+
+  <section class="section table-section">
+    <div class="table-head">
+      <div>
+        <div class="section-title">Manufacturer Performance Summary</div>
+        <div class="section-sub">Volume, market share, portfolio breadth, range, pricing and vehicle-age comparison.</div><div class="table-meta"><span class="table-chip">↕ <strong>Sortable</strong></span><span class="table-chip">⌕ <strong>Searchable</strong></span><span class="table-chip">● <strong>Click a row to focus charts</strong></span><span class="table-chip">▥ <strong>Condition labels</strong></span></div>
+      </div>
+      <div class="table-tools">
+        <input class="search" id="tableSearch" placeholder="Search manufacturer, model, state..." autocomplete="off">
+        <button class="btn" id="clearTableSearch">✕ Clear</button>
+        <button class="btn btn-green" id="downloadBtn">↓ Download CSV</button>
+      </div>
+    </div>
+
+    <div id="tableArea"></div>
+  </section>
+
+  <div class="footer">EV Intelligence Platform • Interactive HTML Dashboard • Cleaned CSV Analytics</div>
+</div>
+
+<script>
+/* ============================================================
+   EV INTELLIGENCE DASHBOARD — DATA ENGINE
+   ============================================================ */
+
+const $ = id => document.getElementById(id);
+const filters = ["fYear","fState","fMake","fType","fCafv","fUtility"];
+let rawData = [];
+let filteredData = [];
+let charts = {};
+let tablePage = 1;
+let tablePageSize = 12;
+let tableSort = {key:"Vehicle Records", dir:"desc"};
+let demoMode = true;
+
+/* ---------- Multi-theme engine ---------- */
+/*
+  Four complete dashboard themes:
+  White → Dark → Cream → Green
+
+  Each theme changes:
+  • page background
+  • cards / controls
+  • borders / shadows
+  • text
+  • buttons
+  • animated bubbles
+  • ALL Chart.js chart palettes
+*/
+const themes = ["white","dark","cream","green"];
+
+const themeLabels = {
+  white:"☼ White",
+  dark:"☾ Dark",
+  cream:"◐ Cream",
+  green:"✦ Green"
+};
+
+let savedTheme = localStorage.getItem("evDashboardTheme") || "white";
+let themeIndex = themes.includes(savedTheme) ? themes.indexOf(savedTheme) : 0;
+
+function applyTheme(theme, rerender=true){
+  if(!themes.includes(theme)) theme="white";
+
+  themeIndex = themes.indexOf(theme);
+  document.body.dataset.theme = theme;
+  localStorage.setItem("evDashboardTheme", theme);
+
+  $("themeBtn").textContent =
+    `${themeLabels[theme]} • Click to change`;
+
+  if(window.Chart){
+    Chart.defaults.color = css("--text");
+    Chart.defaults.borderColor = css("--border");
+    Chart.defaults.font.family = "Inter, Segoe UI, Arial, sans-serif";
+  }
+
+  /*
+    Rebuild every chart after the theme changes so the new
+    theme palette is applied to existing chart instances.
+  */
+  if(rerender) renderAll();
+}
+
+$("themeBtn").onclick = () => {
+  const nextIndex = (themeIndex + 1) % themes.length;
+  applyTheme(themes[nextIndex], true);
+};
+
+applyTheme(themes[themeIndex], false);
+
+/* ---------- Animated bubbles ---------- */
+(function createBubbles(){
+  const layer = $("bubble-layer");
+  for(let i=0;i<26;i++){
+    const b=document.createElement("div");
+    b.className="bubble";
+    const size=12+Math.random()*90;
+    b.style.width=size+"px";
+    b.style.height=size+"px";
+    b.style.left=(Math.random()*100)+"%";
+    b.style.animationDuration=(13+Math.random()*24)+"s";
+    b.style.animationDelay=(-Math.random()*25)+"s";
+    b.style.setProperty("--drift",(Math.random()*220-110)+"px");
+    layer.appendChild(b);
+  }
+})();
+
+/* ---------- Flexible column matching ---------- */
+function keyNorm(s){
+  return String(s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+}
+function findKey(row, candidates){
+  const keys=Object.keys(row||{});
+  for(const c of candidates){
+    const n=keyNorm(c);
+    const exact=keys.find(k=>keyNorm(k)===n);
+    if(exact) return exact;
+  }
+  for(const c of candidates){
+    const n=keyNorm(c);
+    const partial=keys.find(k=>keyNorm(k).includes(n)||n.includes(keyNorm(k)));
+    if(partial) return partial;
+  }
+  return null;
+}
+function val(row,candidates,def=""){
+  const k=findKey(row,candidates);
+  return k ? row[k] : def;
+}
+function num(v){
+  if(v===null||v===undefined||v==="") return NaN;
+  const n=Number(String(v).replace(/[$,%\s,]/g,""));
+  return Number.isFinite(n)?n:NaN;
+}
+function cleanText(v){
+  return String(v??"").trim();
+}
+function uniqueSorted(arr){
+  return [...new Set(arr.filter(x=>x!=="" && x!==null && x!==undefined))]
+    .sort((a,b)=>String(a).localeCompare(String(b),undefined,{numeric:true}));
+}
+function average(a){
+  const x=a.filter(Number.isFinite);
+  return x.length ? x.reduce((s,v)=>s+v,0)/x.length : NaN;
+}
+function median(a){
+  const x=a.filter(Number.isFinite).sort((a,b)=>a-b);
+  if(!x.length)return NaN;
+  const m=Math.floor(x.length/2);
+  return x.length%2?x[m]:(x[m-1]+x[m])/2;
+}
+function pct(a,b){return b ? a/b*100 : 0}
+function money(v){return Number.isFinite(v)?"$"+Math.round(v).toLocaleString():"—"}
+function one(v){return Number.isFinite(v)?v.toFixed(1):"—"}
+function int(v){return Number.isFinite(v)?Math.round(v).toLocaleString():"—"}
+function pctFmt(v){return Number.isFinite(v)?v.toFixed(1)+"%":"—"}
+function escapeHTML(s){
+  return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+
+/* ---------- Normalize each raw CSV row ---------- */
+function normalize(row){
+  return {
+    make: cleanText(val(row,["Make","Manufacturer","Brand"])),
+    model: cleanText(val(row,["Model","Vehicle Model"])),
+    year: num(val(row,["Model Year","ModelYear","Year"])),
+    state: cleanText(val(row,["State","Registration State"])),
+    city: cleanText(val(row,["City"])),
+    type: cleanText(val(row,["Electric Vehicle Type","EV Type","EVType","Vehicle Type"])),
+    cafv: cleanText(val(row,["Clean Alternative Fuel Vehicle (CAFV) Eligibility","CAFV Eligibility","CAFV","CAFV Eligibility Status"])),
+    utility: cleanText(val(row,["Electric Utility","Electric Utility Provider","Utility"])),
+    range: num(val(row,["Electric Range","Electric Range (Miles)","Range","Range Miles"])),
+    msrp: num(val(row,["Base MSRP","MSRP","Base MSRP ($)","Price"])),
+    age: num(val(row,["Vehicle Age","Age"])),
+  };
+}
+
+/* ---------- Demo dataset ---------- */
+function buildDemo(){
+  const makes=[
+    ["TESLA",68983],["NISSAN",13497],["CHEVROLET",12026],["FORD",7014],
+    ["BMW",6430],["KIA",6108],["TOYOTA",5223],["VOLKSWAGEN",4074],
+    ["VOLVO",3528],["JEEP",3274],["HYUNDAI",2612],["AUDI",2500],
+    ["MERCEDES-BENZ",2100],["RIVIAN",1900],["PORSCHE",1650]
+  ];
+  const states=["WA","CA","OR","MD","TX","NC","FL","CO","AZ","NJ","IL","NY"];
+  const types=["Battery Electric Vehicle (BEV)","Plug-in Hybrid Electric Vehicle (PHEV)"];
+  const models=["MODEL Y","MODEL 3","LEAF","BOLT EV","MUSTANG MACH-E","RAV4 PRIME","IONIQ 5","ID.4","XC40","WRANGLER"];
+  const rows=[];
+  let id=0;
+  for(const [make,count] of makes){
+    const n=Math.max(20,Math.min(count,1600));
+    for(let i=0;i<n;i++){
+      const y=2000+Math.floor(Math.random()*26);
+      const isBEV=Math.random()<.776;
+      rows.push({
+        make,model:models[id++%models.length],year:y,
+        state:states[id%states.length],
+        city:["Seattle","Bellevue","Redmond","Vancouver","Kirkland","Sammamish"][id%6],
+        type:isBEV?types[0]:types[1],
+        cafv:Math.random()<.537?"Clean Alternative Fuel Vehicle Eligible":"Eligibility unknown as battery range has not been researched",
+        utility:["PUGET SOUND ENERGY INC","CITY OF TACOMA","PACIFICORP","SEATTLE CITY LIGHT"][id%4],
+        range:isBEV?Math.max(40,Math.min(337,180+Math.random()*130)):Math.max(20,Math.min(80,30+Math.random()*45)),
+        msrp:Math.random()<.977?Math.max(20000,Math.min(120000,30000+Math.random()*55000)):0,
+        age:2024-y
+      });
+    }
+  }
+  return rows;
+}
+
+/* ---------- CSV parser ---------- */
+function parseCSV(text){
+  const rows=[];
+  let row=[], cell="", quoted=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i], n=text[i+1];
+    if(c=='"'){
+      if(quoted && n=='"'){cell+='"';i++}
+      else quoted=!quoted;
+    }else if(c=="," && !quoted){
+      row.push(cell);cell="";
+    }else if((c=="\n"||c=="\r") && !quoted){
+      if(c=="\r" && n=="\n")i++;
+      row.push(cell);cell="";
+      if(row.some(v=>v.trim()!==""))rows.push(row);
+      row=[];
+    }else cell+=c;
+  }
+  if(cell!==""||row.length){row.push(cell);if(row.some(v=>v.trim()!==""))rows.push(row)}
+  if(!rows.length)return [];
+  const headers=rows[0].map(h=>h.replace(/^\uFEFF/,"").trim());
+  return rows.slice(1).map(r=>{
+    const o={};
+    headers.forEach((h,i)=>o[h]=(r[i]??"").trim());
+    return o;
+  });
+}
+
+$("csvFile").addEventListener("change",e=>{
+  const file=e.target.files[0];
+  if(!file)return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const parsed=parseCSV(reader.result);
+      rawData=parsed.map(normalize).filter(r=>r.make||r.model||r.year||r.state);
+      demoMode=false;
+      tablePage=1;
+      $("dataStatus").textContent=`Loaded cleaned CSV: ${file.name}`;
+      $("recordStatus").textContent=`${rawData.length.toLocaleString()} records`;
+      populateFilters();
+      renderAll();
+    }catch(err){
+      alert("Could not read the CSV. Please check that it is a valid comma-separated file.");
+    }
+  };
+  reader.readAsText(file);
+});
+
+/* ---------- Filters ---------- */
+function populateSelect(id,values,placeholder){
+  const el=$(id), old=el.value;
+  el.innerHTML="";
+  const op=document.createElement("option");
+  op.value="";op.textContent=placeholder;el.appendChild(op);
+  uniqueSorted(values).forEach(v=>{
+    const o=document.createElement("option");
+    o.value=v;o.textContent=v;el.appendChild(o);
+  });
+  if([...el.options].some(o=>o.value===old))el.value=old;
+}
+function populateFilters(){
+  populateSelect("fYear",rawData.map(r=>r.year).filter(Number.isFinite),"Select Model Year");
+  populateSelect("fState",rawData.map(r=>r.state),"Select State");
+  populateSelect("fMake",rawData.map(r=>r.make),"Select Manufacturer");
+  populateSelect("fType",rawData.map(r=>r.type),"Select EV Type");
+  populateSelect("fCafv",rawData.map(r=>r.cafv),"Select CAFV Eligibility");
+  populateSelect("fUtility",rawData.map(r=>r.utility),"Select Electric Utility");
+}
+function applyFilters(){
+  const [year,state,make,type,cafv,utility]=filters.map(id=>$(id).value);
+  filteredData=rawData.filter(r=>
+    (!year||String(r.year)===year)&&
+    (!state||r.state===state)&&
+    (!make||r.make===make)&&
+    (!type||r.type===type)&&
+    (!cafv||r.cafv===cafv)&&
+    (!utility||r.utility===utility)
+  );
+  tablePage=1;
+  renderAll();
+}
+filters.forEach(id=>$(id).addEventListener("change",applyFilters));
+$("resetBtn").onclick=()=>{
+  filters.forEach(id=>$(id).value="");
+  $("tableSearch").value="";
+  tablePage=1;
+  applyFilters();
+};
+
+/* ---------- KPI calculations ---------- */
+function metrics(data){
+  const total=data.length;
+  const makes=uniqueSorted(data.map(r=>r.make)).length;
+  const models=uniqueSorted(data.map(r=>r.model)).length;
+  const states=uniqueSorted(data.map(r=>r.state)).length;
+  const ranges=data.map(r=>r.range);
+  const msrps=data.map(r=>r.msrp);
+  const ages=data.map(r=>r.age);
+  const bev=data.filter(r=>/battery electric|BEV/i.test(r.type)).length;
+  const phev=data.filter(r=>/plug-in hybrid|PHEV/i.test(r.type)).length;
+  const cafv=data.filter(r=>/eligible/i.test(r.cafv)&&!/not eligible/i.test(r.cafv)).length;
+  const priced=data.filter(r=>Number.isFinite(r.msrp)&&r.msrp>0).length;
+  const zero=data.filter(r=>Number.isFinite(r.msrp)&&r.msrp===0).length;
+
+  const makeCounts=countBy(data,r=>r.make);
+  const stateCounts=countBy(data,r=>r.state);
+  const modelCounts=countBy(data,r=>r.model);
+  const topMake=topEntry(makeCounts),topState=topEntry(stateCounts),topModel=topEntry(modelCounts);
+  const bevRanges=data.filter(r=>/battery electric|BEV/i.test(r.type)).map(r=>r.range);
+  const phevRanges=data.filter(r=>/plug-in hybrid|PHEV/i.test(r.type)).map(r=>r.range);
+
+  return {
+    total,makes,models,states,
+    avgRange:average(ranges),avgMSRP:average(msrps),medianRange:median(ranges),avgAge:average(ages),
+    bevShare:pct(bev,total),phevShare:pct(phev,total),cafvShare:pct(cafv,total),
+    topMake:topMake?.[0]||"—",topState:topState?.[0]||"—",topModel:topModel?.[0]||"—",
+    bevAvgRange:average(bevRanges),phevAvgRange:average(phevRanges),
+    pricedShare:pct(priced,total),zeroMSRPShare:pct(zero,total),
+    maxRange:Math.max(...ranges.filter(Number.isFinite),0),
+    referenceYear:Math.max(...data.map(r=>r.year).filter(Number.isFinite),2024)
+  };
+}
+function countBy(data,fn){
+  const m=new Map();
+  data.forEach(r=>{const k=fn(r)||"Unknown";m.set(k,(m.get(k)||0)+1)});
+  return m;
+}
+function topEntry(map){
+  return [...map.entries()].sort((a,b)=>b[1]-a[1])[0];
+}
+
+/* ---------- KPIs ---------- */
+function renderKPIs(m){
+  const items=[
+    ["Total Vehicles",int(m.total),"▥"],
+    ["Manufacturers",int(m.makes),"▥"],
+    ["Models",int(m.models),"◆"],
+    ["States",int(m.states),"⊕"],
+    ["Average Range",one(m.avgRange),"↗"],
+    ["Average MSRP",money(m.avgMSRP),"＄"],
+    ["Median Range",one(m.medianRange),"≋"],
+    ["Average Vehicle Age",one(m.avgAge),"◷"],
+    ["BEV Share",pctFmt(m.bevShare),"E"],
+    ["PHEV Share",pctFmt(m.phevShare),"P"],
+    ["CAFV Eligible Share",pctFmt(m.cafvShare),"✓"],
+    ["Filtered Records",int(m.total),"⌁"],
+    ["Top Manufacturer",m.topMake,"▲"],
+    ["Top State",m.topState,"●"],
+    ["Top Model",m.topModel,"🏆"],
+    ["BEV Avg Range",one(m.bevAvgRange),"E"],
+    ["PHEV Avg Range",one(m.phevAvgRange),"P"],
+    ["Priced Records Share",pctFmt(m.pricedShare),"＄"],
+    ["Zero MSRP Share",pctFmt(m.zeroMSRPShare),"0"],
+    ["Maximum Range",one(m.maxRange),"↗"]
+  ];
+  $("kpis").innerHTML=items.map(x=>`
+    <div class="kpi">
+      <div class="kpi-top"><span class="kpi-icon">${x[2]}</span>${escapeHTML(x[0])}</div>
+      <div class="kpi-value" title="${escapeHTML(x[1])}">${escapeHTML(x[1])}</div>
+    </div>`).join("");
+  $("referenceYear").textContent=m.referenceYear;
+  $("recordStatus").textContent=`${m.total.toLocaleString()} filtered records`;
+}
+
+/* ---------- Chart helpers ---------- */
+function destroyCharts(){
+  Object.values(charts).forEach(c=>{try{c.destroy()}catch(e){}});
+  charts={};
+}
+function css(name){return getComputedStyle(document.body).getPropertyValue(name).trim()}
+function chartColors(){
+  /*
+    Theme-aware chart palette.
+    No hard-coded chart colors are used here.
+  */
+  return [
+    css("--chart1"),
+    css("--chart2"),
+    css("--chart3"),
+    css("--chart4"),
+    css("--chart5"),
+    css("--chart6"),
+    css("--chart7"),
+    css("--chart8")
+  ];
+}
+function makeCanvas(id){
+  return `<div class="chart-card" id="card-${id}">
+    <div class="chart-title" id="title-${id}"></div>
+    <div class="chart-wrap"><canvas id="canvas-${id}"></canvas></div>
+  </div>`;
+}
+function addChart(id,title,type,labels,data,opts={}){
+  const ctx=$(`canvas-${id}`).getContext("2d");
+  const colors=chartColors();
+  const horizontal=opts.horizontal||false;
+  charts[id]=new Chart(ctx,{
+    type,
+    data:{labels,datasets:[{
+      label:opts.label||"Vehicle Records",
+      data,
+      backgroundColor:type==="line"?colors[0]:labels.map((_,i)=>colors[i%colors.length]),
+      borderColor:colors[0],
+      borderWidth:type==="line"?2:1,
+      fill:type==="line",
+      tension:.25,
+      pointRadius:type==="line"?1.8:0,
+      borderRadius:type==="bar"?2:0,
+      hoverBackgroundColor:colors[1]
+    }]},
+    options:{
+      responsive:true,maintainAspectRatio:false,
+      indexAxis:horizontal?"y":"x",
+      plugins:{
+        legend:{display:opts.legend!==false,labels:{font:{size:7},color:css("--text"),boxWidth:9}},
+        tooltip:{titleFont:{size:9},bodyFont:{size:8}}
+      },
+      scales:{
+        x:{ticks:{font:{size:6},color:css("--muted"),maxRotation:0},grid:{color:css("--border")},title:{display:!!opts.xTitle,text:opts.xTitle,font:{size:7},color:css("--muted")}},
+        y:{ticks:{font:{size:6},color:css("--muted")},grid:{color:css("--border")},title:{display:!!opts.yTitle,text:opts.yTitle,font:{size:7},color:css("--muted")}}
+      }
+    }
+  });
+}
+function addDoughnut(id,title,labels,data){
+  const ctx=$(`canvas-${id}`).getContext("2d");
+  const colors=chartColors();
+  charts[id]=new Chart(ctx,{
+    type:"doughnut",
+    data:{labels,datasets:[{data,backgroundColor:colors.slice(0,labels.length),borderWidth:2,borderColor:css("--surface")}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:"58%",
+      plugins:{legend:{position:"top",labels:{font:{size:6},color:css("--text"),boxWidth:8}},
+      tooltip:{bodyFont:{size:8}}}}
+  });
+}
+
+/* ---------- Chart data ---------- */
+function grouped(data,fn){
+  return [...countBy(data,fn).entries()].sort((a,b)=>b[1]-a[1]);
+}
+function renderCharts(data){
+  destroyCharts();
+  $("charts").innerHTML=[
+    makeCanvas("year"),
+    makeCanvas("make"),
+    makeCanvas("ev"),
+    makeCanvas("msrp"),
+    makeCanvas("range"),
+    makeCanvas("state"),
+    makeCanvas("portfolio"),
+    makeCanvas("model"),
+    makeCanvas("cafv"),
+    makeCanvas("utility"),
+    makeCanvas("city"),
+    makeCanvas("evyear")
+  ].join("");
+
+  $("title-year").textContent="EV Market Trend by Model Year";
+  $("title-make").textContent="Top 12 Manufacturers by Vehicle Records";
+  $("title-ev").textContent="EV Technology Mix";
+  $("title-msrp").textContent="Base MSRP Distribution";
+  $("title-range").textContent="Electric Range Distribution";
+  $("title-state").textContent="Top States by EV Records";
+  $("title-portfolio").textContent="Manufacturer Portfolio: Volume vs Average Range";
+  $("title-model").textContent="Top 15 EV Models";
+  $("title-cafv").textContent="CAFV Eligibility Mix";
+  $("title-utility").textContent="Top Electric Utilities by EV Records";
+  $("title-city").textContent="Top 15 Cities by EV Records";
+  $("title-evyear").textContent="EV Technology Trend by Model Year";
+
+  /* 1 Year */
+  const years=grouped(data,r=>r.year).sort((a,b)=>a[0]-b[0]);
+  addChart("year","", "line",years.map(x=>String(x[0])),years.map(x=>x[1]),{legend:false,xTitle:"Model Year",yTitle:"Vehicle Records"});
+
+  /* 2 Manufacturer */
+  const makes=grouped(data,r=>r.make).slice(0,12);
+  addChart("make","", "bar",makes.map(x=>x[0]),makes.map(x=>x[1]),{horizontal:true,legend:false,xTitle:"Vehicle Records",yTitle:"Manufacturer"});
+
+  /* 3 Technology */
+  const tech=grouped(data,r=>r.type).slice(0,5);
+  addDoughnut("ev","",tech.map(x=>x[0]),tech.map(x=>x[1]));
+
+  /* 4 MSRP */
+  const bins=[
+    ["≤ $25K",0,25000],["$25K–$40K",25000,40000],["$40K–$50K",40000,50000],
+    ["$50K–$60K",50000,60000],["$60K–$80K",60000,80000],["$80K–$120K",80000,120000],[" > $120K",120000,Infinity]
+  ];
+  const msrpCounts=bins.map(b=>data.filter(r=>Number.isFinite(r.msrp)&&r.msrp>0&&r.msrp>b[1]&&r.msrp<=b[2]).length);
+  addChart("msrp","", "bar",bins.map(b=>b[0]),msrpCounts,{legend:false,xTitle:"Base MSRP Band",yTitle:"Vehicle Records"});
+
+  /* 5 Range */
+  const rbins=[["0–50",0,50],["51–100",50,100],["101–150",100,150],["151–200",150,200],["201–250",200,250],["251–300",250,300],["301–350",300,351]];
+  const rc=rbins.map(b=>data.filter(r=>Number.isFinite(r.range)&&r.range>b[1]&&r.range<=b[2]).length);
+  addChart("range","", "bar",rbins.map(b=>b[0]),rc,{legend:false,xTitle:"Electric Range Band",yTitle:"Vehicle Records"});
+
+  /* 6 State */
+  const states=grouped(data,r=>r.state).slice(0,12);
+  addChart("state","", "bar",states.map(x=>x[0]),states.map(x=>x[1]),{horizontal:true,legend:false,xTitle:"Vehicle Records",yTitle:"State"});
+
+  /* 7 Portfolio scatter */
+  const makeGroups={};
+  data.forEach(r=>{
+    if(!r.make)return;
+    if(!makeGroups[r.make])makeGroups[r.make]=[];
+    makeGroups[r.make].push(r);
+  });
+  const scatterData=Object.entries(makeGroups).map(([make,arr])=>({
+    x:arr.length,y:average(arr.map(r=>r.range)),label:make
+  })).filter(x=>Number.isFinite(x.y)).sort((a,b)=>b.x-a.x).slice(0,30);
+  const c7=$("canvas-portfolio").getContext("2d");
+  charts.portfolio=new Chart(c7,{
+    type:"scatter",
+    data:{datasets:[{
+      label:"Manufacturers",
+      data:scatterData,
+      backgroundColor:scatterData.map((_,i)=>chartColors()[i%chartColors().length]),
+      pointRadius:5,pointHoverRadius:7
+    }]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.label}: ${c.raw.x.toLocaleString()} records • ${c.raw.y.toFixed(1)} avg range`}}},
+      scales:{
+        x:{title:{display:true,text:"Vehicle Records",font:{size:7}},ticks:{font:{size:6}}},
+        y:{title:{display:true,text:"Average Electric Range",font:{size:7}},ticks:{font:{size:6}}}
+      }
+    }
+  });
+
+  /* 8 Model */
+  const models=grouped(data,r=>r.model).slice(0,15);
+  addChart("model","", "bar",models.map(x=>x[0]),models.map(x=>x[1]),{horizontal:true,legend:false,xTitle:"Vehicle Records",yTitle:"Model"});
+
+  /* 9 CAFV */
+  const cafv=grouped(data,r=>r.cafv).slice(0,5);
+  addDoughnut("cafv","",cafv.map(x=>x[0]),cafv.map(x=>x[1]));
+
+  /* 10 Utility */
+  const utilities=grouped(data,r=>r.utility).slice(0,12);
+  addChart("utility","", "bar",utilities.map(x=>x[0]),utilities.map(x=>x[1]),{horizontal:true,legend:false,xTitle:"Vehicle Records",yTitle:"Electric Utility"});
+
+  /* 11 City */
+  const cities=grouped(data,r=>r.city).slice(0,15);
+  addChart("city","", "bar",cities.map(x=>x[0]),cities.map(x=>x[1]),{horizontal:true,legend:false,xTitle:"Vehicle Records",yTitle:"City"});
+
+  /* 12 Technology by year */
+  const techNames=uniqueSorted(data.map(r=>r.type)).slice(0,4);
+  const yearList=uniqueSorted(data.map(r=>r.year).filter(Number.isFinite));
+  const ctx12=$("canvas-evyear").getContext("2d");
+  charts.evyear=new Chart(ctx12,{
+    type:"line",
+    data:{labels:yearList.map(String),datasets:techNames.map((t,i)=>({
+      label:t,
+      data:yearList.map(y=>data.filter(r=>r.year===y&&r.type===t).length),
+      borderColor:chartColors()[i%chartColors().length],
+      backgroundColor:"transparent",tension:.25,borderWidth:2,pointRadius:1
+    }))},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{font:{size:6},color:css("--text"),boxWidth:9}}},
+      scales:{x:{ticks:{font:{size:6},maxTicksLimit:10}},y:{ticks:{font:{size:6}}}}
+    }
+  });
+}
+
+/* ---------- Manufacturer summary ---------- */
+function manufacturerSummary(data){
+  const total=data.length;
+  const map={};
+  data.forEach(r=>{
+    if(!r.make)return;
+    if(!map[r.make])map[r.make]={make:r.make,records:0,models:new Set(),ranges:[],msrps:[],ages:[]};
+    const x=map[r.make];
+    x.records++;
+    if(r.model)x.models.add(r.model);
+    if(Number.isFinite(r.range))x.ranges.push(r.range);
+    if(Number.isFinite(r.msrp))x.msrps.push(r.msrp);
+    if(Number.isFinite(r.age))x.ages.push(r.age);
+  });
+  const avgRange=average(data.map(r=>r.range));
+  const avgMSRP=average(data.map(r=>r.msrp));
+  return Object.values(map).map(x=>({
+    "Manufacturer":x.make,
+    "Vehicle Records":x.records,
+    "Market Share %":pct(x.records,total),
+    "Models":x.models.size,
+    "Avg Range":average(x.ranges),
+    "Avg MSRP":average(x.msrps),
+    "Avg Vehicle Age":average(x.ages),
+    "Range vs Overall %":pct(average(x.ranges),avgRange),
+    "Price vs Overall %":pct(average(x.msrps),avgMSRP),
+    "Volume Rank":0
+  })).sort((a,b)=>b["Vehicle Records"]-a["Vehicle Records"]).map((x,i)=>({...x,"Volume Rank":i+1}));
+}
+
+function manufacturerCondition(value, kind){
+  if(!Number.isFinite(value)) return {label:"No data", cls:"neutral"};
+  if(kind==="share"){
+    if(value>=20) return {label:"Dominant",cls:"good"};
+    if(value>=10) return {label:"Strong",cls:"good"};
+    if(value>=5) return {label:"Growing",cls:"warn"};
+    return {label:"Niche",cls:"neutral"};
+  }
+  if(kind==="range"){
+    if(value>=110) return {label:"Above range",cls:"good"};
+    if(value>=90) return {label:"Near average",cls:"warn"};
+    return {label:"Below range",cls:"low"};
+  }
+  if(kind==="price"){
+    if(value>=120) return {label:"Premium",cls:"warn"};
+    if(value>=100) return {label:"Above avg",cls:"warn"};
+    if(value>=85) return {label:"Value",cls:"good"};
+    return {label:"Lower cost",cls:"good"};
+  }
+  return {label:"Normal",cls:"neutral"};
+}
+
+function renderTable(data){
+  let rows=manufacturerSummary(data);
+  const q=$("tableSearch").value.trim().toLowerCase();
+
+  /* Search against the current vehicle-level data, not just the manufacturer text.
+     This means typing a model/state/utility also finds the relevant manufacturer. */
+  if(q){
+    const matchedMakes=new Set(rawData.filter(r=>
+      [r.make,r.model,r.state,r.city,r.utility,r.type,r.cafv].some(v=>String(v??"").toLowerCase().includes(q))
+    ).map(r=>r.make));
+    rows=rows.filter(r=>matchedMakes.has(r.Manufacturer)||r.Manufacturer.toLowerCase().includes(q));
+  }
+
+  rows.sort((a,b)=>{
+    let A=a[tableSort.key],B=b[tableSort.key];
+    if(typeof A==="string")return tableSort.dir==="asc"?A.localeCompare(B):B.localeCompare(A);
+    A=Number.isFinite(A)?A:-Infinity; B=Number.isFinite(B)?B:-Infinity;
+    return tableSort.dir==="asc"?A-B:B-A;
+  });
+
+  const totalRows=rows.length;
+  const pages=Math.max(1,Math.ceil(totalRows/tablePageSize));
+  if(tablePage>pages)tablePage=pages;
+  const start=(tablePage-1)*tablePageSize;
+  const pageRows=rows.slice(start,start+tablePageSize);
+
+  const cols=[
+    ["Manufacturer","text"],["Vehicle Records","num"],["Market Share %","num"],
+    ["Market Share","bar"],["Models","num"],["Avg Range","num"],["Avg MSRP","money"],
+    ["Avg Vehicle Age","num"],["Range vs Overall %","range"],["Price vs Overall %","price"],["Volume Rank","rank"],["Action","action"]
+  ];
+
+  let html=`<div class="table-scroll"><table><thead><tr>`;
+  cols.forEach(([name,type])=>{
+    if(type==="action") html+=`<th>${name}</th>`;
+    else html+=`<th><button data-sort="${escapeHTML(name==="Market Share"?"Market Share %":name)}">${escapeHTML(name)} <span style="opacity:.65">${tableSort.key===(name==="Market Share"?"Market Share %":name)?(tableSort.dir==="asc"?"↑":"↓"):"↕"}</span></button></th>`;
+  });
+  html+=`</tr></thead><tbody>`;
+
+  if(!pageRows.length){
+    html+=`<tr><td colspan="${cols.length}" style="text-align:center;padding:36px;color:var(--muted)"><b>No matching manufacturers</b><br><span style="font-size:7px">Try another manufacturer, model, state, city, utility or clear the search.</span></td></tr>`;
+  }else{
+    pageRows.forEach((r,idx)=>{
+      const share=Math.max(0,Math.min(100,r["Market Share %"]||0));
+      const shareCond=manufacturerCondition(r["Market Share %"],"share");
+      const rangeCond=manufacturerCondition(r["Range vs Overall %"],"range");
+      const priceCond=manufacturerCondition(r["Price vs Overall %"],"price");
+      const rangeBar=Math.max(0,Math.min(100,(r["Range vs Overall %"]||0)/150*100));
+      const priceBar=Math.max(0,Math.min(100,(r["Price vs Overall %"]||0)/150*100));
+      html+=`<tr data-make="${escapeHTML(r.Manufacturer)}" title="Click to focus the dashboard on ${escapeHTML(r.Manufacturer)}">
+        <td><div style="display:flex;align-items:center;gap:6px"><span style="width:5px;height:22px;border-radius:4px;background:${idx<3?'var(--green)':'var(--green3)'};display:inline-block"></span><b>${escapeHTML(r.Manufacturer)}</b></div></td>
+        <td class="num"><b>${int(r["Vehicle Records"])}</b></td>
+        <td class="num"><span class="condition ${shareCond.cls}">${one(r["Market Share %"])}% • ${shareCond.label}</span></td>
+        <td class="bar-cell"><div class="share-wrap"><div class="share-track"><div class="share-fill" style="width:${share}%"></div></div><span class="share-label">${one(share)}%</span></div></td>
+        <td class="num">${int(r.Models)}</td>
+        <td class="metric-cell"><div class="metric-line"><b>${one(r["Avg Range"])}</b><span style="font-size:6px;color:var(--muted)">mi</span></div></td>
+        <td class="metric-cell"><div class="metric-line"><b>${money(r["Avg MSRP"])}</b></div></td>
+        <td class="num">${one(r["Avg Vehicle Age"])} yr</td>
+        <td class="metric-cell"><div class="metric-line"><span class="condition ${rangeCond.cls}">${one(r["Range vs Overall %"])}% • ${rangeCond.label}</span></div><div class="metric-mini"><span style="width:${rangeBar}%"></span></div></td>
+        <td class="metric-cell"><div class="metric-line"><span class="condition ${priceCond.cls}">${one(r["Price vs Overall %"])}% • ${priceCond.label}</span></div><div class="metric-mini"><span style="width:${priceBar}%"></span></div></td>
+        <td class="num"><span class="rank-badge ${r["Volume Rank"]<=3?'top':''}">#${int(r["Volume Rank"])}</span></td>
+        <td><button class="focus-btn" data-focus="${escapeHTML(r.Manufacturer)}">Focus ↗</button></td>
+      </tr>`;
+    });
+  }
+  html+=`</tbody></table></div>`;
+
+  const pageButtons=[];
+  for(let p=1;p<=pages;p++){
+    if(p===1||p===pages||Math.abs(p-tablePage)<=1)pageButtons.push(p);
+    else if(pageButtons[pageButtons.length-1]!=="…")pageButtons.push("…");
+  }
+  html+=`<div class="table-foot">
+    <div class="table-foot-left"><span>Showing <b>${totalRows?start+1:0}–${Math.min(start+tablePageSize,totalRows)}</b> of <b>${totalRows.toLocaleString()}</b> manufacturers</span><label>Rows <select id="tablePageSize"><option ${tablePageSize===8?'selected':''}>8</option><option ${tablePageSize===12?'selected':''}>12</option><option ${tablePageSize===20?'selected':''}>20</option><option ${tablePageSize===30?'selected':''}>30</option></select></label></div>
+    <div class="pagination"><button class="page-btn" data-page="${Math.max(1,tablePage-1)}">‹</button>${pageButtons.map(p=>p==="…"?"<span style='padding:5px'>…</span>":`<button class="page-btn ${p===tablePage?'active':''}" data-page="${p}">${p}</button>`).join("")}<button class="page-btn" data-page="${Math.min(pages,tablePage+1)}">›</button></div>
+  </div><div class="table-hint">Tip: click any manufacturer row or <b>Focus ↗</b> to synchronize the filters, KPIs and all charts.</div>`;
+
+  $("tableArea").innerHTML=html;
+
+  $("tableArea").querySelectorAll("[data-sort]").forEach(btn=>btn.onclick=(e)=>{
+    e.stopPropagation(); const key=btn.dataset.sort;
+    if(tableSort.key===key)tableSort.dir=tableSort.dir==="asc"?"desc":"asc";
+    else{tableSort.key=key;tableSort.dir="desc";}
+    tablePage=1;renderTable(filteredData);
+  });
+
+  $("tableArea").querySelectorAll("[data-page]").forEach(btn=>btn.onclick=()=>{tablePage=Number(btn.dataset.page);renderTable(filteredData)});
+  const sizeSelect=$("tablePageSize");
+  if(sizeSelect)sizeSelect.onchange=()=>{tablePageSize=Number(sizeSelect.value);tablePage=1;renderTable(filteredData)};
+
+  function focusMake(make){
+    const option=[...$("fMake").options].find(o=>o.value===make);
+    if(option){$("fMake").value=make;tablePage=1;applyFilters();window.scrollTo({top:0,behavior:"smooth"});}
+  }
+  $("tableArea").querySelectorAll("[data-focus]").forEach(btn=>btn.onclick=e=>{e.stopPropagation();focusMake(btn.dataset.focus)});
+  $("tableArea").querySelectorAll("tbody tr[data-make]").forEach(row=>row.onclick=()=>focusMake(row.dataset.make));
+}
+
+$("tableSearch").addEventListener("input",()=>{tablePage=1;renderTable(filteredData)});
+$("clearTableSearch").onclick=()=>{$("tableSearch").value="";tablePage=1;renderTable(filteredData);$("tableSearch").focus()};
+
+/* ---------- Download current summary table ---------- */
+function downloadCSV(){
+  const data=manufacturerSummary(filteredData);
+  const headers=["Manufacturer","Vehicle Records","Market Share %","Market Share Bar","Models","Avg Range","Avg MSRP","Avg Vehicle Age","Range vs Overall %","Price vs Overall %","Volume Rank"];
+  const lines=[headers.join(",")];
+  data.forEach(r=>{
+    const share=Math.max(0,Math.min(100,r["Market Share %"]||0));
+    const bar="█".repeat(Math.round(share/5))+"░".repeat(20-Math.round(share/5))+" "+share.toFixed(1)+"%";
+    const vals=[
+      r["Manufacturer"],r["Vehicle Records"],r["Market Share %"].toFixed(2),bar,r["Models"],
+      Number.isFinite(r["Avg Range"])?r["Avg Range"].toFixed(1):"",
+      Number.isFinite(r["Avg MSRP"])?r["Avg MSRP"].toFixed(0):"",
+      Number.isFinite(r["Avg Vehicle Age"])?r["Avg Vehicle Age"].toFixed(1):"",
+      Number.isFinite(r["Range vs Overall %"])?r["Range vs Overall %"].toFixed(1):"",
+      Number.isFinite(r["Price vs Overall %"])?r["Price vs Overall %"].toFixed(1):"",
+      r["Volume Rank"]
+    ].map(v=>`"${String(v??"").replace(/"/g,'""')}"`);
+    lines.push(vals.join(","));
+  });
+  const blob=new Blob(["\uFEFF"+lines.join("\n")],{type:"text/csv;charset=utf-8"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="ev_manufacturer_summary.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+$("downloadBtn").onclick=downloadCSV;
+
+/* ---------- Full render ---------- */
+function renderAll(){
+  const m=metrics(filteredData);
+  renderKPIs(m);
+  renderCharts(filteredData);
+  renderTable(filteredData);
+}
+
+/* ---------- Start ---------- */
+rawData=buildDemo();
+filteredData=[...rawData];
+populateFilters();
+$("dataStatus").textContent="Demo data loaded — choose your cleaned CSV for real data.";
+renderAll();
+
+/* ============================================================
+   POWER BI CANVAS RESIZE SYNC
+   ============================================================ */
+(function(){
+  let resizeTimer = null;
+
+  function syncReportCanvas(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      if(window.Chart && window.Chart.instances){
+        Object.values(window.Chart.instances).forEach(function(chart){
+          try { chart.resize(); } catch(e) {}
+        });
+      }
+      window.dispatchEvent(new Event("resize"));
+    }, 80);
+  }
+
+  window.addEventListener("resize", syncReportCanvas);
+
+  if(window.ResizeObserver){
+    const shell = document.getElementById("app-shell");
+    if(shell){
+      const observer = new ResizeObserver(syncReportCanvas);
+      observer.observe(shell);
+    }
+  }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+Model|Year|BodyStyle|Manufacturer|Origin
+Aeolus Sky EV01|2023|Crossover SUV|Dongfeng Motor|China
+Aeolus Yixuan|2019|Sedan|Dongfeng Motor|China
+Aeolus Yixuan Max|2021|Sedan|Dongfeng Motor|China
+Aion i60|2025|Crossover SUV|GAC Group|China
+Aion LX|2019|Crossover SUV|GAC Group|China
+Aion S|2019|Sedan|GAC Group|China
+Aion S Plus / ES|2021|Sedan|GAC Group|China
+Aion V|2020|Crossover SUV|GAC Group|China
+Aion Y|2021|Crossover SUV|GAC Group|China
+AITO M5|2022|Crossover SUV|Seres Auto|China
+AITO M7|2025|Crossover SUV|Seres Auto|China
+AITO M9|2023|Crossover SUV|Seres Auto|China
+Arcfox alphaS5|2024|Sedan|BAIC Group|China
+Arcfox alphaT5|2024|Crossover SUV|BAIC Group|China
+Avatr 06|2025|Sedan|Avatr Technology|China
+Avatr 07|2024|Crossover SUV|Avatr Technology|China
+Avatr 11|2022|Crossover SUV|Avatr Technology|China
+Avatr 12|2023|Sedan|Avatr Technology|China
+Baojun Yunduo / Wuling Cloud EV|2023|Hatchback|SAIC-GM-Wuling|China
+BYD Atto 3 / Yuan Plus|2022|Crossover SUV|BYD Auto|China
+BYD Dolphin|2021|Hatchback|BYD Auto|China
+BYD e2|2019|Hatchback|BYD Auto|China
+BYD Han EV|2020|Sedan|BYD Auto|China
+BYD Qin Plus EV|2021|Sedan|BYD Auto|China
+BYD Seagull / Dolphin Mini/Surf / Atto 1|2023|Hatchback|BYD Auto|China
+BYD Seal|2022|Sedan|BYD Auto|China
+BYD Sealion 07 EV / Sealion 7|2024|Crossover SUV|BYD Auto|China
+BYD Song L EV|2023|Crossover SUV|BYD Auto|China
+BYD Song Plus EV / Seal U|2020|Crossover SUV|BYD Auto|China
+BYD Tang EV / Tan EV|2015|Crossover SUV|BYD Auto|China
+BYD Yuan Up/Pro / S1 Pro / Atto 2|2024|Crossover SUV|BYD Auto|China
+Changan Lumin|2022|Hatchback|Changan Automobile|China
+Changan Nevo A07|2023|Sedan|Changan Automobile|China
+Chery eQ7 / Aiqar eQ7|2023|Crossover SUV|Chery|China
+Chery Omoda E5|2023|Crossover SUV|Chery|China
+Deepal L07|2022|Sedan|Changan Automobile|China
+Deepal S05|2024|Crossover SUV|Changan Automobile|China
+Deepal S07|2023|Crossover SUV|Changan Automobile|China
+Denza D9|2022|MPV/minivan|BYD Auto|China
+Denza N7|2023|Crossover SUV|BYD Auto|China
+Dongfeng eπ 007|2024|Sedan|Dongfeng Motor|China
+Dongfeng eπ 008|2024|Crossover SUV|Dongfeng Motor|China
+Exeed Sterra ES|2023|Sedan|Chery|China
+Firefly|2025|Hatchback|Nio|China
+Geely Galaxy E5 / EX5|2024|Crossover SUV|Geely|China
+Geely Galaxy E8|2023|Sedan|Geely|China
+Geometry A|2019|Sedan|Geely|China
+Geometry C|2020|Sedan|Geely|China
+Hongqi E-HS9|2020|Crossover SUV|FAW Group|China
+Hongqi E-QM5|2022|Sedan|FAW Group|China
+Hyptec GT|2023|Sedan|GAC Group|China
+Hyptec HT|2023|Crossover SUV|GAC Group|China
+IM L7|2022|Sedan|IM Motors|China
+IM LS6 / MG IM6|2023|Crossover SUV|IM Motors|China
+IM LS7|2022|Crossover SUV|IM Motors|China
+Leapmotor C01|2022|Sedan|Leapmotor|China
+Leapmotor C10|2023|Crossover SUV|Leapmotor|China
+Leapmotor C11|2020|Crossover SUV|Leapmotor|China
+Leapmotor T03|2020|Hatchback|Leapmotor|China
+Li Mega|2024|MPV/minivan|Li Auto|China
+Luxeed S7|2023|Sedan|Chery|China
+MG4 EV|2022|Hatchback|SAIC Motor|China
+MG Cyberster|2023|Roadster|SAIC Motor|China
+MG ZS EV / EZS|2018|Crossover SUV|SAIC Motor|China
+Neta Aya / V|2020|Crossover SUV|Hozon Auto|China
+Neta U / X|2020|Crossover SUV|Hozon Auto|China
+Nio EC6|2020|Crossover SUV|Nio|China
+Nio ES6|2019|Crossover SUV|Nio|China
+Nio ES8|2018|Crossover SUV|Nio|China
+Nio ET5|2021|Sedan|Nio|China
+Nio ET7|2021|Sedan|Nio|China
+Onvo L60|2024|Crossover SUV|Nio|China
+Ora Good Cat / Funky Cat / 03|2020|Hatchback|Great Wall Motor|China
+Roewe Ei5 / MG5 EV|2017|Station wagon|SAIC Motor|China
+SAIC Rising R7|2022|Crossover SUV|SAIC Motor|China
+Seres SF5 / A5 / 5|2019|Crossover SUV|Seres|China
+Wuling Hongguang Mini EV|2020|Microcar hatchback|SAIC-GM-Wuling|China
+Wuling Starlight|2023|Sedan|SAIC-GM-Wuling|China
+Xiaomi SU7|2024|Sedan|Xiaomi Auto|China
+Xiaomi YU7|2025|Crossover SUV|Xiaomi Auto|China
+XPeng G6|2023|Crossover SUV|XPeng|China
+XPeng G9|2022|Crossover SUV|XPeng|China
+XPeng Mona M03|2024|Liftback|XPeng|China
+XPeng P7|2020|Sedan|XPeng|China
+Zeekr 001|2021|Shooting brake|Geely|China
+Zeekr 007|2023|Sedan|Geely|China
+Zeekr 009|2022|MPV/minivan|Geely|China
+Zeekr X|2023|Crossover SUV|Geely|China

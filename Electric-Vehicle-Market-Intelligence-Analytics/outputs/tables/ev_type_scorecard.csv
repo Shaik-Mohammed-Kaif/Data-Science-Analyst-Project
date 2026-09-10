@@ -1,0 +1,3 @@
+EV_Type,records,makes,models,states,avg_range,median_range,avg_msrp,median_msrp,share_pct
+Battery Electric Vehicle (BEV),116807,27,67,40,78.60890186375816,0.0,1146.231390242023,0.0,77.62190826809851
+Plug-in Hybrid Electric Vehicle (PHEV),33675,25,63,26,30.65547141796585,26.0,1889.875426874536,0.0,22.37809173190149

@@ -1,0 +1,198 @@
+State,County,Vehicle_Count,Manufacturer_Count,Model_Count,Avg_Range,Median_Range
+AK,Anchorage,1,1,1,0.0,0.0
+AL,Lee,1,1,1,220.0,220.0
+AL,Mobile,1,1,1,0.0,0.0
+AL,Shelby,1,1,1,0.0,0.0
+AP,King,1,1,1,75.0,75.0
+AR,Pulaski,2,2,2,236.0,236.0
+AZ,Maricopa,10,7,9,38.0,15.5
+AZ,Yavapai,1,1,1,25.0,25.0
+BC,King,2,1,2,220.0,220.0
+CA,Alameda,4,2,2,55.0,0.0
+CA,Contra Costa,3,2,3,20.666666666666668,14.0
+CA,Kern,2,1,2,59.5,59.5
+CA,Kings,4,3,3,56.25,58.0
+CA,Los Angeles,7,5,6,71.42857142857143,19.0
+CA,Marin,1,1,1,26.0,26.0
+CA,Monterey,2,2,2,21.0,21.0
+CA,Napa,1,1,1,16.0,16.0
+CA,Orange,8,5,6,59.25,9.5
+CA,Placer,1,1,1,220.0,220.0
+CA,Riverside,4,1,3,105.75,104.0
+CA,Sacramento,4,1,2,147.0,133.0
+CA,San Bernardino,3,3,3,6.333333333333333,0.0
+CA,San Diego,24,7,12,87.375,33.5
+CA,San Joaquin,1,1,1,32.0,32.0
+CA,Santa Barbara,1,1,1,0.0,0.0
+CA,Santa Clara,11,5,6,77.45454545454545,30.0
+CA,Santa Cruz,1,1,1,215.0,215.0
+CA,Solano,5,3,4,0.0,0.0
+CA,Sonoma,2,2,2,86.0,86.0
+CA,Ventura,3,2,2,21.333333333333332,32.0
+CO,Adams,1,1,1,0.0,0.0
+CO,Arapahoe,2,1,2,11.0,11.0
+CO,Boulder,2,2,2,158.5,158.5
+CO,El Paso,4,3,4,111.0,57.0
+CO,Larimer,1,1,1,215.0,215.0
+CO,Las Animas,1,1,1,0.0,0.0
+CT,New Haven,2,2,2,26.0,26.0
+CT,New London,5,4,4,93.8,38.0
+DC,District of Columbia,5,2,4,152.8,151.0
+DE,Kent,1,1,1,0.0,0.0
+FL,Broward,1,1,1,291.0,291.0
+FL,Collier,1,1,1,200.0,200.0
+FL,Escambia,1,1,1,29.0,29.0
+FL,Hillsborough,2,2,2,40.0,40.0
+FL,Miami-Dade,1,1,1,291.0,291.0
+FL,Orange,1,1,1,0.0,0.0
+FL,Palm Beach,1,1,1,0.0,0.0
+FL,Sarasota,1,1,1,220.0,220.0
+GA,DeKalb,1,1,1,84.0,84.0
+GA,Gwinnett,1,1,1,266.0,266.0
+GA,Houston,1,1,1,215.0,215.0
+GA,Richmond,1,1,1,19.0,19.0
+GA,Rockdale,1,1,1,0.0,0.0
+HI,Hawaii,1,1,1,208.0,208.0
+HI,Honolulu,5,4,4,112.0,25.0
+HI,Kauai,1,1,1,22.0,22.0
+HI,Maui,1,1,1,215.0,215.0
+ID,Elmore,1,1,1,0.0,0.0
+ID,Kootenai,1,1,1,0.0,0.0
+IL,Champaign,1,1,1,220.0,220.0
+IL,Cook,4,3,3,28.25,14.5
+IL,DuPage,1,1,1,14.0,14.0
+IL,Lake,3,2,2,71.66666666666667,0.0
+IL,Madison,1,1,1,215.0,215.0
+IL,Rock Island,1,1,1,32.0,32.0
+IL,St. Clair,1,1,1,322.0,322.0
+IN,Allen,1,1,1,210.0,210.0
+IN,Lake,1,1,1,21.0,21.0
+KS,Leavenworth,1,1,1,14.0,14.0
+KS,Sedgwick,1,1,1,0.0,0.0
+KY,Hardin,1,1,1,0.0,0.0
+KY,Meade,1,1,1,0.0,0.0
+KY,Oldham,1,1,1,33.0,33.0
+LA,Plaquemines,1,1,1,0.0,0.0
+LA,St. Tammany,1,1,1,0.0,0.0
+LA,Vernon,1,1,1,0.0,0.0
+MA,Middlesex,3,2,3,17.666666666666668,0.0
+MD,Anne Arundel,9,4,6,35.44444444444444,0.0
+MD,Calvert,2,2,2,16.5,16.5
+MD,Carroll,1,1,1,19.0,19.0
+MD,Charles,2,2,2,16.5,16.5
+MD,Frederick,2,2,2,63.0,63.0
+MD,Harford,1,1,1,25.0,25.0
+MD,Howard,2,2,2,35.5,35.5
+MD,Montgomery,8,6,7,68.125,37.0
+MD,Prince George's,4,3,4,126.75,108.0
+MD,St. Mary's,1,1,1,215.0,215.0
+MD,Washington,1,1,1,0.0,0.0
+MN,Hennepin,1,1,1,220.0,220.0
+MO,Platte,2,1,2,145.5,145.5
+MO,Ray,1,1,1,16.0,16.0
+MO,St. Louis,1,1,1,322.0,322.0
+MS,Harrison,1,1,1,0.0,0.0
+MT,Yellowstone,1,1,1,22.0,22.0
+NC,Cumberland,2,2,2,7.0,7.0
+NC,Currituck,1,1,1,0.0,0.0
+NC,Harnett,4,1,3,53.75,0.0
+NC,Hoke,2,1,2,0.0,0.0
+NC,Moore,1,1,1,33.0,33.0
+NC,Onslow,1,1,1,26.0,26.0
+NC,Orange,1,1,1,26.0,26.0
+NC,Randolph,1,1,1,215.0,215.0
+NE,Douglas,2,2,2,127.5,127.5
+NE,Sarpy,1,1,1,0.0,0.0
+NH,Rockingham,1,1,1,308.0,308.0
+NJ,Burlington,4,3,4,114.5,112.5
+NJ,Camden,1,1,1,29.0,29.0
+NJ,Cape May,1,1,1,38.0,38.0
+NJ,Essex,2,2,2,0.0,0.0
+NJ,Hudson,1,1,1,220.0,220.0
+NV,Clark,6,3,5,93.0,28.5
+NY,Jefferson,3,2,3,78.0,19.0
+NY,Richmond,1,1,1,0.0,0.0
+NY,Saratoga,2,2,2,121.0,121.0
+NY,Ulster,1,1,1,93.0,93.0
+OH,Hamilton,2,2,2,0.0,0.0
+OR,Benton,1,1,1,0.0,0.0
+OR,Deschutes,2,1,2,119.0,119.0
+OR,Lane,2,2,2,14.0,14.0
+OR,Lincoln,1,1,1,25.0,25.0
+OR,Multnomah,1,1,1,14.0,14.0
+OR,Polk,1,1,1,42.0,42.0
+PA,Cumberland,1,1,1,0.0,0.0
+PA,Philadelphia,1,1,1,0.0,0.0
+SC,Beaufort,1,1,1,0.0,0.0
+SC,Berkeley,1,1,1,53.0,53.0
+SC,Charleston,3,3,3,17.0,19.0
+SC,Dorchester,1,1,1,0.0,0.0
+TX,Bell,1,1,1,0.0,0.0
+TX,Bexar,3,3,3,15.333333333333334,21.0
+TX,Collin,3,3,3,35.666666666666664,0.0
+TX,Coryell,1,1,1,0.0,0.0
+TX,Dallas,1,1,1,0.0,0.0
+TX,El Paso,2,1,2,205.0,205.0
+TX,Galveston,1,1,1,26.0,26.0
+TX,Nueces,2,2,2,173.5,173.5
+TX,Tarrant,1,1,1,220.0,220.0
+TX,Travis,1,1,1,0.0,0.0
+TX,Wichita,2,1,2,207.5,207.5
+TX,Williamson,1,1,1,17.0,17.0
+TX,Wilson,1,1,1,19.0,19.0
+UT,Salt Lake,2,2,2,132.0,132.0
+VA,Alexandria,3,3,3,11.333333333333334,0.0
+VA,Charlottesville,1,1,1,35.0,35.0
+VA,Chesapeake,3,2,3,107.33333333333333,38.0
+VA,Fairfax,9,4,7,74.66666666666667,42.0
+VA,Goochland,1,1,1,32.0,32.0
+VA,Henrico,1,1,1,19.0,19.0
+VA,Loudoun,2,1,2,0.0,0.0
+VA,Newport News,1,1,1,210.0,210.0
+VA,Norfolk,3,3,3,126.0,38.0
+VA,Portsmouth,1,1,1,19.0,19.0
+VA,Stafford,3,1,2,73.33333333333333,0.0
+VA,Suffolk,1,1,1,215.0,215.0
+VA,Virginia Beach,5,4,5,73.0,32.0
+VA,Williamsburg,1,1,1,38.0,38.0
+WA,Adams,41,9,17,81.63414634146342,21.0
+WA,Asotin,63,16,27,62.77777777777778,25.0
+WA,Benton,1800,28,86,70.73722222222223,25.0
+WA,Chelan,863,28,68,80.37775202780996,25.0
+WA,Clallam,920,28,74,67.13478260869566,26.0
+WA,Clark,8849,33,110,65.57136399593175,21.0
+WA,Columbia,18,5,9,65.61111111111111,0.0
+WA,Cowlitz,762,28,71,69.93700787401575,21.0
+WA,Douglas,294,22,48,73.93877551020408,19.0
+WA,Ferry,24,6,12,99.79166666666667,31.5
+WA,Franklin,511,24,61,71.48140900195695,21.0
+WA,Garfield,3,2,3,26.666666666666668,19.0
+WA,Grant,452,22,58,70.14159292035399,21.0
+WA,Grays Harbor,533,25,61,62.590994371482175,21.0
+WA,Island,1640,27,87,75.37378048780488,25.0
+WA,Jefferson,875,25,71,77.61371428571428,35.0
+WA,King,79075,35,123,68.5611381599747,14.0
+WA,Kitsap,4923,33,104,68.94210847044485,25.0
+WA,Kittitas,503,27,64,73.91650099403579,18.0
+WA,Klickitat,239,22,43,70.73221757322176,20.0
+WA,Lewis,598,27,62,70.61204013377926,32.0
+WA,Lincoln,39,13,19,57.1025641025641,32.0
+WA,Mason,706,28,77,74.02549575070822,25.0
+WA,Okanogan,211,23,42,69.81990521327015,21.0
+WA,Pacific,177,20,44,68.47457627118644,30.0
+WA,Pend Oreille,47,13,23,72.85106382978724,21.0
+WA,Pierce,11542,33,116,64.37714434240166,19.0
+WA,San Juan,844,26,76,89.17772511848341,75.0
+WA,Skagit,1658,31,84,73.56574185765983,25.0
+WA,Skamania,164,19,39,71.28658536585365,25.0
+WA,Snohomish,17307,34,117,63.13225862367828,0.0
+WA,Spokane,3690,31,102,63.923035230352305,21.0
+WA,Stevens,193,22,42,65.97409326424871,25.0
+WA,Thurston,5403,32,100,69.33703498056636,22.0
+WA,Wahkiakum,49,13,23,71.91836734693878,25.0
+WA,Walla Walla,360,24,56,68.92777777777778,25.0
+WA,Whatcom,3668,34,103,71.40839694656489,26.5
+WA,Whitman,262,23,49,59.20992366412214,21.0
+WA,Yakima,835,29,77,66.67305389221556,22.0
+WY,Laramie,1,1,1,322.0,322.0
+WY,Sheridan,1,1,1,0.0,0.0

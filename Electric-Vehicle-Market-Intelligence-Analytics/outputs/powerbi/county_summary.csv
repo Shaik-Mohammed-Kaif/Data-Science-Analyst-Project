@@ -1,0 +1,198 @@
+State,County,Vehicle_Count,Model_Count
+WA,King,8123,123
+WA,Snohomish,4492,117
+WA,Pierce,4048,116
+WA,Clark,3522,110
+WA,Kitsap,2597,104
+WA,Thurston,2531,100
+WA,Spokane,2077,102
+WA,Whatcom,2053,103
+WA,Benton,1199,86
+WA,Island,1182,87
+WA,Skagit,1173,84
+WA,Clallam,738,74
+WA,Jefferson,695,71
+WA,San Juan,670,76
+WA,Yakima,646,77
+WA,Chelan,645,68
+WA,Cowlitz,623,71
+WA,Mason,603,77
+WA,Lewis,495,62
+WA,Grays Harbor,472,61
+WA,Franklin,428,61
+WA,Kittitas,413,64
+WA,Grant,396,58
+WA,Walla Walla,323,56
+WA,Douglas,266,48
+WA,Whitman,234,49
+WA,Klickitat,220,43
+WA,Okanogan,196,42
+WA,Stevens,185,42
+WA,Pacific,174,44
+WA,Skamania,160,39
+WA,Asotin,62,27
+WA,Wahkiakum,49,23
+WA,Pend Oreille,46,23
+WA,Adams,40,17
+WA,Lincoln,39,19
+WA,Ferry,24,12
+CA,San Diego,24,12
+WA,Columbia,18,9
+CA,Santa Clara,11,6
+AZ,Maricopa,10,9
+VA,Fairfax,9,7
+MD,Anne Arundel,9,6
+CA,Orange,8,6
+MD,Montgomery,8,7
+CA,Los Angeles,7,6
+NV,Clark,6,5
+HI,Honolulu,5,4
+CA,Solano,5,4
+DC,District of Columbia,5,4
+VA,Virginia Beach,5,5
+CT,New London,5,4
+IL,Cook,4,3
+CA,Sacramento,4,2
+CA,Riverside,4,3
+MD,Prince George's,4,4
+NJ,Burlington,4,4
+NC,Harnett,4,3
+CO,El Paso,4,4
+CA,Kings,4,3
+CA,Alameda,4,2
+NY,Jefferson,3,3
+MA,Middlesex,3,3
+CA,San Bernardino,3,3
+CA,Ventura,3,2
+IL,Lake,3,2
+CA,Contra Costa,3,3
+TX,Collin,3,3
+TX,Bexar,3,3
+VA,Norfolk,3,3
+VA,Stafford,3,2
+SC,Charleston,3,3
+WA,Garfield,3,3
+VA,Chesapeake,3,3
+VA,Alexandria,3,3
+UT,Salt Lake,2,2
+TX,Nueces,2,2
+OR,Deschutes,2,2
+OH,Hamilton,2,2
+CO,Arapahoe,2,2
+CA,Monterey,2,2
+CO,Boulder,2,2
+FL,Hillsborough,2,2
+BC,King,2,2
+AR,Pulaski,2,2
+CA,Sonoma,2,2
+CT,New Haven,2,2
+NJ,Essex,2,2
+OR,Lane,2,2
+NC,Hoke,2,2
+TX,El Paso,2,2
+TX,Wichita,2,2
+VA,Loudoun,2,2
+NE,Douglas,2,2
+NY,Saratoga,2,2
+MD,Frederick,2,2
+NC,Cumberland,2,2
+MO,Platte,2,2
+MD,Howard,2,2
+MD,Calvert,2,2
+MD,Charles,2,2
+CA,Kern,2,2
+AZ,Yavapai,1,1
+CA,Napa,1,1
+CA,Placer,1,1
+AL,Lee,1,1
+AL,Mobile,1,1
+AL,Shelby,1,1
+AP,King,1,1
+AK,Anchorage,1,1
+CA,Marin,1,1
+ID,Elmore,1,1
+HI,Maui,1,1
+HI,Kauai,1,1
+GA,Houston,1,1
+GA,Richmond,1,1
+GA,Rockdale,1,1
+FL,Miami-Dade,1,1
+FL,Escambia,1,1
+FL,Collier,1,1
+GA,Gwinnett,1,1
+GA,DeKalb,1,1
+FL,Sarasota,1,1
+FL,Palm Beach,1,1
+FL,Orange,1,1
+DE,Kent,1,1
+FL,Broward,1,1
+CA,San Joaquin,1,1
+CA,Santa Barbara,1,1
+CA,Santa Cruz,1,1
+CO,Adams,1,1
+CO,Larimer,1,1
+CO,Las Animas,1,1
+KS,Leavenworth,1,1
+IN,Lake,1,1
+IN,Allen,1,1
+IL,St. Clair,1,1
+IL,Rock Island,1,1
+IL,Madison,1,1
+IL,DuPage,1,1
+IL,Champaign,1,1
+HI,Hawaii,1,1
+ID,Kootenai,1,1
+SC,Dorchester,1,1
+TX,Bell,1,1
+SC,Berkeley,1,1
+PA,Cumberland,1,1
+PA,Philadelphia,1,1
+SC,Beaufort,1,1
+TX,Dallas,1,1
+TX,Coryell,1,1
+NJ,Camden,1,1
+NJ,Cape May,1,1
+KY,Oldham,1,1
+MN,Hennepin,1,1
+MD,Washington,1,1
+MD,St. Mary's,1,1
+MS,Harrison,1,1
+MO,St. Louis,1,1
+MO,Ray,1,1
+MT,Yellowstone,1,1
+NC,Currituck,1,1
+NC,Moore,1,1
+NC,Onslow,1,1
+NC,Orange,1,1
+KS,Sedgwick,1,1
+LA,Plaquemines,1,1
+LA,St. Tammany,1,1
+LA,Vernon,1,1
+KY,Hardin,1,1
+KY,Meade,1,1
+MD,Carroll,1,1
+MD,Harford,1,1
+OR,Multnomah,1,1
+OR,Lincoln,1,1
+OR,Polk,1,1
+NH,Rockingham,1,1
+NY,Richmond,1,1
+NJ,Hudson,1,1
+NY,Ulster,1,1
+OR,Benton,1,1
+NC,Randolph,1,1
+NE,Sarpy,1,1
+VA,Suffolk,1,1
+VA,Williamsburg,1,1
+VA,Portsmouth,1,1
+VA,Newport News,1,1
+VA,Goochland,1,1
+VA,Henrico,1,1
+TX,Wilson,1,1
+TX,Williamson,1,1
+TX,Travis,1,1
+TX,Tarrant,1,1
+TX,Galveston,1,1
+VA,Charlottesville,1,1
+WY,Laramie,1,1
+WY,Sheridan,1,1

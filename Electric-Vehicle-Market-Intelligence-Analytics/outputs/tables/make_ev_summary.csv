@@ -1,0 +1,53 @@
+Make,EV_Type,vehicle_records,unique_models,avg_range,median_range,avg_msrp
+TESLA,Battery Electric Vehicle (BEV),68983,5,90.2969427250192,0.0,1648.601829436238
+NISSAN,Battery Electric Vehicle (BEV),13497,2,84.7249018300363,84.0,0.0
+CHEVROLET,Battery Electric Vehicle (BEV),7136,4,129.46804932735427,238.0,0.0
+TOYOTA,Plug-in Hybrid Electric Vehicle (PHEV),5034,4,26.70580055621772,25.0,0.0
+CHEVROLET,Plug-in Hybrid Electric Vehicle (PHEV),4890,1,45.35889570552147,53.0,0.0
+BMW,Plug-in Hybrid Electric Vehicle (PHEV),4643,9,41.018737884988155,30.0,5761.016584105105
+KIA,Battery Electric Vehicle (BEV),4148,4,63.68731918997107,0.0,4860.740115718419
+VOLKSWAGEN,Battery Electric Vehicle (BEV),4074,2,28.33406971035837,0.0,0.0
+FORD,Battery Electric Vehicle (BEV),3908,5,5.041453428863869,0.0,0.0
+FORD,Plug-in Hybrid Electric Vehicle (PHEV),3706,3,21.441446303291958,19.0,0.0
+JEEP,Plug-in Hybrid Electric Vehicle (PHEV),3292,2,22.331713244228432,21.0,0.0
+HYUNDAI,Battery Electric Vehicle (BEV),2695,5,22.886456400742116,0.0,0.0
+CHRYSLER,Plug-in Hybrid Electric Vehicle (PHEV),2642,1,32.24299772899319,32.0,1771.163890991673
+RIVIAN,Battery Electric Vehicle (BEV),2483,3,0.0,0.0,0.0
+VOLVO,Plug-in Hybrid Electric Vehicle (PHEV),2355,5,23.473460721868364,18.0,7186.008492569003
+KIA,Plug-in Hybrid Electric Vehicle (PHEV),2050,4,30.21317073170732,32.0,0.0
+BMW,Battery Electric Vehicle (BEV),1796,3,30.78173719376392,0.0,0.0
+AUDI,Battery Electric Vehicle (BEV),1662,6,81.84957882069796,0.0,0.0
+AUDI,Plug-in Hybrid Electric Vehicle (PHEV),1344,5,18.48139880952381,18.0,0.0
+VOLVO,Battery Electric Vehicle (BEV),1181,2,0.0,0.0,0.0
+HONDA,Plug-in Hybrid Electric Vehicle (PHEV),810,2,46.62716049382716,47.0,0.0
+FIAT,Battery Electric Vehicle (BEV),806,1,85.62655086848635,87.0,0.0
+MITSUBISHI,Plug-in Hybrid Electric Vehicle (PHEV),790,1,27.38227848101266,22.0,0.0
+MERCEDES-BENZ,Battery Electric Vehicle (BEV),790,6,9.69113924050633,0.0,0.0
+POLESTAR,Battery Electric Vehicle (BEV),764,1,36.29188481675393,0.0,0.0
+MINI,Battery Electric Vehicle (BEV),579,1,23.557858376511227,0.0,0.0
+SUBARU,Battery Electric Vehicle (BEV),559,1,0.0,0.0,0.0
+PORSCHE,Battery Electric Vehicle (BEV),547,1,74.74040219378428,0.0,0.0
+PORSCHE,Plug-in Hybrid Electric Vehicle (PHEV),481,3,14.592515592515593,14.0,9177.338877338878
+HYUNDAI,Plug-in Hybrid Electric Vehicle (PHEV),476,4,30.191176470588236,30.0,0.0
+SMART,Battery Electric Vehicle (BEV),274,3,62.37591240875913,58.0,0.0
+MERCEDES-BENZ,Plug-in Hybrid Electric Vehicle (PHEV),264,4,11.25,10.0,0.0
+LINCOLN,Plug-in Hybrid Electric Vehicle (PHEV),229,2,23.62882096069869,21.0,0.0
+JAGUAR,Battery Electric Vehicle (BEV),228,1,204.23684210526315,234.0,0.0
+MINI,Plug-in Hybrid Electric Vehicle (PHEV),212,1,13.367924528301886,12.0,26779.716981132075
+LUCID,Battery Electric Vehicle (BEV),190,1,0.0,0.0,0.0
+TOYOTA,Battery Electric Vehicle (BEV),189,2,32.57142857142857,0.0,0.0
+MAZDA,Plug-in Hybrid Electric Vehicle (PHEV),136,1,26.0,26.0,0.0
+GENESIS,Battery Electric Vehicle (BEV),107,3,0.0,0.0,0.0
+CADILLAC,Plug-in Hybrid Electric Vehicle (PHEV),92,2,36.5,37.0,12243.75
+CADILLAC,Battery Electric Vehicle (BEV),84,1,0.0,0.0,0.0
+LEXUS,Plug-in Hybrid Electric Vehicle (PHEV),84,1,37.0,37.0,0.0
+SUBARU,Plug-in Hybrid Electric Vehicle (PHEV),64,1,17.0,17.0,34995.0
+MITSUBISHI,Battery Electric Vehicle (BEV),59,1,61.94915254237288,62.0,0.0
+LEXUS,Battery Electric Vehicle (BEV),54,1,0.0,0.0,0.0
+LAND ROVER,Plug-in Hybrid Electric Vehicle (PHEV),47,2,21.72340425531915,19.0,0.0
+FISKER,Plug-in Hybrid Electric Vehicle (PHEV),17,1,33.0,33.0,102000.0
+ALFA ROMEO,Plug-in Hybrid Electric Vehicle (PHEV),12,1,33.0,33.0,0.0
+AZURE DYNAMICS,Battery Electric Vehicle (BEV),9,1,56.0,56.0,0.0
+TH!NK,Battery Electric Vehicle (BEV),5,1,100.0,100.0,0.0
+WHEEGO ELECTRIC CARS,Plug-in Hybrid Electric Vehicle (PHEV),3,1,100.0,100.0,32995.0
+BENTLEY,Plug-in Hybrid Electric Vehicle (PHEV),2,2,19.0,19.0,0.0

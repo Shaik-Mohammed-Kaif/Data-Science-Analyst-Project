@@ -1,0 +1,67 @@
+State,EV_Type,vehicle_records,unique_makes,unique_models,avg_range,median_range,avg_msrp
+WA,Battery Electric Vehicle (BEV),116585,27,67,78.5695758459493,0.0,1145.4925590770683
+WA,Plug-in Hybrid Electric Vehicle (PHEV),33556,25,63,30.665305757539635,26.0,1887.285880319466
+CA,Battery Electric Vehicle (BEV),61,8,13,90.91803278688525,0.0,2291.8032786885246
+CA,Plug-in Hybrid Electric Vehicle (PHEV),31,12,16,26.451612903225808,25.0,1422.5806451612902
+VA,Battery Electric Vehicle (BEV),20,4,8,105.0,78.0,0.0
+MD,Battery Electric Vehicle (BEV),18,6,9,78.0,0.0,0.0
+MD,Plug-in Hybrid Electric Vehicle (PHEV),15,9,11,32.6,33.0,6800.0
+VA,Plug-in Hybrid Electric Vehicle (PHEV),15,7,10,30.6,32.0,0.0
+TX,Battery Electric Vehicle (BEV),14,5,8,105.28571428571429,53.5,0.0
+NC,Battery Electric Vehicle (BEV),9,1,3,47.77777777777778,0.0,0.0
+IL,Battery Electric Vehicle (BEV),9,3,4,117.33333333333333,84.0,0.0
+CO,Battery Electric Vehicle (BEV),9,5,8,104.88888888888889,82.0,0.0
+TX,Plug-in Hybrid Electric Vehicle (PHEV),6,4,4,22.166666666666668,23.0,5832.5
+CT,Plug-in Hybrid Electric Vehicle (PHEV),6,5,5,33.166666666666664,35.5,0.0
+FL,Battery Electric Vehicle (BEV),6,1,3,167.0,210.0,0.0
+AZ,Battery Electric Vehicle (BEV),6,3,5,47.166666666666664,0.0,0.0
+AZ,Plug-in Hybrid Electric Vehicle (PHEV),5,5,5,24.4,25.0,0.0
+DC,Battery Electric Vehicle (BEV),5,2,4,152.8,151.0,0.0
+NJ,Battery Electric Vehicle (BEV),5,2,4,125.6,200.0,13980.0
+NY,Battery Electric Vehicle (BEV),5,2,4,101.6,93.0,6390.0
+OR,Plug-in Hybrid Electric Vehicle (PHEV),5,4,5,21.8,22.0,18140.0
+HI,Plug-in Hybrid Electric Vehicle (PHEV),4,2,2,18.5,21.5,0.0
+HI,Battery Electric Vehicle (BEV),4,2,3,232.75,226.5,0.0
+NV,Battery Electric Vehicle (BEV),4,1,3,125.25,105.0,0.0
+NJ,Plug-in Hybrid Electric Vehicle (PHEV),4,4,4,29.25,27.0,0.0
+NC,Plug-in Hybrid Electric Vehicle (PHEV),4,3,3,24.75,26.0,0.0
+GA,Battery Electric Vehicle (BEV),4,3,3,141.25,149.5,0.0
+AL,Battery Electric Vehicle (BEV),3,2,3,73.33333333333333,0.0,0.0
+OR,Battery Electric Vehicle (BEV),3,2,3,79.33333333333333,0.0,0.0
+SC,Battery Electric Vehicle (BEV),3,1,2,0.0,0.0,0.0
+MO,Battery Electric Vehicle (BEV),3,1,2,204.33333333333334,291.0,0.0
+FL,Plug-in Hybrid Electric Vehicle (PHEV),3,3,3,36.333333333333336,38.0,0.0
+IL,Plug-in Hybrid Electric Vehicle (PHEV),3,3,3,25.0,29.0,13331.666666666666
+LA,Battery Electric Vehicle (BEV),3,2,2,0.0,0.0,0.0
+SC,Plug-in Hybrid Electric Vehicle (PHEV),3,3,3,34.666666666666664,32.0,0.0
+CO,Plug-in Hybrid Electric Vehicle (PHEV),2,2,2,27.0,27.0,0.0
+OH,Battery Electric Vehicle (BEV),2,2,2,0.0,0.0,0.0
+NY,Plug-in Hybrid Electric Vehicle (PHEV),2,2,2,30.5,30.5,0.0
+PA,Battery Electric Vehicle (BEV),2,1,1,0.0,0.0,0.0
+WY,Battery Electric Vehicle (BEV),2,2,2,161.0,161.0,0.0
+NV,Plug-in Hybrid Electric Vehicle (PHEV),2,2,2,28.5,28.5,0.0
+NE,Battery Electric Vehicle (BEV),2,2,2,111.0,111.0,0.0
+AR,Battery Electric Vehicle (BEV),2,2,2,236.0,236.0,0.0
+ID,Battery Electric Vehicle (BEV),2,2,2,0.0,0.0,0.0
+KY,Battery Electric Vehicle (BEV),2,2,2,0.0,0.0,0.0
+BC,Battery Electric Vehicle (BEV),2,1,2,220.0,220.0,49475.0
+MA,Battery Electric Vehicle (BEV),2,1,2,0.0,0.0,0.0
+AK,Battery Electric Vehicle (BEV),1,1,1,0.0,0.0,0.0
+CT,Battery Electric Vehicle (BEV),1,1,1,322.0,322.0,0.0
+AP,Battery Electric Vehicle (BEV),1,1,1,75.0,75.0,0.0
+MA,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,53.0,53.0,0.0
+KS,Battery Electric Vehicle (BEV),1,1,1,0.0,0.0,0.0
+KS,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,14.0,14.0,0.0
+KY,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,33.0,33.0,0.0
+IN,Battery Electric Vehicle (BEV),1,1,1,210.0,210.0,0.0
+GA,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,19.0,19.0,0.0
+IN,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,21.0,21.0,0.0
+DE,Battery Electric Vehicle (BEV),1,1,1,0.0,0.0,0.0
+NE,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,33.0,33.0,0.0
+NH,Battery Electric Vehicle (BEV),1,1,1,308.0,308.0,0.0
+MT,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,22.0,22.0,0.0
+MS,Battery Electric Vehicle (BEV),1,1,1,0.0,0.0,0.0
+MO,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,16.0,16.0,0.0
+MN,Battery Electric Vehicle (BEV),1,1,1,220.0,220.0,0.0
+UT,Plug-in Hybrid Electric Vehicle (PHEV),1,1,1,26.0,26.0,0.0
+UT,Battery Electric Vehicle (BEV),1,1,1,238.0,238.0,0.0

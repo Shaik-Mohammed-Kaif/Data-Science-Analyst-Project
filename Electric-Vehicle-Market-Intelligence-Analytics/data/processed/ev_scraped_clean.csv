@@ -1,0 +1,244 @@
+Vehicle_ID,Model,Year,BodyStyle,Platform,DedicatedBEV,Manufacturer,Origin,Market,Primary_Body_Style,Model_Age_Years,Launch_Era,Region,Is_Dedicated_BEV,Manufacturer_Group,Is_SUV_Crossover
+WIKI1000,Abarth 500e,2023,Hatchback,,No,Stellantis,Italy,Global,Hatchback,3,2023-2024 (Acceleration),Europe,0.0,Stellantis,0
+WIKI1001,Abarth 600e,2024,Crossover SUV,"eCMP, CMP",No,Stellantis,Italy,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1002,Aletra L8,2025,MPV/minivan,,Yes,Aletra (produced by Geely),Indonesia,Global,MPV,1,2025-2026 (Latest),Asia-Pacific,1.0,Geely Group,0
+WIKI1003,Alfa Romeo Junior,2024,Crossover SUV,"eCMP, CMP",No,Stellantis,Italy,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1004,Alpine A290,2024,Hatchback,AmpR Small,Yes,Alpine/Renault,France,Global,Hatchback,2,2023-2024 (Acceleration),Europe,1.0,Alpine/Renault,0
+WIKI1005,Alpine A390,2026,Crossover SUV,AmpR Medium,Yes,Alpine/Renault,France,Global,Crossover SUV,0,2025-2026 (Latest),Europe,1.0,Alpine/Renault,1
+WIKI1006,Audi e-tron GT,2021,Sedan,J1,Yes,Audi,Germany,Global,Sedan,5,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,0
+WIKI1007,Audi A6 e-tron,2024,Sedan and Station wagon,PPE,Yes,Audi,Germany,Global,Sedan,2,2023-2024 (Acceleration),Europe,1.0,Volkswagen Group,0
+WIKI1008,Audi Q4 e-tron,2021,Crossover SUV,MEB,Yes,Audi,Germany,Global,Crossover SUV,5,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,1
+WIKI1009,Audi Q6 e-tron,2024,Crossover SUV,PPE,Yes,Audi,Germany,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,Volkswagen Group,1
+WIKI1010,BMW i3,2026,Sedan,Neue Klasse,Yes,BMW,Germany,Global,Sedan,0,2025-2026 (Latest),Europe,1.0,BMW Group,0
+WIKI1011,BMW i4,2021,Liftback,CLAR,No,BMW,Germany,Global,Liftback,5,2020-2022 (Mainstream),Europe,0.0,BMW Group,0
+WIKI1012,BMW i5,2023,Sedan,CLAR,No,BMW,Germany,Global,Sedan,3,2023-2024 (Acceleration),Europe,0.0,BMW Group,0
+WIKI1013,BMW i5 Touring,2024,Station wagon,CLAR,No,BMW,Germany,Global,Station wagon,2,2023-2024 (Acceleration),Europe,0.0,BMW Group,0
+WIKI1014,BMW i7,2022,Sedan,CLAR,No,BMW,Germany,Global,Sedan,4,2020-2022 (Mainstream),Europe,0.0,BMW Group,0
+WIKI1015,BMW iX,2021,Crossover SUV,iX,Yes,BMW,Germany,Global,Crossover SUV,5,2020-2022 (Mainstream),Europe,1.0,BMW Group,1
+WIKI1016,BMW iX1,2022,Crossover SUV,UKL2,No,BMW,Germany,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,0.0,BMW Group,1
+WIKI1017,BMW iX2,2023,Crossover SUV,UKL2,No,BMW,Germany,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,0.0,BMW Group,1
+WIKI1018,BMW iX3,2025,Crossover SUV,Neue Klasse,Yes,BMW,Germany,Global,Crossover SUV,1,2025-2026 (Latest),Europe,1.0,BMW Group,1
+WIKI1019,Cadillac Celestiq,2024,Liftback,BEV3,Yes,General Motors,United States,Global,Liftback,2,2023-2024 (Acceleration),North America,1.0,General Motors,0
+WIKI1020,Cadillac Escalade IQ,2024,SUV,BT1,Yes,General Motors,United States,Global,SUV,2,2023-2024 (Acceleration),North America,1.0,General Motors,1
+WIKI1021,Cadillac Lyriq,2022,Crossover SUV,BEV3,Yes,General Motors,United States,Global,Crossover SUV,4,2020-2022 (Mainstream),North America,1.0,General Motors,1
+WIKI1022,Cadillac Optiq,2023,Crossover SUV,BEV3,Yes,General Motors,United States,Global,Crossover SUV,3,2023-2024 (Acceleration),North America,1.0,General Motors,1
+WIKI1023,Cadillac Vistiq,2025,Crossover SUV,BEV3,Yes,General Motors,United States,Global,Crossover SUV,1,2025-2026 (Latest),North America,1.0,General Motors,1
+WIKI1024,Chevrolet Blazer EV,2023,Crossover SUV,BEV3,Yes,General Motors,United States,Global,Crossover SUV,3,2023-2024 (Acceleration),North America,1.0,General Motors,1
+WIKI1025,Chevrolet Bolt,2025,Crossover SUV,BEV2,Yes,General Motors,United States,Global,Crossover SUV,1,2025-2026 (Latest),North America,1.0,General Motors,1
+WIKI1026,Chevrolet Equinox EV,2024,Crossover SUV,BEV3,Yes,General Motors,United States,Global,Crossover SUV,2,2023-2024 (Acceleration),North America,1.0,General Motors,1
+WIKI1027,Chevrolet Silverado EV,2023,Pickup truck,BT1,Yes,General Motors,United States,Global,Pickup truck,3,2023-2024 (Acceleration),North America,1.0,General Motors,0
+WIKI1028,Citroen e-Berlingo,2021,Van,EMP2,No,Stellantis,France,Global,Van,5,2020-2022 (Mainstream),Europe,0.0,Stellantis,0
+WIKI1029,Citroen e-C3 Europe,2023,Hatchback,Smart Car,No,Stellantis,France,Global,Hatchback,3,2023-2024 (Acceleration),Europe,0.0,Stellantis,0
+WIKI1030,Citroen e-C3 India,2023,Hatchback,Smart Car,No,Stellantis,France,Global,Hatchback,3,2023-2024 (Acceleration),Europe,0.0,Stellantis,0
+WIKI1031,Citroen e-C4,2021,Crossover SUV,eCMP,No,Stellantis,France,Global,Crossover SUV,5,2020-2022 (Mainstream),Europe,0.0,Stellantis,1
+WIKI1032,Citroen e-C4 X,2022,Crossover SUV,eCMP,No,Stellantis,France,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,0.0,Stellantis,1
+WIKI1033,Citroen e-C5 Aircross,2025,Crossover SUV,STLA Medium,No,Stellantis,France,Global,Crossover SUV,1,2025-2026 (Latest),Europe,0.0,Stellantis,1
+WIKI1034,Cupra Born,2021,Hatchback,MEB,Yes,SEAT,Spain,Global,Hatchback,5,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,0
+WIKI1035,Cupra Tavascan,2023,Crossover SUV,MEB,Yes,SEAT,Spain,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,1.0,Volkswagen Group,1
+WIKI1036,DS 3 Crossback E-Tense,2019,Crossover SUV,eCMP,No,Stellantis,France,Global,Crossover SUV,7,2016-2019 (Growth),Europe,0.0,Stellantis,1
+WIKI1037,DS No. 4,2025,Hatchback,EMP2 V3,No,Stellantis,France,Global,Hatchback,1,2025-2026 (Latest),Europe,0.0,Stellantis,0
+WIKI1038,DS No. 8,2025,Crossover SUV,STLA Medium,Yes,Stellantis,France,Global,Crossover SUV,1,2025-2026 (Latest),Europe,1.0,Stellantis,1
+WIKI1039,Dodge Charger Daytona,2024,Liftback,STLA Large,No,Stellantis,United States,Global,Liftback,2,2023-2024 (Acceleration),North America,0.0,Stellantis,0
+WIKI1040,Dacia Spring Electric,2021,Hatchback,CMFA-EV,No,Dacia/Renault,Romania,Global,Hatchback,5,2020-2022 (Mainstream),Europe,0.0,Dacia/Renault,0
+WIKI1041,Faraday Future FF 91,2023,Crossover SUV,,Yes,Faraday Future,United States,Global,Crossover SUV,3,2023-2024 (Acceleration),North America,1.0,Faraday Future,1
+WIKI1042,Fiat E-Ducato,2021,Van,,No,Stellantis,Italy,Global,Van,5,2020-2022 (Mainstream),Europe,0.0,Stellantis,0
+WIKI1043,Fiat 500e,2020,Hatchback,,Yes,Stellantis,Italy,Global,Hatchback,6,2020-2022 (Mainstream),Europe,1.0,Stellantis,0
+WIKI1044,Fiat 600e,2023,Crossover SUV,"eCMP, CMP",No,Stellantis,Italy,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1045,Fiat Grande Panda,2024,Hatchback,Smart Car,No,Stellantis,Italy,Global,Hatchback,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,0
+WIKI1046,Ford Capri EV,2024,Crossover SUV,MEB,Yes,Ford,United States,Global,Crossover SUV,2,2023-2024 (Acceleration),North America,1.0,Ford,1
+WIKI1047,Ford E-Transit,2021,Van,,No,Ford,United States,Global,Van,5,2020-2022 (Mainstream),North America,0.0,Ford,0
+WIKI1048,Ford Explorer EV,2024,Crossover SUV,MEB,Yes,Ford,United States,Global,Crossover SUV,2,2023-2024 (Acceleration),North America,1.0,Ford,1
+WIKI1049,Ford Mustang Mach-E,2020,Crossover SUV,GE1,Yes,Ford,United States,Global,Crossover SUV,6,2020-2022 (Mainstream),North America,1.0,Ford,1
+WIKI1050,Ford Puma Gen-E,2024,Crossover SUV,Ford Global B-car,No,Ford,United States,Global,Crossover SUV,2,2023-2024 (Acceleration),North America,0.0,Ford,1
+WIKI1051,Genesis Electrified G80,2021,Sedan,M3,No,Genesis Motor,South Korea,Global,Sedan,5,2020-2022 (Mainstream),Asia-Pacific,0.0,Genesis Motor,0
+WIKI1052,Genesis Electrified GV70,2022,Crossover SUV,M3,No,Genesis Motor,South Korea,Global,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,0.0,Genesis Motor,1
+WIKI1053,Genesis GV60,2021,Crossover SUV,E-GMP,Yes,Genesis Motor,South Korea,Global,Crossover SUV,5,2020-2022 (Mainstream),Asia-Pacific,1.0,Genesis Motor,1
+WIKI1054,GMC Sierra EV,2023,Pickup truck,BT1,Yes,General Motors,United States,Global,Pickup truck,3,2023-2024 (Acceleration),North America,1.0,General Motors,0
+WIKI1055,GMC Hummer EV,2022,Pickup truck and SUV,BT1,Yes,General Motors,United States,Global,Pickup truck,4,2020-2022 (Mainstream),North America,1.0,General Motors,0
+WIKI1056,Honda e:Ny1/e:N1,2023,Crossover SUV,e:N Architecture F,No,Honda,Japan,Global,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,0.0,Honda,1
+WIKI1057,Honda Prologue,2023,Crossover SUV,BEV3,Yes,Honda (produced by General Motors),Japan,Global,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,1.0,General Motors,1
+WIKI1058,Hyundai Casper Electric/Inster,2024,Hatchback,Hyundai-Kia K1 BEV,No,Hyundai,South Korea,Global,Hatchback,2,2023-2024 (Acceleration),Asia-Pacific,0.0,Hyundai,0
+WIKI1059,Hyundai Creta Electric,2025,Crossover SUV,Hyundai-Kia K2 BEV,No,Hyundai,South Korea,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,0.0,Hyundai,1
+WIKI1060,Hyundai Ioniq 5,2021,Crossover SUV,E-GMP,Yes,Hyundai,South Korea,Global,Crossover SUV,5,2020-2022 (Mainstream),Asia-Pacific,1.0,Hyundai,1
+WIKI1061,Hyundai Ioniq 6,2022,Sedan,E-GMP,Yes,Hyundai,South Korea,Global,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,1.0,Hyundai,0
+WIKI1062,Hyundai Ioniq 9,2025,Crossover SUV,E-GMP,Yes,Hyundai,South Korea,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,1.0,Hyundai,1
+WIKI1063,Hyundai Kona Electric,2019,Crossover SUV,Hyundai-Kia K3,No,Hyundai,South Korea,Global,Crossover SUV,7,2016-2019 (Growth),Asia-Pacific,0.0,Hyundai,1
+WIKI1064,Jeep Avenger,2023,Crossover SUV,eCMP / STLA Small,No,Stellantis,United States,Global,Crossover SUV,3,2023-2024 (Acceleration),North America,0.0,Stellantis,1
+WIKI1065,Jeep Wagoneer S,2024,Crossover SUV,STLA Large,Yes,Stellantis,United States,Global,Crossover SUV,2,2023-2024 (Acceleration),North America,1.0,Stellantis,1
+WIKI1066,Kia EV3,2024,Crossover SUV,E-GMP,Yes,Kia,South Korea,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,Kia,1
+WIKI1067,Kia EV4,2025,Sedan and hatchback,E-GMP,Yes,Kia,South Korea,Global,Sedan,1,2025-2026 (Latest),Asia-Pacific,1.0,Kia,0
+WIKI1068,Kia EV5,2023,Crossover SUV,Hyundai-Kia N3 eK,Yes,Kia,South Korea,Global,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,1.0,Kia,1
+WIKI1069,Kia EV6,2021,Crossover SUV,E-GMP,Yes,Kia,South Korea,Global,Crossover SUV,5,2020-2022 (Mainstream),Asia-Pacific,1.0,Kia,1
+WIKI1070,Kia EV9,2023,Crossover SUV,E-GMP,Yes,Kia,South Korea,Global,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,1.0,Kia,1
+WIKI1071,Lexus RZ,2022,Crossover SUV,e-TNGA,Yes,Toyota,Japan,Global,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,1.0,Toyota Group,1
+WIKI1072,Lotus Eletre,2023,Crossover SUV,EPA,Yes,Lotus Cars,United Kingdom,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,1.0,Lotus Cars,1
+WIKI1073,Lotus Emeya,2024,Liftback,EPA,Yes,Lotus Cars,United Kingdom,Global,Liftback,2,2023-2024 (Acceleration),Europe,1.0,Lotus Cars,0
+WIKI1074,Lucid Air,2021,Sedan,,Yes,Lucid Motors,United States,Global,Sedan,5,2020-2022 (Mainstream),North America,1.0,Lucid Motors,0
+WIKI1075,Lucid Gravity,2024,Crossover SUV,,Yes,Lucid Motors,United States,Global,Crossover SUV,2,2023-2024 (Acceleration),North America,1.0,Lucid Motors,1
+WIKI1076,Mahindra BE 6,2025,Crossover SUV,INGLO,Yes,Mahindra,India,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,1.0,Mahindra,1
+WIKI1077,Mahindra XEV 9e,2025,Crossover SUV,INGLO,Yes,Mahindra,India,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,1.0,Mahindra,1
+WIKI1078,Mahindra XEV 9S,2025,Crossover SUV,INGLO,Yes,Mahindra,India,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,1.0,Mahindra,1
+WIKI1079,Mahindra XUV 3XO EV,2026,Crossover SUV,X100,No,Mahindra,India,Global,Crossover SUV,0,2025-2026 (Latest),Asia-Pacific,0.0,Mahindra,1
+WIKI1080,Maserati Grecale Folgore,2023,Crossover SUV,FCA Giorgio,No,Stellantis,Italy,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1081,Mazda 6e,2025,Liftback,EPA1,Yes,Mazda,Japan,Global,Liftback,1,2025-2026 (Latest),Asia-Pacific,1.0,Mazda,0
+WIKI1082,Mazda MX-30,2020,Crossover SUV,e-Skyactiv,No,Mazda,Japan,Global,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,0.0,Mazda,1
+WIKI1083,Mercedes-Benz EQA,2021,Crossover SUV,MFA2,No,Mercedes-Benz Group,Germany,Global,Crossover SUV,5,2020-2022 (Mainstream),Europe,0.0,Mercedes-Benz Group,1
+WIKI1084,Mercedes-Benz EQE,2022,Sedan,EVA,Yes,Mercedes-Benz Group,Germany,Global,Sedan,4,2020-2022 (Mainstream),Europe,1.0,Mercedes-Benz Group,0
+WIKI1085,Mercedes-Benz EQE SUV,2022,Crossover SUV,EVA,Yes,Mercedes-Benz Group,Germany,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,1.0,Mercedes-Benz Group,1
+WIKI1086,Mercedes-Benz EQS,2021,Liftback,MEA,Yes,Mercedes-Benz Group,Germany,Global,Liftback,5,2020-2022 (Mainstream),Europe,1.0,Mercedes-Benz Group,0
+WIKI1087,Mercedes-Benz EQS SUV,2022,Crossover SUV,MEA,Yes,Mercedes-Benz Group,Germany,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,1.0,Mercedes-Benz Group,1
+WIKI1088,Mini Cooper E/SE,2023,Hatchback,,No,Mini/BMW,United Kingdom,Global,Hatchback,3,2023-2024 (Acceleration),Europe,0.0,BMW Group,0
+WIKI1089,Mini Countryman E/SE,2023,Crossover SUV,UKL2,No,Mini/BMW,United Kingdom,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,0.0,BMW Group,1
+WIKI1090,Mini Aceman,2024,Crossover SUV,,Yes,Mini/BMW,United Kingdom,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,BMW Group,1
+WIKI1091,Nissan Ariya,2021,Crossover SUV,AmpR Medium,Yes,Nissan,Japan,Global,Crossover SUV,5,2020-2022 (Mainstream),Asia-Pacific,1.0,Nissan,1
+WIKI1092,Nissan Leaf,2010,Hatchback/Crossover SUV,AmpR Medium,Yes,Nissan,Japan,Global,Hatchback,16,2010-2015 (Early),Asia-Pacific,1.0,Nissan,0
+WIKI1093,Nissan Sakura,2022,Hatchback,KEI-EV,Yes,NMKV,Japan,Global,Hatchback,4,2020-2022 (Mainstream),Asia-Pacific,1.0,NMKV,0
+WIKI1094,Opel Astra Electric,2023,Hatchback,EMP2 V3,No,Stellantis,Germany/United Kingdom,Global,Hatchback,3,2023-2024 (Acceleration),Europe,0.0,Stellantis,0
+WIKI1095,Opel Corsa Electric,2019,Hatchback,eCMP,No,Stellantis,Germany/United Kingdom,Global,Hatchback,7,2016-2019 (Growth),Europe,0.0,Stellantis,0
+WIKI1096,Opel Mokka-e,2020,Crossover SUV,eCMP,No,Stellantis,Germany/United Kingdom,Global,Crossover SUV,6,2020-2022 (Mainstream),Europe,0.0,Stellantis,1
+WIKI1097,Opel Frontera Electric,2024,Crossover SUV,Smart Car,No,Stellantis,Germany/United Kingdom,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1098,Opel Grandland Electric,2024,Crossover SUV,STLA Medium,No,Stellantis,Germany/United Kingdom,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1099,Peugeot e-208,2019,Hatchback,eCMP,No,Stellantis,France,Global,Hatchback,7,2016-2019 (Growth),Europe,0.0,Stellantis,0
+WIKI1100,Peugeot e-2008,2020,Crossover SUV,eCMP,No,Stellantis,France,Global,Crossover SUV,6,2020-2022 (Mainstream),Europe,0.0,Stellantis,1
+WIKI1101,Peugeot e-308,2022,Hatchback,EMP2 V3,No,Stellantis,France,Global,Hatchback,4,2020-2022 (Mainstream),Europe,0.0,Stellantis,0
+WIKI1102,Peugeot e-3008,2024,Crossover SUV,STLA Medium,No,Stellantis,France,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1103,Peugeot e-408,2024,Crossover SUV,EMP2 V3,No,Stellantis,France,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1104,Peugeot e-5008,2024,Crossover SUV,STLA Medium,No,Stellantis,France,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,0.0,Stellantis,1
+WIKI1105,Polestar 2,2020,Liftback,CMA,Yes,Volvo Cars,Sweden,Global,Liftback,6,2020-2022 (Mainstream),Europe,1.0,Geely Group,0
+WIKI1106,Polestar 3,2024,Crossover SUV,SPA2,Yes,Volvo Cars,Sweden,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,Geely Group,1
+WIKI1107,Polestar 4,2023,Crossover SUV,SEA,Yes,Volvo Cars,Sweden,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,1.0,Geely Group,1
+WIKI1108,Porsche Cayenne,2026,Crossover SUV,PPE,Yes,Porsche,Germany,Global,Crossover SUV,0,2025-2026 (Latest),Europe,1.0,Porsche,1
+WIKI1109,Porsche Macan,2024,Crossover SUV,PPE,Yes,Porsche,Germany,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,Porsche,1
+WIKI1110,Porsche Taycan,2019,Sedan and shooting brake,J1,Yes,Porsche,Germany,Global,Sedan,7,2016-2019 (Growth),Europe,1.0,Porsche,0
+WIKI1111,Renault 4 E-Tech,2025,Crossover SUV,AmpR Small,Yes,Renault,France,Global,Crossover SUV,1,2025-2026 (Latest),Europe,1.0,Renault,1
+WIKI1112,Renault 5 E-Tech,2024,Hatchback,AmpR Small,Yes,Renault,France,Global,Hatchback,2,2023-2024 (Acceleration),Europe,1.0,Renault,0
+WIKI1113,Renault Megane E-Tech Electric,2022,Crossover SUV,AmpR Medium,Yes,Renault,France,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,1.0,Renault,1
+WIKI1114,Renault Scenic E-Tech,2024,Crossover SUV,AmpR Medium,Yes,Renault,France,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,Renault,1
+WIKI1115,Rimac Nevera,2021,Coupe,,Yes,Rimac Automobili,Croatia,Global,Coupe,5,2020-2022 (Mainstream),Europe,1.0,Rimac Automobili,0
+WIKI1116,Rivian R1S,2022,SUV,,Yes,Rivian,United States,Global,SUV,4,2020-2022 (Mainstream),North America,1.0,Rivian,1
+WIKI1117,Rivian R1T,2021,Pickup truck,,Yes,Rivian,United States,Global,Pickup truck,5,2020-2022 (Mainstream),North America,1.0,Rivian,0
+WIKI1118,Rivian R2,2026,SUV,,Yes,Rivian,United States,Global,SUV,0,2025-2026 (Latest),North America,1.0,Rivian,1
+WIKI1119,Rolls-Royce Spectre,2023,Coupe,Architecture of Luxury,Yes,Rolls-Royce,United Kingdom,Global,Coupe,3,2023-2024 (Acceleration),Europe,1.0,Rolls-Royce,0
+WIKI1120,Skoda Enyaq,2020,Crossover SUV,MEB,Yes,Skoda Auto,Czech Republic,Global,Crossover SUV,6,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,1
+WIKI1121,Skoda Elroq,2025,Crossover SUV,MEB,Yes,Skoda Auto,Czech Republic,Global,Crossover SUV,1,2025-2026 (Latest),Europe,1.0,Volkswagen Group,1
+WIKI1122,Smart #1,2022,Crossover SUV,SEA2,Yes,Smart Automobile (produced by Geely),Germany,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,1.0,Geely Group,1
+WIKI1123,Smart #3,2023,Crossover SUV,SEA2,Yes,Smart Automobile (produced by Geely),Germany,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,1.0,Geely Group,1
+WIKI1124,Smart #5,2024,Crossover SUV,PMA2+,Yes,Smart Automobile (produced by Geely),Germany,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,Geely Group,1
+WIKI1125,Subaru Solterra,2022,Crossover SUV,e-TNGA/e-SGP,Yes,Subaru (produced by Toyota),Japan,Global,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,1.0,Toyota Group,1
+WIKI1126,Suzuki e Vitara,2025,Crossover SUV,Heartect-e,Yes,Suzuki,Japan,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,1.0,Suzuki,1
+WIKI1127,Tata Nexon.ev,2020,Crossover SUV,,No,Tata Motors Passenger Vehicles,India,Global,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,0.0,Tata Motors Passenger Vehicles,1
+WIKI1128,Tata Punch.ev,2024,Crossover SUV,Acti.ev,Yes,Tata Motors Passenger Vehicles,India,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,Tata Motors Passenger Vehicles,1
+WIKI1129,Tata Harrier.ev,2024,Crossover SUV,Acti.ev,Yes,Tata Motors Passenger Vehicles,India,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,Tata Motors Passenger Vehicles,1
+WIKI1130,Tata Curvv.ev,2024,Crossover SUV,Acti.ev,Yes,Tata Motors Passenger Vehicles,India,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,Tata Motors Passenger Vehicles,1
+WIKI1131,Tata Tiago.ev,2022,Hatchback,,No,Tata Motors Passenger Vehicles,India,Global,Hatchback,4,2020-2022 (Mainstream),Asia-Pacific,0.0,Tata Motors Passenger Vehicles,0
+WIKI1132,Tata Tigor EV,2022,Sedan,,No,Tata Motors Passenger Vehicles,India,Global,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,0.0,Tata Motors Passenger Vehicles,0
+WIKI1133,Tesla Cybertruck,2023,Pickup,,Yes,"Tesla, Inc.",United States,Global,Pickup,3,2023-2024 (Acceleration),North America,1.0,"Tesla, Inc.",0
+WIKI1134,Tesla Model 3,2016,Sedan,Model 3,Yes,"Tesla, Inc.",United States,Global,Sedan,10,2016-2019 (Growth),North America,1.0,"Tesla, Inc.",0
+WIKI1135,Tesla Model Y,2020,Crossover SUV,Model 3,Yes,"Tesla, Inc.",United States,Global,Crossover SUV,6,2020-2022 (Mainstream),North America,1.0,"Tesla, Inc.",1
+WIKI1136,Toyota bZ4X/bZ,2022,Crossover SUV,e-TNGA,Yes,Toyota,Japan,Global,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,1.0,Toyota Group,1
+WIKI1137,Toyota C-HR+/C-HR,2025,Crossover SUV,e-TNGA,Yes,Toyota,Japan,Global,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,1.0,Toyota Group,1
+WIKI1138,VinFast VF e34,2021,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,5,2020-2022 (Mainstream),Asia-Pacific,1.0,VinFast,1
+WIKI1139,VinFast VF 3,2024,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,VinFast,1
+WIKI1140,VinFast VF 5,2023,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,1.0,VinFast,1
+WIKI1141,VinFast VF 6,2024,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,VinFast,1
+WIKI1142,VinFast VF 7,2024,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,1.0,VinFast,1
+WIKI1143,VinFast VF 8,2022,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,1.0,VinFast,1
+WIKI1144,VinFast VF 9,2023,Crossover SUV,,Yes,VinFast,Vietnam,Global,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,1.0,VinFast,1
+WIKI1145,Volkswagen ID.3,2020,Hatchback,MEB,Yes,Volkswagen,Germany,Global,Hatchback,6,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,0
+WIKI1146,Volkswagen ID.4,2020,Crossover SUV,MEB,Yes,Volkswagen,Germany,Global,Crossover SUV,6,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,1
+WIKI1147,Volkswagen ID.5,2022,Crossover SUV,MEB,Yes,Volkswagen,Germany,Global,Crossover SUV,4,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,1
+WIKI1148,Volkswagen ID.7,2023,Liftback,MEB,Yes,Volkswagen,Germany,Global,Liftback,3,2023-2024 (Acceleration),Europe,1.0,Volkswagen Group,0
+WIKI1149,Volkswagen ID. Buzz,2022,MPV/minivan,MEB,Yes,Volkswagen,Germany,Global,MPV,4,2020-2022 (Mainstream),Europe,1.0,Volkswagen Group,0
+WIKI1150,Volvo EC40,2021,Crossover SUV,CMA,No,Volvo Cars,Sweden,Global,Crossover SUV,5,2020-2022 (Mainstream),Europe,0.0,Geely Group,1
+WIKI1151,Volvo ES90,2025,Liftback,SPA2,Yes,Volvo Cars,Sweden,Global,Liftback,1,2025-2026 (Latest),Europe,1.0,Geely Group,0
+WIKI1152,Volvo EX30,2023,Crossover SUV,SEA,Yes,Volvo Cars,Sweden,Global,Crossover SUV,3,2023-2024 (Acceleration),Europe,1.0,Geely Group,1
+WIKI1153,Volvo EX40,2020,Crossover SUV,CMA,No,Volvo Cars,Sweden,Global,Crossover SUV,6,2020-2022 (Mainstream),Europe,0.0,Geely Group,1
+WIKI1154,Volvo EX90,2024,Crossover SUV,SPA2,Yes,Volvo Cars,Sweden,Global,Crossover SUV,2,2023-2024 (Acceleration),Europe,1.0,Geely Group,1
+WIKI1155,Aeolus Sky EV01,2023,Crossover SUV,,,Dongfeng Motor,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Dongfeng Motor,1
+WIKI1156,Aeolus Yixuan,2019,Sedan,,,Dongfeng Motor,China,China,Sedan,7,2016-2019 (Growth),Asia-Pacific,,Dongfeng Motor,0
+WIKI1157,Aeolus Yixuan Max,2021,Sedan,,,Dongfeng Motor,China,China,Sedan,5,2020-2022 (Mainstream),Asia-Pacific,,Dongfeng Motor,0
+WIKI1158,Aion i60,2025,Crossover SUV,,,GAC Group,China,China,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,,GAC Group,1
+WIKI1159,Aion LX,2019,Crossover SUV,,,GAC Group,China,China,Crossover SUV,7,2016-2019 (Growth),Asia-Pacific,,GAC Group,1
+WIKI1160,Aion S,2019,Sedan,,,GAC Group,China,China,Sedan,7,2016-2019 (Growth),Asia-Pacific,,GAC Group,0
+WIKI1161,Aion S Plus / ES,2021,Sedan,,,GAC Group,China,China,Sedan,5,2020-2022 (Mainstream),Asia-Pacific,,GAC Group,0
+WIKI1162,Aion V,2020,Crossover SUV,,,GAC Group,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,GAC Group,1
+WIKI1163,Aion Y,2021,Crossover SUV,,,GAC Group,China,China,Crossover SUV,5,2020-2022 (Mainstream),Asia-Pacific,,GAC Group,1
+WIKI1164,AITO M5,2022,Crossover SUV,,,Seres Auto,China,China,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,,Seres Auto,1
+WIKI1165,AITO M7,2025,Crossover SUV,,,Seres Auto,China,China,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,,Seres Auto,1
+WIKI1166,AITO M9,2023,Crossover SUV,,,Seres Auto,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Seres Auto,1
+WIKI1167,Arcfox alphaS5,2024,Sedan,,,BAIC Group,China,China,Sedan,2,2023-2024 (Acceleration),Asia-Pacific,,BAIC Group,0
+WIKI1168,Arcfox alphaT5,2024,Crossover SUV,,,BAIC Group,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,BAIC Group,1
+WIKI1169,Avatr 06,2025,Sedan,,,Avatr Technology,China,China,Sedan,1,2025-2026 (Latest),Asia-Pacific,,Avatr Technology,0
+WIKI1170,Avatr 07,2024,Crossover SUV,,,Avatr Technology,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,Avatr Technology,1
+WIKI1171,Avatr 11,2022,Crossover SUV,,,Avatr Technology,China,China,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,,Avatr Technology,1
+WIKI1172,Avatr 12,2023,Sedan,,,Avatr Technology,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,Avatr Technology,0
+WIKI1173,Baojun Yunduo / Wuling Cloud EV,2023,Hatchback,,,SAIC-GM-Wuling,China,China,Hatchback,3,2023-2024 (Acceleration),Asia-Pacific,,General Motors,0
+WIKI1174,BYD Atto 3 / Yuan Plus,2022,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,1
+WIKI1175,BYD Dolphin,2021,Hatchback,,,BYD Auto,China,China,Hatchback,5,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,0
+WIKI1176,BYD e2,2019,Hatchback,,,BYD Auto,China,China,Hatchback,7,2016-2019 (Growth),Asia-Pacific,,BYD Auto,0
+WIKI1177,BYD Han EV,2020,Sedan,,,BYD Auto,China,China,Sedan,6,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,0
+WIKI1178,BYD Qin Plus EV,2021,Sedan,,,BYD Auto,China,China,Sedan,5,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,0
+WIKI1179,BYD Seagull / Dolphin Mini/Surf / Atto 1,2023,Hatchback,,,BYD Auto,China,China,Hatchback,3,2023-2024 (Acceleration),Asia-Pacific,,BYD Auto,0
+WIKI1180,BYD Seal,2022,Sedan,,,BYD Auto,China,China,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,0
+WIKI1181,BYD Sealion 07 EV / Sealion 7,2024,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,BYD Auto,1
+WIKI1182,BYD Song L EV,2023,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,BYD Auto,1
+WIKI1183,BYD Song Plus EV / Seal U,2020,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,1
+WIKI1184,BYD Tang EV / Tan EV,2015,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,11,2010-2015 (Early),Asia-Pacific,,BYD Auto,1
+WIKI1185,BYD Yuan Up/Pro / S1 Pro / Atto 2,2024,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,BYD Auto,1
+WIKI1186,Changan Lumin,2022,Hatchback,,,Changan Automobile,China,China,Hatchback,4,2020-2022 (Mainstream),Asia-Pacific,,Changan Automobile,0
+WIKI1187,Changan Nevo A07,2023,Sedan,,,Changan Automobile,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,Changan Automobile,0
+WIKI1188,Chery eQ7 / Aiqar eQ7,2023,Crossover SUV,,,Chery,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Chery,1
+WIKI1189,Chery Omoda E5,2023,Crossover SUV,,,Chery,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Chery,1
+WIKI1190,Deepal L07,2022,Sedan,,,Changan Automobile,China,China,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,,Changan Automobile,0
+WIKI1191,Deepal S05,2024,Crossover SUV,,,Changan Automobile,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,Changan Automobile,1
+WIKI1192,Deepal S07,2023,Crossover SUV,,,Changan Automobile,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Changan Automobile,1
+WIKI1193,Denza D9,2022,MPV/minivan,,,BYD Auto,China,China,MPV,4,2020-2022 (Mainstream),Asia-Pacific,,BYD Auto,0
+WIKI1194,Denza N7,2023,Crossover SUV,,,BYD Auto,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,BYD Auto,1
+WIKI1195,Dongfeng eπ 007,2024,Sedan,,,Dongfeng Motor,China,China,Sedan,2,2023-2024 (Acceleration),Asia-Pacific,,Dongfeng Motor,0
+WIKI1196,Dongfeng eπ 008,2024,Crossover SUV,,,Dongfeng Motor,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,Dongfeng Motor,1
+WIKI1197,Exeed Sterra ES,2023,Sedan,,,Chery,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,Chery,0
+WIKI1198,Firefly,2025,Hatchback,,,Nio,China,China,Hatchback,1,2025-2026 (Latest),Asia-Pacific,,Nio,0
+WIKI1199,Geely Galaxy E5 / EX5,2024,Crossover SUV,,,Geely,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,Geely Group,1
+WIKI1200,Geely Galaxy E8,2023,Sedan,,,Geely,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,Geely Group,0
+WIKI1201,Geometry A,2019,Sedan,,,Geely,China,China,Sedan,7,2016-2019 (Growth),Asia-Pacific,,Geely Group,0
+WIKI1202,Geometry C,2020,Sedan,,,Geely,China,China,Sedan,6,2020-2022 (Mainstream),Asia-Pacific,,Geely Group,0
+WIKI1203,Hongqi E-HS9,2020,Crossover SUV,,,FAW Group,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,FAW Group,1
+WIKI1204,Hongqi E-QM5,2022,Sedan,,,FAW Group,China,China,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,,FAW Group,0
+WIKI1205,Hyptec GT,2023,Sedan,,,GAC Group,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,GAC Group,0
+WIKI1206,Hyptec HT,2023,Crossover SUV,,,GAC Group,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,GAC Group,1
+WIKI1207,IM L7,2022,Sedan,,,IM Motors,China,China,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,,IM Motors,0
+WIKI1208,IM LS6 / MG IM6,2023,Crossover SUV,,,IM Motors,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,IM Motors,1
+WIKI1209,IM LS7,2022,Crossover SUV,,,IM Motors,China,China,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,,IM Motors,1
+WIKI1210,Leapmotor C01,2022,Sedan,,,Leapmotor,China,China,Sedan,4,2020-2022 (Mainstream),Asia-Pacific,,Leapmotor,0
+WIKI1211,Leapmotor C10,2023,Crossover SUV,,,Leapmotor,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Leapmotor,1
+WIKI1212,Leapmotor C11,2020,Crossover SUV,,,Leapmotor,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,Leapmotor,1
+WIKI1213,Leapmotor T03,2020,Hatchback,,,Leapmotor,China,China,Hatchback,6,2020-2022 (Mainstream),Asia-Pacific,,Leapmotor,0
+WIKI1214,Li Mega,2024,MPV/minivan,,,Li Auto,China,China,MPV,2,2023-2024 (Acceleration),Asia-Pacific,,Li Auto,0
+WIKI1215,Luxeed S7,2023,Sedan,,,Chery,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,Chery,0
+WIKI1216,MG4 EV,2022,Hatchback,,,SAIC Motor,China,China,Hatchback,4,2020-2022 (Mainstream),Asia-Pacific,,SAIC Motor,0
+WIKI1217,MG Cyberster,2023,Roadster,,,SAIC Motor,China,China,Roadster,3,2023-2024 (Acceleration),Asia-Pacific,,SAIC Motor,0
+WIKI1218,MG ZS EV / EZS,2018,Crossover SUV,,,SAIC Motor,China,China,Crossover SUV,8,2016-2019 (Growth),Asia-Pacific,,SAIC Motor,1
+WIKI1219,Neta Aya / V,2020,Crossover SUV,,,Hozon Auto,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,Hozon Auto,1
+WIKI1220,Neta U / X,2020,Crossover SUV,,,Hozon Auto,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,Hozon Auto,1
+WIKI1221,Nio EC6,2020,Crossover SUV,,,Nio,China,China,Crossover SUV,6,2020-2022 (Mainstream),Asia-Pacific,,Nio,1
+WIKI1222,Nio ES6,2019,Crossover SUV,,,Nio,China,China,Crossover SUV,7,2016-2019 (Growth),Asia-Pacific,,Nio,1
+WIKI1223,Nio ES8,2018,Crossover SUV,,,Nio,China,China,Crossover SUV,8,2016-2019 (Growth),Asia-Pacific,,Nio,1
+WIKI1224,Nio ET5,2021,Sedan,,,Nio,China,China,Sedan,5,2020-2022 (Mainstream),Asia-Pacific,,Nio,0
+WIKI1225,Nio ET7,2021,Sedan,,,Nio,China,China,Sedan,5,2020-2022 (Mainstream),Asia-Pacific,,Nio,0
+WIKI1226,Onvo L60,2024,Crossover SUV,,,Nio,China,China,Crossover SUV,2,2023-2024 (Acceleration),Asia-Pacific,,Nio,1
+WIKI1227,Ora Good Cat / Funky Cat / 03,2020,Hatchback,,,Great Wall Motor,China,China,Hatchback,6,2020-2022 (Mainstream),Asia-Pacific,,Great Wall Motor,0
+WIKI1228,Roewe Ei5 / MG5 EV,2017,Station wagon,,,SAIC Motor,China,China,Station wagon,9,2016-2019 (Growth),Asia-Pacific,,SAIC Motor,0
+WIKI1229,SAIC Rising R7,2022,Crossover SUV,,,SAIC Motor,China,China,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,,SAIC Motor,1
+WIKI1230,Seres SF5 / A5 / 5,2019,Crossover SUV,,,Seres,China,China,Crossover SUV,7,2016-2019 (Growth),Asia-Pacific,,Seres,1
+WIKI1231,Wuling Hongguang Mini EV,2020,Microcar hatchback,,,SAIC-GM-Wuling,China,China,Microcar hatchback,6,2020-2022 (Mainstream),Asia-Pacific,,General Motors,0
+WIKI1232,Wuling Starlight,2023,Sedan,,,SAIC-GM-Wuling,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,General Motors,0
+WIKI1233,Xiaomi SU7,2024,Sedan,,,Xiaomi Auto,China,China,Sedan,2,2023-2024 (Acceleration),Asia-Pacific,,Xiaomi Auto,0
+WIKI1234,Xiaomi YU7,2025,Crossover SUV,,,Xiaomi Auto,China,China,Crossover SUV,1,2025-2026 (Latest),Asia-Pacific,,Xiaomi Auto,1
+WIKI1235,XPeng G6,2023,Crossover SUV,,,XPeng,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,XPeng,1
+WIKI1236,XPeng G9,2022,Crossover SUV,,,XPeng,China,China,Crossover SUV,4,2020-2022 (Mainstream),Asia-Pacific,,XPeng,1
+WIKI1237,XPeng Mona M03,2024,Liftback,,,XPeng,China,China,Liftback,2,2023-2024 (Acceleration),Asia-Pacific,,XPeng,0
+WIKI1238,XPeng P7,2020,Sedan,,,XPeng,China,China,Sedan,6,2020-2022 (Mainstream),Asia-Pacific,,XPeng,0
+WIKI1239,Zeekr 001,2021,Shooting brake,,,Geely,China,China,Shooting brake,5,2020-2022 (Mainstream),Asia-Pacific,,Geely Group,0
+WIKI1240,Zeekr 007,2023,Sedan,,,Geely,China,China,Sedan,3,2023-2024 (Acceleration),Asia-Pacific,,Geely Group,0
+WIKI1241,Zeekr 009,2022,MPV/minivan,,,Geely,China,China,MPV,4,2020-2022 (Mainstream),Asia-Pacific,,Geely Group,0
+WIKI1242,Zeekr X,2023,Crossover SUV,,,Geely,China,China,Crossover SUV,3,2023-2024 (Acceleration),Asia-Pacific,,Geely Group,1

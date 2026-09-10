@@ -1,0 +1,156 @@
+Model|Year|BodyStyle|Platform|DedicatedBEV|Manufacturer|Origin
+Abarth 500e|2023|Hatchback||No|Stellantis|Italy
+Abarth 600e|2024|Crossover SUV|eCMP, CMP|No|Stellantis|Italy
+Aletra L8|2025|MPV/minivan||Yes|Aletra (produced by Geely)|Indonesia
+Alfa Romeo Junior|2024|Crossover SUV|eCMP, CMP|No|Stellantis|Italy
+Alpine A290|2024|Hatchback|AmpR Small|Yes|Alpine/Renault|France
+Alpine A390|2026|Crossover SUV|AmpR Medium|Yes|Alpine/Renault|France
+Audi e-tron GT|2021|Sedan|J1|Yes|Audi|Germany
+Audi A6 e-tron|2024|Sedan and Station wagon|PPE|Yes|Audi|Germany
+Audi Q4 e-tron|2021|Crossover SUV|MEB|Yes|Audi|Germany
+Audi Q6 e-tron|2024|Crossover SUV|PPE|Yes|Audi|Germany
+BMW i3|2026|Sedan|Neue Klasse|Yes|BMW|Germany
+BMW i4|2021|Liftback|CLAR|No|BMW|Germany
+BMW i5|2023|Sedan|CLAR|No|BMW|Germany
+BMW i5 Touring|2024|Station wagon|CLAR|No|BMW|Germany
+BMW i7|2022|Sedan|CLAR|No|BMW|Germany
+BMW iX|2021|Crossover SUV|iX|Yes|BMW|Germany
+BMW iX1|2022|Crossover SUV|UKL2|No|BMW|Germany
+BMW iX2|2023|Crossover SUV|UKL2|No|BMW|Germany
+BMW iX3|2025|Crossover SUV|Neue Klasse|Yes|BMW|Germany
+Cadillac Celestiq|2024|Liftback|BEV3|Yes|General Motors|United States
+Cadillac Escalade IQ|2024|SUV|BT1|Yes|General Motors|United States
+Cadillac Lyriq|2022|Crossover SUV|BEV3|Yes|General Motors|United States
+Cadillac Optiq|2023|Crossover SUV|BEV3|Yes|General Motors|United States
+Cadillac Vistiq|2025|Crossover SUV|BEV3|Yes|General Motors|United States
+Chevrolet Blazer EV|2023|Crossover SUV|BEV3|Yes|General Motors|United States
+Chevrolet Bolt|2025|Crossover SUV|BEV2|Yes|General Motors|United States
+Chevrolet Equinox EV|2024|Crossover SUV|BEV3|Yes|General Motors|United States
+Chevrolet Silverado EV|2023|Pickup truck|BT1|Yes|General Motors|United States
+Citroen e-Berlingo|2021|Van|EMP2|No|Stellantis|France
+Citroen e-C3 Europe|2023|Hatchback|Smart Car|No|Stellantis|France
+Citroen e-C3 India|2023|Hatchback|Smart Car|No|Stellantis|France
+Citroen e-C4|2021|Crossover SUV|eCMP|No|Stellantis|France
+Citroen e-C4 X|2022|Crossover SUV|eCMP|No|Stellantis|France
+Citroen e-C5 Aircross|2025|Crossover SUV|STLA Medium|No|Stellantis|France
+Cupra Born|2021|Hatchback|MEB|Yes|SEAT|Spain
+Cupra Tavascan|2023|Crossover SUV|MEB|Yes|SEAT|Spain
+DS 3 Crossback E-Tense|2019|Crossover SUV|eCMP|No|Stellantis|France
+DS No. 4|2025|Hatchback|EMP2 V3|No|Stellantis|France
+DS No. 8|2025|Crossover SUV|STLA Medium|Yes|Stellantis|France
+Dodge Charger Daytona|2024|Liftback|STLA Large|No|Stellantis|United States
+Dacia Spring Electric|2021|Hatchback|CMFA-EV|No|Dacia/Renault|Romania
+Faraday Future FF 91|2023|Crossover SUV||Yes|Faraday Future|United States
+Fiat E-Ducato|2021|Van||No|Stellantis|Italy
+Fiat 500e|2020|Hatchback||Yes|Stellantis|Italy
+Fiat 600e|2023|Crossover SUV|eCMP, CMP|No|Stellantis|Italy
+Fiat Grande Panda|2024|Hatchback|Smart Car|No|Stellantis|Italy
+Ford Capri EV|2024|Crossover SUV|MEB|Yes|Ford|United States
+Ford E-Transit|2021|Van||No|Ford|United States
+Ford Explorer EV|2024|Crossover SUV|MEB|Yes|Ford|United States
+Ford Mustang Mach-E|2020|Crossover SUV|GE1|Yes|Ford|United States
+Ford Puma Gen-E|2024|Crossover SUV|Ford Global B-car|No|Ford|United States
+Genesis Electrified G80|2021|Sedan|M3|No|Genesis Motor|South Korea
+Genesis Electrified GV70|2022|Crossover SUV|M3|No|Genesis Motor|South Korea
+Genesis GV60|2021|Crossover SUV|E-GMP|Yes|Genesis Motor|South Korea
+GMC Sierra EV|2023|Pickup truck|BT1|Yes|General Motors|United States
+GMC Hummer EV|2022|Pickup truck and SUV|BT1|Yes|General Motors|United States
+Honda e:Ny1/e:N1|2023|Crossover SUV|e:N Architecture F|No|Honda|Japan
+Honda Prologue|2023|Crossover SUV|BEV3|Yes|Honda (produced by General Motors)|Japan
+Hyundai Casper Electric/Inster|2024|Hatchback|Hyundai-Kia K1 BEV|No|Hyundai|South Korea
+Hyundai Creta Electric|2025|Crossover SUV|Hyundai-Kia K2 BEV|No|Hyundai|South Korea
+Hyundai Ioniq 5|2021|Crossover SUV|E-GMP|Yes|Hyundai|South Korea
+Hyundai Ioniq 6|2022|Sedan|E-GMP|Yes|Hyundai|South Korea
+Hyundai Ioniq 9|2025|Crossover SUV|E-GMP|Yes|Hyundai|South Korea
+Hyundai Kona Electric|2019|Crossover SUV|Hyundai-Kia K3|No|Hyundai|South Korea
+Jeep Avenger|2023|Crossover SUV|eCMP / STLA Small|No|Stellantis|United States
+Jeep Wagoneer S|2024|Crossover SUV|STLA Large|Yes|Stellantis|United States
+Kia EV3|2024|Crossover SUV|E-GMP|Yes|Kia|South Korea
+Kia EV4|2025|Sedan and hatchback|E-GMP|Yes|Kia|South Korea
+Kia EV5|2023|Crossover SUV|Hyundai-Kia N3 eK|Yes|Kia|South Korea
+Kia EV6|2021|Crossover SUV|E-GMP|Yes|Kia|South Korea
+Kia EV9|2023|Crossover SUV|E-GMP|Yes|Kia|South Korea
+Lexus RZ|2022|Crossover SUV|e-TNGA|Yes|Toyota|Japan
+Lotus Eletre|2023|Crossover SUV|EPA|Yes|Lotus Cars|United Kingdom
+Lotus Emeya|2024|Liftback|EPA|Yes|Lotus Cars|United Kingdom
+Lucid Air|2021|Sedan||Yes|Lucid Motors|United States
+Lucid Gravity|2024|Crossover SUV||Yes|Lucid Motors|United States
+Mahindra BE 6|2025|Crossover SUV|INGLO|Yes|Mahindra|India
+Mahindra XEV 9e|2025|Crossover SUV|INGLO|Yes|Mahindra|India
+Mahindra XEV 9S|2025|Crossover SUV|INGLO|Yes|Mahindra|India
+Mahindra XUV 3XO EV|2026|Crossover SUV|X100|No|Mahindra|India
+Maserati Grecale Folgore|2023|Crossover SUV|FCA Giorgio|No|Stellantis|Italy
+Mazda 6e|2025|Liftback|EPA1|Yes|Mazda|Japan
+Mazda MX-30|2020|Crossover SUV|e-Skyactiv|No|Mazda|Japan
+Mercedes-Benz EQA|2021|Crossover SUV|MFA2|No|Mercedes-Benz Group|Germany
+Mercedes-Benz EQE|2022|Sedan|EVA|Yes|Mercedes-Benz Group|Germany
+Mercedes-Benz EQE SUV|2022|Crossover SUV|EVA|Yes|Mercedes-Benz Group|Germany
+Mercedes-Benz EQS|2021|Liftback|MEA|Yes|Mercedes-Benz Group|Germany
+Mercedes-Benz EQS SUV|2022|Crossover SUV|MEA|Yes|Mercedes-Benz Group|Germany
+Mini Cooper E/SE|2023|Hatchback||No|Mini/BMW|United Kingdom
+Mini Countryman E/SE|2023|Crossover SUV|UKL2|No|Mini/BMW|United Kingdom
+Mini Aceman|2024|Crossover SUV||Yes|Mini/BMW|United Kingdom
+Nissan Ariya|2021|Crossover SUV|AmpR Medium|Yes|Nissan|Japan
+Nissan Leaf|2010|Hatchback/Crossover SUV|AmpR Medium|Yes|Nissan|Japan
+Nissan Sakura|2022|Hatchback|KEI-EV|Yes|NMKV|Japan
+Opel Astra Electric|2023|Hatchback|EMP2 V3|No|Stellantis|Germany/United Kingdom
+Opel Corsa Electric|2019|Hatchback|eCMP|No|Stellantis|Germany/United Kingdom
+Opel Mokka-e|2020|Crossover SUV|eCMP|No|Stellantis|Germany/United Kingdom
+Opel Frontera Electric|2024|Crossover SUV|Smart Car|No|Stellantis|Germany/United Kingdom
+Opel Grandland Electric|2024|Crossover SUV|STLA Medium|No|Stellantis|Germany/United Kingdom
+Peugeot e-208|2019|Hatchback|eCMP|No|Stellantis|France
+Peugeot e-2008|2020|Crossover SUV|eCMP|No|Stellantis|France
+Peugeot e-308|2022|Hatchback|EMP2 V3|No|Stellantis|France
+Peugeot e-3008|2024|Crossover SUV|STLA Medium|No|Stellantis|France
+Peugeot e-408|2024|Crossover SUV|EMP2 V3|No|Stellantis|France
+Peugeot e-5008|2024|Crossover SUV|STLA Medium|No|Stellantis|France
+Polestar 2|2020|Liftback|CMA|Yes|Volvo Cars|Sweden
+Polestar 3|2024|Crossover SUV|SPA2|Yes|Volvo Cars|Sweden
+Polestar 4|2023|Crossover SUV|SEA|Yes|Volvo Cars|Sweden
+Porsche Cayenne|2026|Crossover SUV|PPE|Yes|Porsche|Germany
+Porsche Macan|2024|Crossover SUV|PPE|Yes|Porsche|Germany
+Porsche Taycan|2019|Sedan and shooting brake|J1|Yes|Porsche|Germany
+Renault 4 E-Tech|2025|Crossover SUV|AmpR Small|Yes|Renault|France
+Renault 5 E-Tech|2024|Hatchback|AmpR Small|Yes|Renault|France
+Renault Megane E-Tech Electric|2022|Crossover SUV|AmpR Medium|Yes|Renault|France
+Renault Scenic E-Tech|2024|Crossover SUV|AmpR Medium|Yes|Renault|France
+Rimac Nevera|2021|Coupe||Yes|Rimac Automobili|Croatia
+Rivian R1S|2022|SUV||Yes|Rivian|United States
+Rivian R1T|2021|Pickup truck||Yes|Rivian|United States
+Rivian R2|2026|SUV||Yes|Rivian|United States
+Rolls-Royce Spectre|2023|Coupe|Architecture of Luxury|Yes|Rolls-Royce|United Kingdom
+Skoda Enyaq|2020|Crossover SUV|MEB|Yes|Skoda Auto|Czech Republic
+Skoda Elroq|2025|Crossover SUV|MEB|Yes|Skoda Auto|Czech Republic
+Smart #1|2022|Crossover SUV|SEA2|Yes|Smart Automobile (produced by Geely)|Germany
+Smart #3|2023|Crossover SUV|SEA2|Yes|Smart Automobile (produced by Geely)|Germany
+Smart #5|2024|Crossover SUV|PMA2+|Yes|Smart Automobile (produced by Geely)|Germany
+Subaru Solterra|2022|Crossover SUV|e-TNGA/e-SGP|Yes|Subaru (produced by Toyota)|Japan
+Suzuki e Vitara|2025|Crossover SUV|Heartect-e|Yes|Suzuki|Japan
+Tata Nexon.ev|2020|Crossover SUV||No|Tata Motors Passenger Vehicles|India
+Tata Punch.ev|2024|Crossover SUV|Acti.ev|Yes|Tata Motors Passenger Vehicles|India
+Tata Harrier.ev|2024|Crossover SUV|Acti.ev|Yes|Tata Motors Passenger Vehicles|India
+Tata Curvv.ev|2024|Crossover SUV|Acti.ev|Yes|Tata Motors Passenger Vehicles|India
+Tata Tiago.ev|2022|Hatchback||No|Tata Motors Passenger Vehicles|India
+Tata Tigor EV|2022|Sedan||No|Tata Motors Passenger Vehicles|India
+Tesla Cybertruck|2023|Pickup||Yes|Tesla, Inc.|United States
+Tesla Model 3|2016|Sedan|Model 3|Yes|Tesla, Inc.|United States
+Tesla Model Y|2020|Crossover SUV|Model 3|Yes|Tesla, Inc.|United States
+Toyota bZ4X/bZ|2022|Crossover SUV|e-TNGA|Yes|Toyota|Japan
+Toyota C-HR+/C-HR|2025|Crossover SUV|e-TNGA|Yes|Toyota|Japan
+VinFast VF e34|2021|Crossover SUV||Yes|VinFast|Vietnam
+VinFast VF 3|2024|Crossover SUV||Yes|VinFast|Vietnam
+VinFast VF 5|2023|Crossover SUV||Yes|VinFast|Vietnam
+VinFast VF 6|2024|Crossover SUV||Yes|VinFast|Vietnam
+VinFast VF 7|2024|Crossover SUV||Yes|VinFast|Vietnam
+VinFast VF 8|2022|Crossover SUV||Yes|VinFast|Vietnam
+VinFast VF 9|2023|Crossover SUV||Yes|VinFast|Vietnam
+Volkswagen ID.3|2020|Hatchback|MEB|Yes|Volkswagen|Germany
+Volkswagen ID.4|2020|Crossover SUV|MEB|Yes|Volkswagen|Germany
+Volkswagen ID.5|2022|Crossover SUV|MEB|Yes|Volkswagen|Germany
+Volkswagen ID.7|2023|Liftback|MEB|Yes|Volkswagen|Germany
+Volkswagen ID. Buzz|2022|MPV/minivan|MEB|Yes|Volkswagen|Germany
+Volvo EC40|2021|Crossover SUV|CMA|No|Volvo Cars|Sweden
+Volvo ES90|2025|Liftback|SPA2|Yes|Volvo Cars|Sweden
+Volvo EX30|2023|Crossover SUV|SEA|Yes|Volvo Cars|Sweden
+Volvo EX40|2020|Crossover SUV|CMA|No|Volvo Cars|Sweden
+Volvo EX90|2024|Crossover SUV|SPA2|Yes|Volvo Cars|Sweden

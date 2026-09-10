@@ -1,0 +1,3 @@
+EV_Type,Vehicle_Count,Manufacturer_Count,Model_Count,Avg_Range,Median_Range,Avg_MSRP,Market_Share_%
+Battery Electric Vehicle (BEV),116807,27,67,78.60890186375816,0.0,1146.231390242023,77.62190826809851
+Plug-in Hybrid Electric Vehicle (PHEV),33675,25,63,30.65547141796585,26.0,1889.875426874536,22.37809173190149
